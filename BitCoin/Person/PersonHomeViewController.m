@@ -134,7 +134,7 @@
             if ([code isEqualToString:@"1"]) {
                 NSLog(@"");
                 _infoData = [NSDictionary dictionaryWithDictionary:[JSON objectForKey:@"data"]];
-                [weakSelf performSelectorOnMainThread:@selector(setInfo:) withObject:nil waitUntilDone:YES];
+                [weakSelf performSelectorOnMainThread:@selector(setInfo) withObject:nil waitUntilDone:YES];
             } else {
                 [weakSelf performSelectorOnMainThread:@selector(logout) withObject:nil waitUntilDone:YES];
 //                [weakSelf performSelectorOnMainThread:@selector(tokenError) withObject:nil waitUntilDone:YES];
@@ -146,13 +146,12 @@
     }
 }
 
-- (void) setInfo:(NSDictionary *) dic
+- (void) setInfo
 {
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    [defaults setObject:[dic objectForKey:@"payPasswordStatus"] forKey:@"paymentPasswordStatus"];
-    [defaults setObject:[dic objectForKey:@"authenticationStatus"] forKey:@"authenticationStatus"];
-    [defaults setObject:[dic objectForKey:@"inviteCode"] forKey:@"inviteCode"];
-
+    [defaults setObject:[_infoData objectForKey:@"payPasswordStatus"] forKey:@"paymentPasswordStatus"];
+    [defaults setObject:[_infoData objectForKey:@"authenticationStatus"] forKey:@"authenticationStatus"];
+    [defaults setObject:[_infoData objectForKey:@"inviteCode"] forKey:@"inviteCode"];
 }
 
 - (void)resetMessage:(NSString *)string
