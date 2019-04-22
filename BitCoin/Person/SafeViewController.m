@@ -49,19 +49,20 @@
 }
 
 - (IBAction)payBtnClick:(id)sender {
-    if ([_status isEqualToString:@"0"]) {
-        RealNameViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RealNameVC"];
-        vc.delegate = self;
-        [self.navigationController pushViewController:vc animated:YES];
-    } else {
+//    if ([_status isEqualToString:@"0"]) {
+//        RealNameViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RealNameVC"];
+//        vc.delegate = self;
+//        [self.navigationController pushViewController:vc animated:YES];
+//    } else {
         if ([_paymentPasswordStatus isEqualToString:@"1"]) {
-            ReSetPayPasswordViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ReSetPayPasswordVC"];
-            [self.navigationController pushViewController:vc animated:YES];
+//
+            self.dustView.alpha = 0.4;
+            self.tipView.alpha = 1;
         } else {
             SetPayPassWordViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SetPayPassWordVC"];
             [self.navigationController pushViewController:vc animated:YES];
         }
-    }
+//    }
 }
 - (IBAction)resetLoginBtnClick:(id)sender {
     ReSetLoginPWViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ReSetLPWVC"];
@@ -72,6 +73,20 @@
 - (IBAction)goBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+- (IBAction)tipCancel:(id)sender {
+    self.dustView.alpha = 0;
+    self.tipView.alpha = 0;
+}
+
+- (IBAction)typeReset:(id)sender {
+    self.dustView.alpha = 0;
+    self.tipView.alpha = 0;
+    ReSetPayPasswordViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ReSetPayPasswordVC"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

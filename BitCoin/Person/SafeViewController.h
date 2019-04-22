@@ -15,4 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property (weak, nonatomic) IBOutlet UILabel *gesturePWLabel;
 
+
+@property (weak, nonatomic) IBOutlet UIView *dustView;
+@property (weak, nonatomic) IBOutlet UIView *tipView;
+
 @end
