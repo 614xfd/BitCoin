@@ -1,0 +1,40 @@
+//
+//  PrefixHeader.pch
+//  BitCoin
+//
+//  Created by LBH on 2017/9/23.
+//  Copyright © 2017年 LBH. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import <objc/runtime.h>
+#import "ToastView.h"
+#import "BaseViewController.h"
+#import "NetworkTool.h"
+#import "MJRefresh.h"
+
+#define FONT_DIN @"DIN Alternate"
+#define IMAGE_URL @"https://img.bitboss.cn"
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+
+
+//#import "EZOpenSDK.h"
+//#import "EZGlobalSDK.h"
+//#import "GlobalKit.h"
+
+#define EZOPENSDK [EZOpenSDK class]
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//#ifdef DEBUG
+//#define REQUEST_URL_STRING @"http://120.78.171.172/Bitboss"
+//#define REQUEST_URL_STRING @"https://bitboss.bitboss.cn/"
+//#define REQUEST_URL_STRING @"http://120.79.218.182/Bitboss/"
+//#define REQUEST_URL_STRING @"https://api.hainiaowo.com/Rest.aspx"
+
+#define REQUEST_URL_STRING @"http://api.zg960.com.cn"
+
+#endif /* PrefixHeader_pch */

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="0dp">
+        <shape android:shape="rectangle">
+
+            <gradient
+                android:angle="180"
+                android:endColor="#0F000000"
+                android:startColor="#0F000000" />
+
+            <corners
+                android:bottomLeftRadius="6dip"
+                android:bottomRightRadius="6dip"
+                android:topLeftRadius="6dip"
+                android:topRightRadius="6dip" />
+        </shape>
+    </item>
+    <!-- 背景部分 -->
+    <!-- 形象的表达：bottom代表背景部分在上边缘超出阴影的高度，right代表背景部分在左边超出阴影的宽度（相对应的offset） -->
+    <item
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="0dp">
+        <shape android:shape="rectangle">
+
+            <gradient
+                android:angle="360"
+                android:endColor="#7422a8"
+                android:centerColor="#4c1685"
+                android:startColor="#2a0c66" />
+
+            <corners
+                android:bottomLeftRadius="0dip"
+                android:bottomRightRadius="0dip"
+                android:topLeftRadius="0dip"
+                android:topRightRadius="0dip" />
+        </shape>
+    </item>
+</layer-list>

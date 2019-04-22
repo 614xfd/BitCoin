@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" misplaced="YES" id="iN0-l3-epB" customClass="runShareView">
+            <rect key="frame" x="0.0" y="0.0" width="517" height="517"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="运动挖矿分享图.png" id="3Ll-2Z-cOq">
+                    <rect key="frame" x="0.0" y="0.0" width="517" height="517"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="运动挖矿分享图_03.png" id="QWa-T2-V1W">
+                    <rect key="frame" x="30" y="30" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="134 **** 7788" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l34-cK-xh2">
+                    <rect key="frame" x="98" y="30" width="294" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BitBoss·运动挖矿9月6日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ehu-bt-GLQ">
+                    <rect key="frame" x="98" y="59" width="316" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.68235294117647061" green="0.67450980392156867" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1234.56" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ofq-uM-cf3">
+                    <rect key="frame" x="31" y="314" width="144" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="公里" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SGy-GF-660">
+                    <rect key="frame" x="31" y="361" width="35" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="步数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rQl-V6-qMI">
+                    <rect key="frame" x="245" y="361" width="35" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="当日挖矿(BBC)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h2e-Vv-qiQ">
+                    <rect key="frame" x="388" y="361" width="109" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9999999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c5M-0I-Fl9">
+                    <rect key="frame" x="178" y="314" width="170" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1234.56" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7hm-vO-yrc">
+                    <rect key="frame" x="355" y="314" width="142" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="“与我一起获得健康收益”" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E5m-oi-Gzf">
+                    <rect key="frame" x="30" y="428" width="343" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="q4N-aa-mkI">
+                    <rect key="frame" x="407" y="399" width="90" height="90"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="KMLabel" destination="ofq-uM-cf3" id="3Qn-Rb-NmA"/>
+                <outlet property="coinLabel" destination="7hm-vO-yrc" id="LGk-GZ-qyK"/>
+                <outlet property="dateLabel" destination="Ehu-bt-GLQ" id="Sz1-z2-KWm"/>
+                <outlet property="phoneLabel" destination="l34-cK-xh2" id="T68-9m-s6f"/>
+                <outlet property="shareImageView" destination="q4N-aa-mkI" id="Fss-xl-3JF"/>
+                <outlet property="stepLabel" destination="c5M-0I-Fl9" id="9py-jc-hFd"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="运动挖矿分享图.png" width="1034" height="1034"/>
+        <image name="运动挖矿分享图_03.png" width="103" height="103"/>
+    </resources>
+</document>
