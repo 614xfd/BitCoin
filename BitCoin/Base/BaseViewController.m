@@ -108,6 +108,23 @@
     [self.view addSubview:tv];
 }
 
+- (void) tokenError
+{
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"isLogin"];
+    [defaults removeObjectForKey:@"phoneNum"];
+    [defaults removeObjectForKey:@"uid"];
+    [defaults removeObjectForKey:@"authenticationStatus"];
+    [defaults removeObjectForKey:@"paymentPasswordStatus"];
+    [defaults removeObjectForKey:@"token"];
+    [defaults synchronize];
+    [self showToastWithMessage:@"登录身份过期"];
+    NSArray <UIViewController *> *childViewControllers = self.navigationController.childViewControllers;
+    if (childViewControllers.count>2) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+}
+
 - (BOOL)inputShouldNumber:(NSString *)inputString {
     if (inputString.length == 0) return NO;
     NSString *regex =@"[0-9]*";
