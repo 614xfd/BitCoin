@@ -78,6 +78,7 @@
     //    } else if ([UIScreen mainScreen].bounds.size.height == 568) {
     //        self.scale = 0.851;
     //    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenError)name:@"TOKEN_ERROR" object:nil];
 }
 
 //MD5加密

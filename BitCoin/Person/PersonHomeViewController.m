@@ -136,6 +136,8 @@
                 _infoData = [NSDictionary dictionaryWithDictionary:[JSON objectForKey:@"data"]];
                 [weakSelf performSelectorOnMainThread:@selector(setInfo:) withObject:nil waitUntilDone:YES];
             } else {
+                [weakSelf performSelectorOnMainThread:@selector(logout) withObject:nil waitUntilDone:YES];
+//                [weakSelf performSelectorOnMainThread:@selector(tokenError) withObject:nil waitUntilDone:YES];
 //                [weakSelf performSelectorOnMainThread:@selector(showToastWithMessage:) withObject:@"登录身份过期" waitUntilDone:YES];
             }
         } failed:^(NSError *error) {
@@ -323,7 +325,6 @@
 {
     _isLogin = NO;
     self.phoneNum.text = @"创建账户/登录";
-    self.tipLabel.text = @"立即认证";
     //    self.phoneNum.hidden = YES;
     self.loginBtn.hidden = NO;
     self.logoutBtn.hidden = YES;
