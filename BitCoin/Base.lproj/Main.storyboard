@@ -2709,6 +2709,7 @@
 <<<<<<< HEAD
                                                     <rect key="frame" x="0.0" y="0.0" width="372" height="8"/>
 =======
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="10"/>
 >>>>>>> 7884521aad26abc65b30ed0d985514dd3c975fa9
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
