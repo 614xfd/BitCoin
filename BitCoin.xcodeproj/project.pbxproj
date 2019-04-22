@@ -11,6 +11,7 @@
 		04B19B19226B3954003E6EEE /* WalletBindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B19B18226B3954003E6EEE /* WalletBindingViewController.m */; };
 		04B19B38226B5CF9003E6EEE /* NewShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B19B37226B5CF9003E6EEE /* NewShareViewController.m */; };
 		04B19B3A226B5DA4003E6EEE /* WechatIMG2210.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B19B39226B5DA0003E6EEE /* WechatIMG2210.png */; };
+		04F8F920226E1C8700873EC6 /* ReSetPayPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F8F91F226E1C8700873EC6 /* ReSetPayPasswordViewController.m */; };
 		370123D520AC3A3C00D8DF43 /* 理财-详情页面3_17.png in Resources */ = {isa = PBXBuildFile; fileRef = 370123D320AC3A3B00D8DF43 /* 理财-详情页面3_17.png */; };
 		370123D620AC3A3C00D8DF43 /* 理财-详情页面3_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 370123D420AC3A3B00D8DF43 /* 理财-详情页面3_06.png */; };
 		370123DA20AD13F500D8DF43 /* 理财-详情页面-买入_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 370123D720AD13F300D8DF43 /* 理财-详情页面-买入_07.png */; };
@@ -579,7 +580,6 @@
 		37E68C23201B461500A027EE /* ReSetLoginPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E68C0E201B461200A027EE /* ReSetLoginPWViewController.m */; };
 		37E68C24201B461500A027EE /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E68C10201B461300A027EE /* MyOrderViewController.m */; };
 		37E68C25201B461500A027EE /* RealNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E68C11201B461300A027EE /* RealNameViewController.m */; };
-		37E68C26201B461500A027EE /* ReSetPayPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E68C12201B461300A027EE /* ReSetPayPasswordViewController.m */; };
 		37E68C27201B461500A027EE /* BankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E68C13201B461300A027EE /* BankCardViewController.m */; };
 		37E68C28201B461500A027EE /* AboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E68C17201B461400A027EE /* AboutMeViewController.m */; };
 		37E68C29201B461500A027EE /* SetPayPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E68C1A201B461400A027EE /* SetPayPassWordViewController.m */; };
@@ -699,6 +699,8 @@
 		04B19B36226B5CF9003E6EEE /* NewShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewShareViewController.h; sourceTree = "<group>"; };
 		04B19B37226B5CF9003E6EEE /* NewShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewShareViewController.m; sourceTree = "<group>"; };
 		04B19B39226B5DA0003E6EEE /* WechatIMG2210.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WechatIMG2210.png; sourceTree = "<group>"; };
+		04F8F91E226E1C8700873EC6 /* ReSetPayPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReSetPayPasswordViewController.h; sourceTree = "<group>"; };
+		04F8F91F226E1C8700873EC6 /* ReSetPayPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReSetPayPasswordViewController.m; sourceTree = "<group>"; };
 		370123D320AC3A3B00D8DF43 /* 理财-详情页面3_17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "理财-详情页面3_17.png"; sourceTree = "<group>"; };
 		370123D420AC3A3B00D8DF43 /* 理财-详情页面3_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "理财-详情页面3_06.png"; sourceTree = "<group>"; };
 		370123D720AD13F300D8DF43 /* 理财-详情页面-买入_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "理财-详情页面-买入_07.png"; sourceTree = "<group>"; };
@@ -1403,7 +1405,6 @@
 		37E68C0F201B461200A027EE /* WalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletViewController.h; sourceTree = "<group>"; };
 		37E68C10201B461300A027EE /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
 		37E68C11201B461300A027EE /* RealNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealNameViewController.m; sourceTree = "<group>"; };
-		37E68C12201B461300A027EE /* ReSetPayPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReSetPayPasswordViewController.m; sourceTree = "<group>"; };
 		37E68C13201B461300A027EE /* BankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardViewController.m; sourceTree = "<group>"; };
 		37E68C14201B461300A027EE /* ExamineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamineViewController.h; sourceTree = "<group>"; };
 		37E68C15201B461300A027EE /* RealNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealNameViewController.h; sourceTree = "<group>"; };
@@ -1415,7 +1416,6 @@
 		37E68C1B201B461400A027EE /* LogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsViewController.m; sourceTree = "<group>"; };
 		37E68C1C201B461400A027EE /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
 		37E68C1D201B461400A027EE /* ExamineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamineViewController.m; sourceTree = "<group>"; };
-		37E68C1E201B461500A027EE /* ReSetPayPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReSetPayPasswordViewController.h; sourceTree = "<group>"; };
 		37E68C1F201B461500A027EE /* ReSetLoginPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReSetLoginPWViewController.h; sourceTree = "<group>"; };
 		37E68C20201B461500A027EE /* LogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsViewController.h; sourceTree = "<group>"; };
 		37E68C21201B461500A027EE /* MyOrderInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderInfoViewController.m; sourceTree = "<group>"; };
@@ -2301,8 +2301,8 @@
 				37E68C11201B461300A027EE /* RealNameViewController.m */,
 				37E68C1F201B461500A027EE /* ReSetLoginPWViewController.h */,
 				37E68C0E201B461200A027EE /* ReSetLoginPWViewController.m */,
-				37E68C1E201B461500A027EE /* ReSetPayPasswordViewController.h */,
-				37E68C12201B461300A027EE /* ReSetPayPasswordViewController.m */,
+				04F8F91E226E1C8700873EC6 /* ReSetPayPasswordViewController.h */,
+				04F8F91F226E1C8700873EC6 /* ReSetPayPasswordViewController.m */,
 				37E68C18201B461400A027EE /* SetPayPassWordViewController.h */,
 				37E68C1A201B461400A027EE /* SetPayPassWordViewController.m */,
 				37E68C0F201B461200A027EE /* WalletViewController.h */,
@@ -3925,6 +3925,7 @@
 				37AA693C211ECA10005B0488 /* Round.m in Sources */,
 				37407897215190960065EA76 /* CoinSendInfoViewController.m in Sources */,
 				37E68D4D201B467800A027EE /* Y_StockChartRightYView.m in Sources */,
+				04F8F920226E1C8700873EC6 /* ReSetPayPasswordViewController.m in Sources */,
 				3715DB9620B3AADB000FF744 /* SafeViewController.m in Sources */,
 				37C5C1F020F733CF00C0E52A /* Province.m in Sources */,
 				37A520482154675800B45632 /* HoldListViewController.m in Sources */,
@@ -4053,7 +4054,6 @@
 				37E68C2B201B461500A027EE /* ExamineViewController.m in Sources */,
 				37E4E7FE1F7DF9E600DA60BD /* MiningHPViewController.m in Sources */,
 				3707B27E214218D3000D6D47 /* runShareView.m in Sources */,
-				37E68C26201B461500A027EE /* ReSetPayPasswordViewController.m in Sources */,
 				3766ABFA1F753B0200F5045A /* AppDelegate.m in Sources */,
 				37E68D67201B467800A027EE /* MJRefreshAutoFooter.m in Sources */,
 				37E4E8221F7E6A4900DA60BD /* CustomAlertView.m in Sources */,
