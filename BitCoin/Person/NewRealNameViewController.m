@@ -74,7 +74,7 @@ static AFHTTPSessionManager *manager;
         //        NSLog(@"uploadProgress is %lld,总字节 is %lld",uploadProgress.completedUnitCount,uploadProgress.totalUnitCount);
         
         double s = uploadProgress.completedUnitCount/uploadProgress.totalUnitCount;
-        [weakSelf performSelectorOnMainThread:@selector(changeToast:) withObject:[NSString stringWithFormat:@"已上传 %lf", s] waitUntilDone:YES];
+        [weakSelf performSelectorOnMainThread:@selector(showToastWithMessage:) withObject:[NSString stringWithFormat:@"上传中，请稍后。"] waitUntilDone:YES];
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"上传成功");
         [weakSelf performSelectorOnMainThread:@selector(upLoadSuccess) withObject:nil waitUntilDone:YES];
@@ -82,6 +82,20 @@ static AFHTTPSessionManager *manager;
         NSLog(@"上传失败");
     }];
 
+}
+
+- (void) upLoadSuccess
+{
+    ToastView *messageView = [[ToastView alloc]initWithFrame:self.view.bounds WithMessage:@"提交审核成功"];
+    [self.view addSubview:messageView];
+    
+    double delayInSeconds = 1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_global_queue(0,0), ^(void){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+    });
 }
 
 - (void) showMassage

@@ -78,6 +78,7 @@
     //    } else if ([UIScreen mainScreen].bounds.size.height == 568) {
     //        self.scale = 0.851;
     //    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenError)name:@"TOKEN_ERROR" object:nil];
 }
 
 //MD5加密
@@ -106,6 +107,23 @@
 {
     ToastView *tv = [[ToastView alloc] initWithFrame:self.view.bounds WithMessage:string];
     [self.view addSubview:tv];
+}
+
+- (void) tokenError
+{
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"isLogin"];
+    [defaults removeObjectForKey:@"phoneNum"];
+    [defaults removeObjectForKey:@"uid"];
+    [defaults removeObjectForKey:@"authenticationStatus"];
+    [defaults removeObjectForKey:@"paymentPasswordStatus"];
+    [defaults removeObjectForKey:@"token"];
+    [defaults synchronize];
+    [self showToastWithMessage:@"登录身份过期"];
+    NSArray <UIViewController *> *childViewControllers = self.navigationController.childViewControllers;
+    if (childViewControllers.count>2) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 - (BOOL)inputShouldNumber:(NSString *)inputString {

@@ -42,6 +42,13 @@
         [self POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             responseObject = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
             NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+            
+            if ([[jsonDict objectForKey:@"msg"]isEqualToString:@"登录身份过期"]) {
+                [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"TOKEN_ERROR" object:nil]];
+                completedBlock(nil, nil);
+                return;
+            }
+            
             NSString *jsonStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
             completedBlock([self changeType:jsonDict], jsonStr);
 
