@@ -84,7 +84,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Third/NetworkTool.m"
-            timestampString = "577639474.47839"
+            timestampString = "577641717.374617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -100,7 +100,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Third/NetworkTool.m"
-            timestampString = "577639474.478771"
+            timestampString = "577641717.375031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -340,7 +340,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Store/AddAddressViewController.m"
-                  timestampString = "577639474.84769"
+                  timestampString = "577641717.723595"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -355,7 +355,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Store/AddAddressViewController.m"
-                  timestampString = "577639474.8498859"
+                  timestampString = "577641717.72651"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -370,7 +370,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Store/AddAddressViewController.m"
-                  timestampString = "577639474.851969"
+                  timestampString = "577641717.729526"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -419,7 +419,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Base/BaseViewController.m"
-            timestampString = "577639474.47904"
+            timestampString = "577641717.375327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -435,7 +435,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Base/BaseViewController.m"
-            timestampString = "577639474.479239"
+            timestampString = "577641717.37561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -659,7 +659,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Third/NetworkTool.m"
-            timestampString = "577639474.479476"
+            timestampString = "577641717.376076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -675,7 +675,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Third/NetworkTool.m"
-            timestampString = "577639474.479532"
+            timestampString = "577641717.376287"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -1203,7 +1203,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Mining/MacListViewController.m"
-                  timestampString = "577639474.95461"
+                  timestampString = "577641717.797805"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
@@ -1218,7 +1218,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Mining/MacListViewController.m"
-                  timestampString = "577639474.95635"
+                  timestampString = "577641717.799471"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -1233,7 +1233,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Mining/MacListViewController.m"
-                  timestampString = "577639474.95895"
+                  timestampString = "577641717.801276"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
@@ -1778,7 +1778,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Base/BaseViewController.m"
-            timestampString = "577639474.4806499"
+            timestampString = "577641717.379634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -1966,11 +1966,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Person/PersonHomeViewController.m"
-            timestampString = "577639474.4808919"
+            timestampString = "577641717.380043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
@@ -1987,6 +1987,38 @@
             continueAfterRunningActions = "No"
             scope = "0"
             stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BitCoin/Person/WalletViewController.m"
+            timestampString = "577641717.380602"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-cbBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BitCoin/Person/CoinINViewController.m"
+            timestampString = "577641815.186264"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-request"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

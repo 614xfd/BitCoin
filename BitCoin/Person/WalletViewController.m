@@ -117,7 +117,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"token"];
     if (token.length) {
-        CoinINViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SafeVC"];
+        CoinINViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CoinINVC"];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

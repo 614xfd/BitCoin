@@ -8,7 +8,9 @@
 
 #import "CoinINViewController.h"
 
-@interface CoinINViewController ()
+@interface CoinINViewController () {
+    NSString *_address;
+}
 
 @end
 
@@ -41,6 +43,13 @@
             //        [weakSelf requestError];
         }];
     }
+}
+
+- (void) setAddress{
+    
+}
+
+- (IBAction)upData:(id)sender {
 }
 
 /*
