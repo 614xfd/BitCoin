@@ -54,7 +54,10 @@
 //        vc.delegate = self;
 //        [self.navigationController pushViewController:vc animated:YES];
 //    } else {
-        if ([_paymentPasswordStatus isEqualToString:@"1"]) {
+    
+
+    
+        if ([_paymentPasswordStatus isEqualToString:@"1"] | YES) {
 //
             self.dustView.alpha = 0.4;
             self.tipView.alpha = 1;

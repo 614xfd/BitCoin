@@ -2,73 +2,89 @@
 //  ReSetPayPasswordViewController.m
 //  BitCoin
 //
-//  Created by LBH on 2017/11/9.
-//  Copyright © 2017年 LBH. All rights reserved.
+//  Created by mac on 2019/4/23.
+//  Copyright © 2019 LBH. All rights reserved.
 //
 
 #import "ReSetPayPasswordViewController.h"
-#import "SetPayPassWordViewController.h"
-#import "CaptchaViewController.h"
 
-@interface ReSetPayPasswordViewController ()
+@interface ReSetPayPasswordViewController (){
+    int _secondsCountDown;
+    NSTimer *_countDownTimer;
+}
 
 @end
 
 @implementation ReSetPayPasswordViewController
-
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self setBarBlackColor:YES];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+    [self requestSMS];
+    [self.timeBtn setEnabled:NO];
+}
+
+- (IBAction)timeBtn:(id)sender {
+    [self requestSMS];
+}
+
+
+-(void)requestSMS{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *phoneNum = [defaults objectForKey:@"phoneNum"];
-    self.phoneNumLabel.text = phoneNum;
     
-    [self.forgetBtn.layer setBorderWidth:1.0];
-    [self.forgetBtn.layer setBorderColor:[UIColor colorWithRed:221/255.0 green:221/255.0 blue:221/255.0 alpha:1].CGColor];
-    [self.forgetBtn.layer setMasksToBounds:YES];
-    self.forgetBtn.layer.cornerRadius = 4;
-    [self.rememberBtn.layer setMasksToBounds:YES];
-    self.rememberBtn.layer.cornerRadius = 4;
-}
-- (IBAction)forgetBtnClick:(id)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *phoneNum = [defaults objectForKey:@"phoneNum"];
-    CaptchaViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CaptchaVC"];
-    vc.phoneNum = phoneNum;
-    vc.phone = phoneNum;
-    vc.isPayVerify = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-- (IBAction)rememberBtnClick:(id)sender {
-    SetPayPassWordViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SetPayPassWordVC"];
-    vc.isReset = YES;
-    vc.tipString = @"输入支付密码，完成身份验证";
-    [self.navigationController pushViewController:vc animated:YES];
-}
-- (IBAction)goBack:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    NSString *phone = [defaults objectForKey:@"phoneNum"];
+    
+    __weak __typeof(self) weakSelf = self;
+    
+    
+    
+    NSDictionary *dic = @{@"phone": phone, @"timestamp":[self getTimeTimestamp], @"auth":@"minant", @"q":@"q"};
+    
+    [[NetworkTool sharedTool] requestWithURLString:@"/sms/sendSmsCode" parameters:dic method:@"POST" completed:^(id JSON, NSString *stringData) {
+        NSLog(@"%@      ------------- %@",stringData, JSON );
+        //        NSString *isError = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
+        NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
+        if ([code isEqualToString:@"1"]) {
+            
+        } else {
+            [weakSelf performSelectorOnMainThread:@selector(showToastWithMessage:) withObject:[JSON objectForKey:@"msg"] waitUntilDone:YES];
+        }
+    } failed:^(NSError *error) {
+        [weakSelf requestError];
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) Countdown
+{
+    _secondsCountDown = 120;
+    _countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeFireMethod) userInfo:nil repeats:YES]; //启动倒计时后会每秒钟调用一次方法 timeFireMethod
+    [self.timeBtn setTitle:@"120秒重新发送" forState:UIControlStateNormal];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)timeFireMethod{
+    _secondsCountDown--;
+    if(_secondsCountDown==0){
+        [_countDownTimer invalidate];
+        _countDownTimer = nil;
+        [self.timeBtn setTitle:[NSString stringWithFormat:@"发送验证码"] forState:UIControlStateNormal];
+        [self.timeBtn setEnabled:YES];
+        return;
+    }
+    [self.timeBtn setTitle:[NSString stringWithFormat:@"%d秒重新发送",_secondsCountDown] forState:UIControlStateNormal];
+    
 }
-*/
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    NSLog(@"adadfas");
+}
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSLog(@"text:%@---%@",string,textField.text);
+    return YES;
+}
+
 
 @end

@@ -2,15 +2,19 @@
 //  ReSetPayPasswordViewController.h
 //  BitCoin
 //
-//  Created by LBH on 2017/11/9.
-//  Copyright © 2017年 LBH. All rights reserved.
+//  Created by mac on 2019/4/23.
+//  Copyright © 2019 LBH. All rights reserved.
 //
 
 #import "BaseViewController.h"
 
-@interface ReSetPayPasswordViewController : BaseViewController
-@property (weak, nonatomic) IBOutlet UIButton *forgetBtn;
-@property (weak, nonatomic) IBOutlet UIButton *rememberBtn;
-@property (weak, nonatomic) IBOutlet UILabel *phoneNumLabel;
+NS_ASSUME_NONNULL_BEGIN
+
+@interface ReSetPayPasswordViewController : BaseViewController<UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *tf;
+@property (weak, nonatomic) IBOutlet UIButton *timeBtn;
 
 @end
+
+NS_ASSUME_NONNULL_END
