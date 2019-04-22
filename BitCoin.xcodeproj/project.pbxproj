@@ -279,6 +279,7 @@
 		3715DB9320B36F16000FF744 /* 邀请享佣金-2_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 3715DB9020B36F15000FF744 /* 邀请享佣金-2_07.png */; };
 		3715DB9620B3AADB000FF744 /* SafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3715DB9520B3AADB000FF744 /* SafeViewController.m */; };
 		3715DB9920B40D9C000FF744 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3715DB9820B40D9C000FF744 /* CalculatorViewController.m */; };
+		371882D5226E12530015C8FF /* CoinINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371882D4226E12530015C8FF /* CoinINViewController.m */; };
 		372353A42106D5B400B72344 /* 钱包.png in Resources */ = {isa = PBXBuildFile; fileRef = 372353A32106D5B300B72344 /* 钱包.png */; };
 		372353A62106FA9400B72344 /* 订单.png in Resources */ = {isa = PBXBuildFile; fileRef = 372353A52106FA9300B72344 /* 订单.png */; };
 		372353A9210718C100B72344 /* 运动挖矿首页_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 372353A7210718C000B72344 /* 运动挖矿首页_06.png */; };
@@ -1031,6 +1032,8 @@
 		3715DB9520B3AADB000FF744 /* SafeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeViewController.m; sourceTree = "<group>"; };
 		3715DB9720B40D9C000FF744 /* CalculatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
 		3715DB9820B40D9C000FF744 /* CalculatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
+		371882D3226E12530015C8FF /* CoinINViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinINViewController.h; sourceTree = "<group>"; };
+		371882D4226E12530015C8FF /* CoinINViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinINViewController.m; sourceTree = "<group>"; };
 		372353A32106D5B300B72344 /* 钱包.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "钱包.png"; sourceTree = "<group>"; };
 		372353A52106FA9300B72344 /* 订单.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "订单.png"; sourceTree = "<group>"; };
 		372353A7210718C000B72344 /* 运动挖矿首页_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "运动挖矿首页_06.png"; sourceTree = "<group>"; };
@@ -2341,6 +2344,8 @@
 				37A5203C2154500900B45632 /* SubordinateViewController.m */,
 				4A089649226B553D00E238B1 /* NewRealNameViewController.h */,
 				4A08964A226B553D00E238B1 /* NewRealNameViewController.m */,
+				371882D3226E12530015C8FF /* CoinINViewController.h */,
+				371882D4226E12530015C8FF /* CoinINViewController.m */,
 			);
 			path = Person;
 			sourceTree = "<group>";
@@ -4039,6 +4044,7 @@
 				37E68D78201B467800A027EE /* UIScrollView+MJExtension.m in Sources */,
 				3707B279214136D2000D6D47 /* CloudMiningViewController.m in Sources */,
 				37E68D55201B467800A027EE /* MASCompositeConstraint.m in Sources */,
+				371882D5226E12530015C8FF /* CoinINViewController.m in Sources */,
 				37B4AA311F763418002D224B /* UIImageView+AFNetworking.m in Sources */,
 				37E68D61201B467800A027EE /* Y_StockChartViewController.m in Sources */,
 				37E68C29201B461500A027EE /* SetPayPassWordViewController.m in Sources */,

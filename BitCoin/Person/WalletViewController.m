@@ -10,6 +10,7 @@
 #import "BalanceViewController.h"
 #import "HistoryViewController.h"
 #import "WalletDetailViewController.h"
+#import "CoinINViewController.h"
 
 @interface WalletViewController ()
 
@@ -113,8 +114,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)cbBtnClick:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token = [defaults objectForKey:@"token"];
+    if (token.length) {
+        CoinINViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SafeVC"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 - (IBAction)tbBtnClick:(id)sender {
+    
 }
 - (IBAction)bindingSiteBtnClick:(id)sender {
 }
