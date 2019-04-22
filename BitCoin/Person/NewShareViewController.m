@@ -18,13 +18,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"share_bg.png"]];
-    self.codeLab.text = self.codeStr;
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    
+    self.codeLab.text = [ud objectForKey:@"inviteCode"];
 }
 - (IBAction)copyBtnClick:(id)sender {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = @"你好";
     [self showToastWithMessage:@"小蚂蚁:已复制到粘贴板"];
 }
+- (IBAction)goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 /*
 #pragma mark - Navigation
