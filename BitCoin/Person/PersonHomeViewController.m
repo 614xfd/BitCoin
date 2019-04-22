@@ -574,7 +574,8 @@
 //        vc.number = self.subordinateLabel.text;
 //        [self.navigationController pushViewController:vc animated:YES];
         
-        
+    
+    
     NewShareViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NewShareVC"];
     vc.codeStr = [_infoData objectForKey:@"inviteCode"];
     [self.navigationController pushViewController:vc animated:YES];
