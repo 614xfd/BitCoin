@@ -4572,7 +4572,7 @@
                                     <constraint firstAttribute="height" constant="44" id="e3T-me-sgj"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="payBtnClick:" destination="g04-Gs-uWt" eventType="touchUpInside" id="lyA-mh-dMk"/>
+                                    <action selector="addMiningBtnClick:" destination="g04-Gs-uWt" eventType="touchUpInside" id="VRJ-09-jhR"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mining_bg1.png" translatesAutoresizingMaskIntoConstraints="NO" id="vB8-iP-J8t">
@@ -4773,6 +4773,14 @@
                                     <outlet property="delegate" destination="g04-Gs-uWt" id="4gE-ml-ZTQ"/>
                                 </connections>
                             </tableView>
+                            <button hidden="YES" opaque="NO" alpha="0.34999999403953552" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1s-yc-w5k">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="addMiningBtnClick:" destination="g04-Gs-uWt" eventType="touchUpInside" id="pkU-mf-tfL"/>
+                                </connections>
+                            </button>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A0X-Qr-t5g">
                                 <rect key="frame" x="32" y="247" width="310" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -4843,11 +4851,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button hidden="YES" opaque="NO" alpha="0.34999999403953552" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1s-yc-w5k">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.1764705882" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

@@ -11,6 +11,7 @@
 #import "QRCodeViewController.h"
 #import "TeamViewController.h"
 #import "UIView+AZGradient.h"
+#import "LoginViewController.h"
 
 @interface NewMiningHPViewController () <QRCodeViewControllerDelegate> {
     NSArray *_dataArray;
@@ -147,6 +148,9 @@
     if (token.length) {
         self.bgBtn.hidden = NO;
         self.addView.hidden = NO;
+    } else {
+        LoginViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 - (IBAction)hiddenAddView:(id)sender {
