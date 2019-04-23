@@ -35,4 +35,6 @@
 
 - (void) showService;
 
+- (void) shareImageView;
+
 @end
