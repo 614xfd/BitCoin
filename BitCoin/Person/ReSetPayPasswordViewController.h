@@ -8,13 +8,13 @@
 
 #import "BaseViewController.h"
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface ReSetPayPasswordViewController : BaseViewController<UITextFieldDelegate>
 
+//@property (weak, nonatomic)  UITextField *tf;
+//@property (weak, nonatomic)  UIButton *timeBtn;
 @property (weak, nonatomic) IBOutlet UITextField *tf;
 @property (weak, nonatomic) IBOutlet UIButton *timeBtn;
 
 @end
 
-NS_ASSUME_NONNULL_END

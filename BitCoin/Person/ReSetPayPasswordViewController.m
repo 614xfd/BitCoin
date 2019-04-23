@@ -7,6 +7,7 @@
 //
 
 #import "ReSetPayPasswordViewController.h"
+#import "SetPayPassWordViewController.h"
 
 @interface ReSetPayPasswordViewController (){
     int _secondsCountDown;
@@ -20,35 +21,58 @@
 {
     [super viewWillAppear:animated];
 }
-
+- (void)createUI{
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestSMS];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self createUI];
+    [self requestSMS:NO];
+    [self Countdown];
     [self.timeBtn setEnabled:NO];
+    self.tf.delegate = self;
 }
 
 - (IBAction)timeBtn:(id)sender {
-    [self requestSMS];
+    [self requestSMS:NO];
+}
+- (IBAction)goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
--(void)requestSMS{
+-(void)requestSMS:(BOOL)isValid{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     
     NSString *phone = [defaults objectForKey:@"phoneNum"];
     
     __weak __typeof(self) weakSelf = self;
+    __weak BOOL weakIsValid = isValid;
+    NSDictionary *dic;
+    NSString *url = @"";
+    if (isValid) {
+        dic = @{@"phone": phone, @"smsCode":self.tf.text};
+        url = @"/sms/validSmsCode";
+        self.tf.text = @"";
+    }else{
+        
+        dic = @{@"phone": phone, @"timestamp":[self getTimeTimestamp], @"auth":@"minant", @"q":@"q"};
+        url = @"/sms/sendSmsCode";
+    }
     
     
     
-    NSDictionary *dic = @{@"phone": phone, @"timestamp":[self getTimeTimestamp], @"auth":@"minant", @"q":@"q"};
-    
-    [[NetworkTool sharedTool] requestWithURLString:@"/sms/sendSmsCode" parameters:dic method:@"POST" completed:^(id JSON, NSString *stringData) {
+
+    [[NetworkTool sharedTool] requestWithURLString:url parameters:dic method:@"POST" completed:^(id JSON, NSString *stringData) {
         NSLog(@"%@      ------------- %@",stringData, JSON );
         //        NSString *isError = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
         NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
         if ([code isEqualToString:@"1"]) {
+            if (weakIsValid) {
+                [weakSelf performSelectorOnMainThread:@selector(pushVC) withObject:nil waitUntilDone:YES];
+            }
             
         } else {
             [weakSelf performSelectorOnMainThread:@selector(showToastWithMessage:) withObject:[JSON objectForKey:@"msg"] waitUntilDone:YES];
@@ -56,6 +80,10 @@
     } failed:^(NSError *error) {
         [weakSelf requestError];
     }];
+}
+- (void)pushVC{
+    SetPayPassWordViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SetPayPassWordVC"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void) Countdown
@@ -83,6 +111,13 @@
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     NSLog(@"text:%@---%@",string,textField.text);
+    if (![string isEqualToString:@""]) {
+        if (textField.text.length == 5) {
+            textField.text = [NSString stringWithFormat:@"%@%@",textField.text,string];
+            [self requestSMS:YES];
+            return NO;
+        }
+    }
     return YES;
 }
 

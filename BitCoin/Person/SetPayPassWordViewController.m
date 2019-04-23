@@ -49,11 +49,14 @@
 - (void) request
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *phoneNum = [defaults objectForKey:@"phoneNum"];
+    NSString *token = [defaults objectForKey:@"token"];
     NSString *password = [self md5:[self.numArray componentsJoinedByString:@""]];
     __weak __typeof(self) weakSelf = self;
-    NSDictionary *d = @{@"phone":phoneNum, @"paymentPassword":password};
-    [[NetworkTool sharedTool] requestWithURLString:@"PaymentPassword/addPaymentPassword" parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
+    NSDictionary *d = @{@"token":token, @"payPwd":password};
+    
+    NSString *url = @"/v1/user/user/setPayPwd";
+    
+    [[NetworkTool sharedTool] requestWithURLString:url parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
         NSLog(@"%@      ------------- %@", stringData, JSON );
         NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
         if ([code isEqualToString:@"1"]) {
@@ -158,12 +161,14 @@
 - (void) requestWithNewPayPW
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *phoneNum = [defaults objectForKey:@"phoneNum"];
+    NSString *token = [defaults objectForKey:@"token"];
     NSString *password = [self md5:[self.numArray componentsJoinedByString:@""]];
-    NSString *s = [self md5:self.original];
     __weak __typeof(self) weakSelf = self;
-    NSDictionary *d = @{@"phone":phoneNum, @"newPaymentPassword":password, @"paymentPassword":s};
-    [[NetworkTool sharedTool] requestWithURLString:@"PaymentPassword/addPaymentPassword" parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
+    NSDictionary *d = @{@"token":token, @"payPwd":password};
+    
+    NSString *url = @"/v1/user/user/setPayPwd";
+    
+    [[NetworkTool sharedTool] requestWithURLString:url parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
         NSLog(@"%@      ------------- %@", stringData, JSON );
         NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
         if ([code isEqualToString:@"1"]) {
