@@ -61,8 +61,7 @@
 //
             self.dustView.alpha = 0.4;
             self.tipView.alpha = 1;
-    ReSetPayPasswordViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ReSetPayPasswordVC"];
-    [self.navigationController pushViewController:vc animated:YES];
+
         } else {
             SetPayPassWordViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SetPayPassWordVC"];
             [self.navigationController pushViewController:vc animated:YES];
@@ -88,8 +87,9 @@
 - (IBAction)typeReset:(id)sender {
     self.dustView.alpha = 0;
     self.tipView.alpha = 0;
-//    ReSetPayPasswordViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ReSetPayPasswordVC"];
-//    [self.navigationController pushViewController:vc animated:YES];
+    ReSetPayPasswordViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"aReSetPayPasswordVC"];
+//    ReSetPayPasswordViewController *vc = [ReSetPayPasswordViewController alloc];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
