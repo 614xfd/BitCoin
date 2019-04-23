@@ -30,5 +30,9 @@
 - (BOOL)inputShouldLetter:(NSString *)inputString;//  判断是否纯英文
 
 - (void) tokenError;
+
 -(NSString *)getTimeTimestamp;
+
+- (void) showService;
+
 @end
