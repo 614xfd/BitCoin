@@ -7,6 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
 
 @interface BaseViewController ()
 
@@ -184,6 +186,46 @@
     }];
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void) shareImageViewWithView:(UIView *)view
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params SSDKSetupShareParamsByText:nil images:@[[self makeImageWithView:view withSize:view.frame.size]] url:nil title:nil type:SSDKContentTypeImage];
+    [ShareSDK share:SSDKPlatformTypeWechat parameters:params onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+        switch (state) {
+            case SSDKResponseStateUpload:
+                // 分享视频的时候上传回调，进度信息在 userData
+                break;
+            case SSDKResponseStateSuccess:
+                //成功
+                [self showToastWithMessage:@"分享成功！"];
+            case SSDKResponseStateFail:
+            {
+                NSLog(@"--%@",error.description);
+                //失败
+                [self showToastWithMessage:@"分享失败！"];
+                break;
+            }
+            case SSDKResponseStateCancel:
+                //取消
+                [self showToastWithMessage:@"已取消分享！"];
+                break;
+            default:
+                break;
+        }
+    }];
+}
+
+
+- (UIImage *)makeImageWithView:(UIView *)view withSize:(CGSize)size
+{
+    // 第一个参数表示区域大小。第二个参数表示是否是非透明的。如果需要显示半透明效果，需要传NO，否则传YES。第三个参数就是屏幕密度了，关键就是第三个参数 [UIScreen mainScreen].scale。
+    UIGraphicsBeginImageContextWithOptions(size, YES, [UIScreen mainScreen].scale);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 /*

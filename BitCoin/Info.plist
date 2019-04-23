@@ -41,7 +41,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx8ae2d8898b255ca8</string>
+				<string>wx92bccc880150b9ad</string>
 			</array>
 		</dict>
 		<dict>
@@ -49,7 +49,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>QQ41F39F0F</string>
+				<string>QQ4215EBD1</string>
 			</array>
 		</dict>
 	</array>
@@ -72,13 +72,14 @@
 		<string>mqqopensdkapiV4</string>
 		<string>wechat</string>
 		<string>weixin</string>
+		<string>timapi</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MOBAppKey</key>
-	<string>24fcc6abccc4e</string>
+	<string>2ad79b63c5854</string>
 	<key>MOBAppSecret</key>
-	<string>82e7a9df0c8b27b17477487eb52f2474</string>
+	<string>37be8ceb49af7c2a8760b7bc3aec9cad</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

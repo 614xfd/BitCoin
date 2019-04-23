@@ -10,14 +10,15 @@
 #import <AlipaySDK/AlipaySDK.h>
 
 #import <ShareSDK/ShareSDK.h>
-#import <ShareSDKConnector/ShareSDKConnector.h>
+//#import <ShareSDK/ShareSDK.h>
+//#import <ShareSDKConnector/ShareSDKConnector.h>
 
-//腾讯开放平台（对应QQ和QQ空间）SDK头文件
-#import <TencentOpenAPI/TencentOAuth.h>
-#import <TencentOpenAPI/QQApiInterface.h>
+////腾讯开放平台（对应QQ和QQ空间）SDK头文件
+//#import <TencentOpenAPI/TencentOAuth.h>
+//#import <TencentOpenAPI/QQApiInterface.h>
 
-//微信SDK头文件
-#import "WXApi.h"
+////微信SDK头文件
+//#import "WXApi.h"
 
 // 引入 JPush 功能所需头文件
 #import "JPUSHService.h"
@@ -55,41 +56,52 @@
             advertisingIdentifier:[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString]];
 
     
-    [ShareSDK registerActivePlatforms:@[@(SSDKPlatformTypeWechat),@(SSDKPlatformTypeQQ)]
-                             onImport:^(SSDKPlatformType platformType)
-     {
-         switch (platformType)
-         {
-             case SSDKPlatformTypeWechat:
-                 [ShareSDKConnector connectWeChat:[WXApi class]];
-                 break;
-             case SSDKPlatformTypeQQ:
-                 [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
-                 break;
-
-             default:
-                 break;
-         }
-     }
-                      onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo)
-     {
-         
-         switch (platformType)
-         {
-             case SSDKPlatformTypeWechat:
-                 [appInfo SSDKSetupWeChatByAppId:@"wx8ae2d8898b255ca8"
-                                       appSecret:@"fc67c7e2dd82bdd33cd3e7ea24f60201"];
-                 break;
-             case SSDKPlatformTypeQQ:
-                 [appInfo SSDKSetupQQByAppId:@"1106485007"
-                                      appKey:@"C1Kum7H6Ug5CUHks"
-                                    authType:SSDKAuthTypeBoth];
-                 break;
-
-             default:
-                 break;
-         }
-     }];
+//    [ShareSDK registerActivePlatforms:@[@(SSDKPlatformTypeWechat),@(SSDKPlatformTypeQQ)]
+//                             onImport:^(SSDKPlatformType platformType)
+//     {
+//         switch (platformType)
+//         {
+//             case SSDKPlatformTypeWechat:
+//                 [ShareSDKConnector connectWeChat:[WXApi class]];
+//                 break;
+//             case SSDKPlatformTypeQQ:
+//                 [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
+//                 break;
+//
+//             default:
+//                 break;
+//         }
+//     }
+//                      onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo)
+//     {
+//
+//         switch (platformType)
+//         {
+//             case SSDKPlatformTypeWechat:
+//                 [appInfo SSDKSetupWeChatByAppId:@"wx8ae2d8898b255ca8"
+//                                       appSecret:@"fc67c7e2dd82bdd33cd3e7ea24f60201"];
+//                 break;
+//             case SSDKPlatformTypeQQ:
+//                 [appInfo SSDKSetupQQByAppId:@"1106485007"
+//                                      appKey:@"C1Kum7H6Ug5CUHks"
+//                                    authType:SSDKAuthTypeBoth];
+//                 break;
+//
+//             default:
+//                 break;
+//         }
+//     }];
+    
+    [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
+        //QQ
+        [platformsRegister setupQQWithAppId:@"100371282" appkey:@"aed9b0303e3ed1e27bae87c33761161d"];
+        
+        //微信
+        [platformsRegister setupWeChatWithAppId:@"wx617c77c82218ea2c" appSecret:@"c7253e5289986cf4c4c74d1ccc185fb1"];
+        
+        //新浪
+        
+    }];
     
     if(self.isEable) {
         return UIInterfaceOrientationMaskLandscape;
@@ -97,6 +109,7 @@
         return UIInterfaceOrientationMaskPortrait;
     }
 
+    
     
     return YES;
 }
