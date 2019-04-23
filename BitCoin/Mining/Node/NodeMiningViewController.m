@@ -149,6 +149,10 @@
 -(void)requestGet{
     __weak __typeof(self) weakSelf = self;
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    if (!token.length) {
+        [self tokenError];
+        return;
+    }
     NSDictionary *d = @{@"token":token};
     
     [[NetworkTool sharedTool] requestWithURLString:@"/v1/node/get" parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {

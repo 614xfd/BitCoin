@@ -10,6 +10,7 @@
 #import "UIView+AZGradient.h"
 #import "QRCodeViewController.h"
 #import "TeamViewController.h"
+#import "UIView+AZGradient.h"
 
 @interface NewMiningHPViewController () <QRCodeViewControllerDelegate> {
     NSArray *_dataArray;
@@ -39,6 +40,8 @@
     self.dateLabel.text = dateStr;
     [self.bgLineLabel.layer setBorderWidth:1];
     [self.bgLineLabel.layer setBorderColor:[UIColor colorWithRed:241/255.0 green:241/255.0 blue:245/255.0 alpha:1].CGColor];
+    [self.viewBGColorLabel az_setGradientBackgroundWithColors:@[[UIColor colorWithRed:44/255.0 green:12/255.0 blue:104/255.0 alpha:1],[UIColor colorWithRed:116/255.0 green:34/255.0 blue:168/255.0 alpha:1]] locations:nil startPoint:CGPointMake(0, 0) endPoint:CGPointMake(1, 0)];
+    self.tableView.tableFooterView = [[UIView alloc] init];
     [self reques];
 }
 

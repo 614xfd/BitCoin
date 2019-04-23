@@ -101,11 +101,12 @@
 #pragma mark  循环scroll广告点击事件跳转
 - (void) index:(unsigned long)index tag:(unsigned long)tag
 {
-//    NSString *string;
-//    if (tag == 100) {
-//        NSLog(@"1 : %ld, tag = %ld",index, tag);
+    NSString *string;
+    if (tag == 100) {
+        NSLog(@"1 : %ld, tag = %ld",index, tag);
+        [self.delegate intoVC:index];
 //        string = [[self.imageArray objectAtIndex:index] objectForKey:@"url"];
-//    }
+    }
 //    if (![string isEqualToString:@"0"] && string.length) {
 //        [self.delegate intoWebViewWith:string];
 //    }

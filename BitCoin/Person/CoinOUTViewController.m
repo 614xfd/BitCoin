@@ -1,45 +1,41 @@
 //
-//  CoinINViewController.m
+//  CoinOUTViewController.m
 //  BitCoin
 //
-//  Created by LBH on 2019/4/22.
+//  Created by LBH on 2019/4/23.
 //  Copyright © 2019年 LBH. All rights reserved.
 //
 
-#import "CoinINViewController.h"
-#import "CreatQRCode.h"
+#import "CoinOUTViewController.h"
 
-@interface CoinINViewController () {
-    NSString *_address;
+@interface CoinOUTViewController () {
+    NSString *_bbcBalance;
 }
 
 @end
 
-@implementation CoinINViewController
+@implementation CoinOUTViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self request];
 }
 
-- (void) request
+- (void) requestBalance
 {
-    __weak __typeof(self) weakSelf = self;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"token"];
     if (token.length) {
+        __weak __typeof(self) weakSelf = self;
         NSDictionary *d = @{@"token":token};
-        [[NetworkTool sharedTool] requestWithURLString:@"v1/param/recharge" parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
+        [[NetworkTool sharedTool] requestWithURLString:@"v1/user/account/info" parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
             NSLog(@"%@      ------------- %@", stringData, JSON );
             NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
             if ([code isEqualToString:@"1"]) {
-                NSLog(@"");
-                _address = [JSON objectForKey:@"data"];
-                [weakSelf performSelectorOnMainThread:@selector(setAddress) withObject:nil waitUntilDone:YES];
+                _bbcBalance = [NSString stringWithFormat:@"%.2lf", [[[JSON objectForKey:@"data"] objectForKey:@"normal"] doubleValue]];
+                [weakSelf performSelectorOnMainThread:@selector(creatBalance) withObject:nil waitUntilDone:YES];
             } else {
-               
+                
             }
         } failed:^(NSError *error) {
             //        [weakSelf requestError];
@@ -47,14 +43,14 @@
     }
 }
 
-- (void) requestIN
+- (void) requestOUT
 {
     __weak __typeof(self) weakSelf = self;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"token"];
     if (token.length) {
-        NSDictionary *d = @{@"token":token, @"fromAddress":self.addressTF.text, @"toAddress":_address, @"count":self.numTF.text};
-        [[NetworkTool sharedTool] requestWithURLString:@"v1/user/recharge/add" parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
+        NSDictionary *d = @{@"token":token, @"toAddress":self.addressTF, @"count":self.numTF.text};
+        [[NetworkTool sharedTool] requestWithURLString:@"v1/user/withdraw/add" parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
             NSLog(@"%@      ------------- %@", stringData, JSON );
             NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
             if ([code isEqualToString:@"1"]) {
@@ -71,7 +67,7 @@
 
 - (void) success
 {
-    [self showToastWithMessage:@"充值成功"];
+    [self showToastWithMessage:@"提交成功，等待审核"];
     double delayInSeconds = 1;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_global_queue(0,0), ^(void){
@@ -81,25 +77,18 @@
     });
 }
 
-- (void) setAddress{
-    self.addressImageView.image = [CreatQRCode qrImageForString:_address imageSize:356 logoImageSize:0];
-    self.addressLabel.text = _address;
+- (void) creatBalance
+{
+    self.coinNumLabel.text = [NSString stringWithFormat:@"%@ GTSE", _bbcBalance];
 }
 
 - (IBAction)upData:(id)sender {
     if (self.addressTF.text.length>0&&[self.numTF.text doubleValue]>0) {
         
-    } else {
-        [self showToastWithMessage:@"请输入地址和数量。"];
     }
 }
 - (IBAction)goBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
-}
-- (IBAction)copy:(id)sender {
-    UIPasteboard * pastboard = [UIPasteboard generalPasteboard];
-    pastboard.string = _address;
-    [self showToastWithMessage:@"复制成功"];
 }
 
 /*

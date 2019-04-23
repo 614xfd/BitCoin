@@ -121,8 +121,14 @@
     [defaults synchronize];
     [self showToastWithMessage:@"登录身份过期"];
     NSArray <UIViewController *> *childViewControllers = self.navigationController.childViewControllers;
-    if (childViewControllers.count>2) {
-        [self.navigationController popToRootViewControllerAnimated:YES];
+    if (childViewControllers.count>=2) {
+        double delayInSeconds = 3;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_global_queue(0,0), ^(void){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            });
+        });
     }
 }
 

@@ -22,6 +22,7 @@
 #import "AnnouncementViewController.h"
 #import "CoinSendInfoViewController.h"
 #import "HoldListViewController.h"
+#import "NewShareViewController.h"
 
 #define SCREEN_HEIGHT                      [UIScreen mainScreen].bounds.size.height
 #define SCREEN_WIDTH                       [UIScreen mainScreen].bounds.size.width
@@ -385,6 +386,7 @@
 - (void) intohold {
     if (!_isOpen) {
         [self showToastWithMessage:@"暂未开放"];
+        return;
     }
     HoldListViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HoldListVC"];
     vc.dataArray = _rateArray;
@@ -423,6 +425,23 @@
     WebViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WebVC"];
     vc.UrlString = string;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void) intoVC:(NSInteger)index
+{
+    if (index == 0) {
+        NodeMiningViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NodeMiningVC"];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if(index == 1) {
+        NodeMiningViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NodeMiningVC"];
+        vc.isSuperNode = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (index == 2) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NewShareViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NewShareVC"];
+        vc.codeStr = [defaults objectForKey:@"inviteCode"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

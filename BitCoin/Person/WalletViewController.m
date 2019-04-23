@@ -11,6 +11,7 @@
 #import "HistoryViewController.h"
 #import "WalletDetailViewController.h"
 #import "CoinINViewController.h"
+#import "CoinOUTViewController.h"
 
 @interface WalletViewController ()
 
@@ -122,7 +123,12 @@
     }
 }
 - (IBAction)tbBtnClick:(id)sender {
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token = [defaults objectForKey:@"token"];
+    if (token.length) {
+        CoinOUTViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CoinOUTVC"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 - (IBAction)bindingSiteBtnClick:(id)sender {
 }

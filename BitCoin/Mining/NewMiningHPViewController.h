@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *bgLineLabel;
 @property (weak, nonatomic) IBOutlet UITextField *macTF;
 
+@property (weak, nonatomic) IBOutlet UILabel *viewBGColorLabel;
 
 @end
 

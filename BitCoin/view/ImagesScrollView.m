@@ -347,10 +347,10 @@
 
 - (void) ImageClick : (id) sender
 {
-//    UITapGestureRecognizer *tap = (UITapGestureRecognizer *)sender;
-//    unsigned long x;
-//    x = [tap view].tag - 6000;
-//    [self.delegate index:x tag:self.index];
+    UITapGestureRecognizer *tap = (UITapGestureRecognizer *)sender;
+    unsigned long x;
+    x = [tap view].tag - 6000;
+    [self.delegate index:x tag:self.index];
 }
 
 

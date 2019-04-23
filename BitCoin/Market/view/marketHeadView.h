@@ -11,6 +11,9 @@
 
 @protocol marketHeadViewDelegate <NSObject>
 
+@optional
+- (void) intoVC:(NSInteger)index;
+
 - (void) intoWebViewWith:(NSString *)string;
 - (void) intoQRCode;
 - (void) intoCoinInCome;

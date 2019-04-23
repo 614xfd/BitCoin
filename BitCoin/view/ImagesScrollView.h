@@ -11,6 +11,7 @@
 
 @protocol ImagesScrollViewDelegate <NSObject>
 
+@optional
 - (void) index : (unsigned long) index tag : (unsigned long) tag;
 
 @end
