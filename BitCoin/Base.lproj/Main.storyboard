@@ -12917,7 +12917,6 @@
             </objects>
             <point key="canvasLocation" x="11413.6" y="3258.6206896551726"/>
         </scene>
-                        <subviews>
         <!--View Controller-->
         <scene sceneID="ffZ-c8-Si2">
             <objects>
@@ -17569,7 +17568,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJL-Uv-1Q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="12031" y="3252"/>
->>>>>>> c10f81264d336c02a8285aa989aee44a76967a9f
         </scene>
     </scenes>
     <resources>
