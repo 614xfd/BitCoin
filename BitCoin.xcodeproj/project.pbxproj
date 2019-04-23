@@ -436,7 +436,6 @@
 		37A8D8D022623FFA00BE1663 /* NewStoreHPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A8D8CF22623FFA00BE1663 /* NewStoreHPViewController.m */; };
 		37A8D8D322626A1F00BE1663 /* NewNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A8D8D222626A1F00BE1663 /* NewNewsViewController.m */; };
 		37A8D8D52264C8C000BE1663 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A8D8D42264C8BE00BE1663 /* logo.png */; };
-		37A8D8D72264CDE000BE1663 /* user_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A8D8D62264CDDF00BE1663 /* user_bg.png */; };
 		37AA6938211E93C4005B0488 /* bluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AA6937211E93C4005B0488 /* bluetooth.m */; };
 		37AA693C211ECA10005B0488 /* Round.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AA693A211ECA10005B0488 /* Round.m */; };
 		37AA6947211EFB8F005B0488 /* 蓝牙列表_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 37AA6946211EFB8F005B0488 /* 蓝牙列表_03.png */; };
@@ -674,6 +673,11 @@
 		4A55A392226F204A00108CF9 /* WechatConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A55A385226F204A00108CF9 /* WechatConnector.framework */; };
 		4A55A393226F204A00108CF9 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A55A386226F204A00108CF9 /* ShareSDK.framework */; };
 		4A55A394226F204A00108CF9 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A55A388226F204A00108CF9 /* MOBFoundation.framework */; };
+		4A55A397226F471600108CF9 /* NewPersonHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55A396226F471600108CF9 /* NewPersonHomeViewController.m */; };
+		4A55A3A0226F4BE400108CF9 /* UIView+LayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55A39F226F4BE400108CF9 /* UIView+LayerInfo.m */; };
+		4A9D98F1226F4D0900D343C9 /* MacAddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D98F0226F4D0900D343C9 /* MacAddressListViewController.m */; };
+		4A9D98F3226F577300D343C9 /* 分享 (3).png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D98F2226F577000D343C9 /* 分享 (3).png */; };
+		4A9D98F5226F5F3100D343C9 /* mac_new.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D98F4226F5F2E00D343C9 /* mac_new.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1224,7 +1228,6 @@
 		37A8D8D122626A1F00BE1663 /* NewNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewNewsViewController.h; sourceTree = "<group>"; };
 		37A8D8D222626A1F00BE1663 /* NewNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewNewsViewController.m; sourceTree = "<group>"; };
 		37A8D8D42264C8BE00BE1663 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		37A8D8D62264CDDF00BE1663 /* user_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_bg.png; sourceTree = "<group>"; };
 		37AA6936211E93C4005B0488 /* bluetooth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bluetooth.h; sourceTree = "<group>"; };
 		37AA6937211E93C4005B0488 /* bluetooth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bluetooth.m; sourceTree = "<group>"; };
 		37AA693A211ECA10005B0488 /* Round.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Round.m; sourceTree = "<group>"; };
@@ -1582,6 +1585,14 @@
 		4A55A385226F204A00108CF9 /* WechatConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WechatConnector.framework; sourceTree = "<group>"; };
 		4A55A386226F204A00108CF9 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		4A55A388226F204A00108CF9 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		4A55A395226F471600108CF9 /* NewPersonHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewPersonHomeViewController.h; sourceTree = "<group>"; };
+		4A55A396226F471600108CF9 /* NewPersonHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewPersonHomeViewController.m; sourceTree = "<group>"; };
+		4A55A39E226F4BE400108CF9 /* UIView+LayerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerInfo.h"; sourceTree = "<group>"; };
+		4A55A39F226F4BE400108CF9 /* UIView+LayerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerInfo.m"; sourceTree = "<group>"; };
+		4A9D98EF226F4D0900D343C9 /* MacAddressListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacAddressListViewController.h; sourceTree = "<group>"; };
+		4A9D98F0226F4D0900D343C9 /* MacAddressListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacAddressListViewController.m; sourceTree = "<group>"; };
+		4A9D98F2226F577000D343C9 /* 分享 (3).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享 (3).png"; sourceTree = "<group>"; };
+		4A9D98F4226F5F2E00D343C9 /* mac_new.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mac_new.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1779,7 +1790,6 @@
 		370983EB1F7BAC8400FF111D /* 个人中心_首页 */ = {
 			isa = PBXGroup;
 			children = (
-				37A8D8D62264CDDF00BE1663 /* user_bg.png */,
 				37A5203821544D4100B45632 /* 邀请人数_01.png */,
 				37A5203721544D4000B45632 /* 邀请人数_03.png */,
 				3707B117212FC77A000D6D47 /* 个人中心_05.png */,
@@ -1820,6 +1830,7 @@
 		370FC4892267B48F00CC0E6C /* drawable-xhdpi */ = {
 			isa = PBXGroup;
 			children = (
+				4A9D98F4226F5F2E00D343C9 /* mac_new.jpg */,
 				04B19B39226B5DA0003E6EEE /* WechatIMG2210.png */,
 				370FC56A226912DE00CC0E6C /* big_add.jpg */,
 				370FC48A2267B48F00CC0E6C /* regist_check.png */,
@@ -2266,6 +2277,10 @@
 				371882D4226E12530015C8FF /* CoinINViewController.m */,
 				371882D6226E97080015C8FF /* CoinOUTViewController.h */,
 				371882D7226E97080015C8FF /* CoinOUTViewController.m */,
+				4A55A395226F471600108CF9 /* NewPersonHomeViewController.h */,
+				4A55A396226F471600108CF9 /* NewPersonHomeViewController.m */,
+				4A9D98EF226F4D0900D343C9 /* MacAddressListViewController.h */,
+				4A9D98F0226F4D0900D343C9 /* MacAddressListViewController.m */,
 			);
 			path = Person;
 			sourceTree = "<group>";
@@ -2464,6 +2479,7 @@
 		377C2820201EAD6000F4B5EF /* 矿池 */ = {
 			isa = PBXGroup;
 			children = (
+				4A9D98F2226F577000D343C9 /* 分享 (3).png */,
 				370FC4852267788D00CC0E6C /* mining_bg1.png */,
 				37D0C0AC202C27E80021E9AE /* 挖矿_03.png */,
 				37A69EE7202AEDCC0097CBD3 /* 白_返回.png */,
@@ -2579,6 +2595,8 @@
 		37B4A98E1F761A71002D224B /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				4A55A39E226F4BE400108CF9 /* UIView+LayerInfo.h */,
+				4A55A39F226F4BE400108CF9 /* UIView+LayerInfo.m */,
 				4A55A370226F204A00108CF9 /* SDK */,
 				4A089632226B54BB00E238B1 /* OtherCategory */,
 				4A089637226B54BB00E238B1 /* Source */,
@@ -3464,6 +3482,7 @@
 				374078A4215227AF0065EA76 /* 个人中心_02.png in Resources */,
 				377A86E21F8F64B000312A6C /* 删除_03.png in Resources */,
 				3707B28721421B65000D6D47 /* 运动挖矿分享_01.png in Resources */,
+				4A9D98F5226F5F3100D343C9 /* mac_new.jpg in Resources */,
 				37C896D41FA8891300C71D30 /* 订单详情-待付款_11.png in Resources */,
 				37407892215110630065EA76 /* 转币输入值_03.png in Resources */,
 				37AFEBE120907D5F0075AEE4 /* 钱包_13.png in Resources */,
@@ -3625,7 +3644,6 @@
 				37C896C61FA8891300C71D30 /* my_order_detail_icon1.png in Resources */,
 				37A69ED420299A990097CBD3 /* 1_09.png in Resources */,
 				37112E251F7CE1A4001E94E7 /* ETC.png in Resources */,
-				37A8D8D72264CDE000BE1663 /* user_bg.png in Resources */,
 				04B19B3A226B5DA4003E6EEE /* WechatIMG2210.png in Resources */,
 				370FC54D2267B49000CC0E6C /* bzlc.png in Resources */,
 				374168D5212A6DDD00BD2A63 /* 明细_03.png in Resources */,
@@ -3800,6 +3818,7 @@
 				379E047220A96C6A003E9490 /* 首页_06.png in Resources */,
 				37C0269420F36F1D0096C5CE /* 运动挖矿总数据_11.png in Resources */,
 				3706E1EB1F8B539900C79EDA /* icon_11_sm.png in Resources */,
+				4A9D98F3226F577300D343C9 /* 分享 (3).png in Resources */,
 				370FC5662267B49000CC0E6C /* cylc_no_data.png in Resources */,
 				370FC5212267B48F00CC0E6C /* eth.png in Resources */,
 				374078AB21523E720065EA76 /* 账单_08.png in Resources */,
@@ -3950,6 +3969,7 @@
 				37E68D4A201B467800A027EE /* Y_KLinePositionModel.m in Sources */,
 				37112E721F7CF1FF001E94E7 /* UIButton+WebCache.m in Sources */,
 				37112E731F7CF1FF001E94E7 /* UIImage+GIF.m in Sources */,
+				4A55A397226F471600108CF9 /* NewPersonHomeViewController.m in Sources */,
 				37E68D56201B467800A027EE /* MASConstraint.m in Sources */,
 				37112E741F7CF1FF001E94E7 /* UIImage+MultiFormat.m in Sources */,
 				3740787D2150EEB00065EA76 /* CoinInComeViewController.m in Sources */,
@@ -3976,6 +3996,7 @@
 				4A089644226B54BC00E238B1 /* UIViewController+AZPushAndPop.m in Sources */,
 				37E68D3D201B467800A027EE /* Y_StockChartGlobalVariable.m in Sources */,
 				37112E781F7CF1FF001E94E7 /* UIView+WebCache.m in Sources */,
+				4A55A3A0226F4BE400108CF9 /* UIView+LayerInfo.m in Sources */,
 				377A86C61F8F047F00312A6C /* MoneyInfoViewController.m in Sources */,
 				37E68D50201B467800A027EE /* Y_KLineVolume.m in Sources */,
 				37E4E7FB1F7DF21E00DA60BD /* MoneyHPViewController.m in Sources */,
@@ -4056,6 +4077,7 @@
 				37E68C29201B461500A027EE /* SetPayPassWordViewController.m in Sources */,
 				37E68D53201B467800A027EE /* Y_StockChartView.m in Sources */,
 				37E68D43201B467800A027EE /* Y_KLine.m in Sources */,
+				4A9D98F1226F4D0900D343C9 /* MacAddressListViewController.m in Sources */,
 				37B4AA321F763418002D224B /* UIProgressView+AFNetworking.m in Sources */,
 				37B4AA331F763418002D224B /* UIRefreshControl+AFNetworking.m in Sources */,
 				37E68D73201B467800A027EE /* MJRefreshNormalHeader.m in Sources */,

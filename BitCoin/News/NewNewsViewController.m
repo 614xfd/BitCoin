@@ -78,12 +78,27 @@
     UILabel *content = (UILabel *) [cell.contentView viewWithTag:13];
     content.text = [[_dataArray objectAtIndex:indexPath.row] objectForKey:@"content"];
     
+    if ([[[_dataArray objectAtIndex:indexPath.row] objectForKey:@"link"] length]) {
+        UIButton *btn1 = (UIButton *)[view.subviews objectAtIndex:5];
+        btn1.tag = indexPath.row+10000;
+        [btn1 addTarget:self action:@selector(intoWEB:) forControlEvents:UIControlEventTouchUpInside];
+        btn1.hidden = NO;
+    }
+    UIButton *btn2 = (UIButton *)[view.subviews objectAtIndex:6];
+    btn2.tag = indexPath.row+20000;
+    
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _dataArray.count;
+}
+
+- (void) intoWEB:(UIButton *)btn
+{
+    NSInteger x = btn.tag-10000;
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[[_dataArray objectAtIndex:x] objectForKey:@"link"]] options:@{} completionHandler:nil];
 }
 
 

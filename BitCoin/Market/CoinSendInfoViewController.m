@@ -170,7 +170,7 @@
         if (s>50.0) {
             s = 50.0;
         }
-        self.chargeLabel.text = [NSString stringWithFormat:@"手续费(5%%) : %.2lfBBC(上限50.00GTSE)", s];
+        self.chargeLabel.text = [NSString stringWithFormat:@"手续费(5%%) : %.2lfGTSE(上限50.00GTSE)", s];
         return;
     }
     if (tf.text.length > 0) {

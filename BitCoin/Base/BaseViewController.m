@@ -24,7 +24,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-    NSArray *array = [NSArray arrayWithObjects:@"MarketViewController", @"MoneyHPViewController", @"StoreHPViewController", @"MiningHPViewController", @"PersonHomeViewController", @"MonitoringViewController", @"RunHPViewController", @"NewsViewController", @"NewMiningHPViewController", @"NewStoreHPViewController", @"NewNewsViewController", nil];
+    NSArray *array = [NSArray arrayWithObjects:@"MarketViewController", @"MoneyHPViewController", @"StoreHPViewController", @"MiningHPViewController", @"PersonHomeViewController", @"MonitoringViewController", @"RunHPViewController", @"NewsViewController", @"NewMiningHPViewController", @"NewStoreHPViewController", @"NewNewsViewController", @"NewPersonHomeViewController", nil];
     
     BOOL _isHomePage = NO;
     for (NSString *s in array) {
