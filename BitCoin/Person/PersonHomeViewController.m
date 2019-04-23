@@ -342,6 +342,9 @@
     vc.infoDic = _infoData;
     [self.navigationController pushViewController:vc animated:YES];
 }
+- (IBAction)service:(id)sender {
+    [self showService];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

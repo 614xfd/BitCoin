@@ -177,7 +177,11 @@
 - (void) showService
 {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"联系客服微信号：TAF-GTSE" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDestructive handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"复制" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        UIPasteboard * pastboard = [UIPasteboard generalPasteboard];
+        pastboard.string = @"TAF-GTSE";
+        [self showToastWithMessage:@"复制成功"];
+    }];
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
