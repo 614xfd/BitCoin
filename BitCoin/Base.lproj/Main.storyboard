@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RFy-sa-mjG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RFy-sa-mjG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1361,10 +1361,10 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQW-Rx-tdN">
-                                                    <rect key="frame" x="10" y="10" width="355" height="79"/>
+                                                    <rect key="frame" x="10" y="10" width="355" height="79.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昨日团队业绩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73w-b3-ndL">
-                                                            <rect key="frame" x="60" y="0.0" width="100" height="79"/>
+                                                            <rect key="frame" x="60" y="0.0" width="100" height="79.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="pJj-7g-xef"/>
                                                             </constraints>
@@ -1373,13 +1373,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999.99 GTSE" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSd-lz-D4Z">
-                                                            <rect key="frame" x="242" y="30" width="98" height="19"/>
+                                                            <rect key="frame" x="242.5" y="30" width="97.5" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.049986825030000001" green="0.68383299539999998" blue="0.69718791449999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cjjd.png" translatesAutoresizingMaskIntoConstraints="NO" id="eno-4s-VVA">
-                                                            <rect key="frame" x="15" y="27" width="25" height="25"/>
+                                                            <rect key="frame" x="15" y="27.5" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="25" id="7kS-dW-qCK"/>
                                                                 <constraint firstAttribute="height" constant="25" id="B1y-Vv-uhX"/>
@@ -11475,7 +11475,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="51" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待收货" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0f1-x4-RcF">
-                                <rect key="frame" x="94" y="65" width="94" height="44"/>
+                                <rect key="frame" x="94" y="65" width="93.5" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="oY5-79-MwQ"/>
@@ -11491,7 +11491,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="52" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已取消" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npy-RL-lzZ">
-                                <rect key="frame" x="188" y="65" width="94" height="44"/>
+                                <rect key="frame" x="187.5" y="65" width="94" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="j9t-SU-Bz6"/>
@@ -11507,7 +11507,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="53" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已完成" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzr-Ts-qdD">
-                                <rect key="frame" x="282" y="65" width="93" height="44"/>
+                                <rect key="frame" x="281.5" y="65" width="93.5" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Ynp-3t-hJO"/>
@@ -14009,7 +14009,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智谷960科技（西安）有限公司是衣架高新技术企业，送死产品基于IPFS底层协议的小蚂蚁服务器设备，组建全国的去中心化分布式存储网络节点。公司目前与GTSE信游链达成战略合作，为GTSE提供云存储服务，以此奖励参与小蚂蚁服务器挖矿的矿工。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gk-gx-BAd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智谷960科技（西安）有限公司是一家高新技术企业，公司产品基于IPFS底层协议的小蚂蚁服务器设备，组建全国的去中心化分布式存储网络节点。公司目前与GTSE信游链达成战略合作，为GTSE提供云存储服务，以此奖励参与小蚂蚁服务器挖矿的矿工。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gk-gx-BAd">
                                 <rect key="frame" x="30" y="200.5" width="315" height="142.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -16356,7 +16356,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EOS地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATO-KQ-i3y">
-                                <rect key="frame" x="20" y="157" width="57" height="17"/>
+                                <rect key="frame" x="20" y="156.5" width="57" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -16368,7 +16368,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJ4-aH-vZi">
-                                <rect key="frame" x="20" y="189" width="335" height="1"/>
+                                <rect key="frame" x="20" y="188.5" width="335" height="1"/>
                                 <color key="backgroundColor" red="1" green="0.33057760920000001" blue="0.111442244" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="slG-UV-jvS"/>
