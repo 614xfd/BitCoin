@@ -198,7 +198,7 @@
         [self showToastWithMessage:@"请完善信息"];
         return;
     }
-    if (self.inviteTf.text.length<6) {
+    if (self.inviteTf.text.length<6&&self.inviteTf.text.length>0) {
         [self showToastWithMessage:@"请完善信息"];
         return;
     }

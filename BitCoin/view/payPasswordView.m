@@ -72,6 +72,8 @@
         tv.text = @"";
         textView.text = @"";
         [tv becomeFirstResponder];
+    } else {
+        textView.text = @"•";
     }
     return YES;
 }

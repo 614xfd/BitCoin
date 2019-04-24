@@ -246,6 +246,7 @@
     [self.view addSubview:view];
     view.payNameLabel.text = tip;
     view.payNumLabel.text = [NSString stringWithFormat:@"%@ GTSE", price];
+    [view.firstTV becomeFirstResponder];
 }
 
 /*

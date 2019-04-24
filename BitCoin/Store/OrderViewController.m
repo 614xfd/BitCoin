@@ -134,7 +134,7 @@
 
 - (void) gopay : (NSDictionary *)dic
 {
-    [self showToastWithMessage:[dic objectForKey:@"msg"]];
+    [self showToastWithMessage:@"下单成功"];
     double delayInSeconds = 1.5;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_global_queue(0,0), ^(void){
