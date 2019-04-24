@@ -124,7 +124,7 @@
             }
                 
             case 3: {
-                WalletDetailViewController *vc = [[WalletDetailViewController alloc]init];
+                WalletDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WalletDetailVC"];
                 vc.isNewPH = YES;
                 [self.navigationController pushViewController:vc animated:YES];
                 break;

@@ -42,16 +42,19 @@
         [self POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             responseObject = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
             NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
-            
-            if ([[jsonDict objectForKey:@"msg"]isEqualToString:@"登录身份过期"]) {
-                [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"TOKEN_ERROR" object:nil]];
-                completedBlock(nil, nil);
-                return;
+            NSString *code = [NSString stringWithFormat:@"%@", [jsonDict objectForKey:@"code"]];
+            if ([code isEqualToString:@"1"]) {
+                if ([[jsonDict objectForKey:@"msg"]isEqualToString:@"登录身份过期"]) {
+                    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"TOKEN_ERROR" object:nil]];
+                    completedBlock(nil, nil);
+                } else {
+                    NSString *jsonStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+                    completedBlock([self changeType:jsonDict], jsonStr);
+                }
+            } else {
+                NSString *jsonStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+                completedBlock([self changeType:jsonDict], jsonStr);
             }
-            
-            NSString *jsonStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
-            completedBlock([self changeType:jsonDict], jsonStr);
-
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             failed(error);
         }];
@@ -78,16 +81,19 @@
         [self POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             responseObject = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
             NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
-            
-            if ([[jsonDict objectForKey:@"msg"]isEqualToString:@"登录身份过期"]) {
-                [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"TOKEN_ERROR" object:nil]];
-                completedBlock(nil, nil);
-                return;
+            NSString *code = [NSString stringWithFormat:@"%@", [jsonDict objectForKey:@"code"]];
+            if ([code isEqualToString:@"1"]) {
+                if ([[jsonDict objectForKey:@"msg"]isEqualToString:@"登录身份过期"]) {
+                    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"TOKEN_ERROR" object:nil]];
+                    completedBlock(nil, nil);
+                } else {
+                    NSString *jsonStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+                    completedBlock([self changeType:jsonDict], jsonStr);
+                }
+            } else {
+                NSString *jsonStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+                completedBlock([self changeType:jsonDict], jsonStr);
             }
-
-            NSString *jsonStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
-            completedBlock([self changeType:jsonDict], jsonStr);
-            
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             failed(error);
         }];

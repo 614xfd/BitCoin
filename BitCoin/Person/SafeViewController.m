@@ -43,6 +43,13 @@
     } else {
         self.tipLabel.text = @"已实名认证";
     }
+    if (self.isWallet) {
+        self.bgLabel.frame = CGRectMake(self.bgLabel.frame.origin.x, self.bgLabel.frame.origin.y, self.bgLabel.frame.size.width, self.lineLabel.frame.origin.y);
+        self.lineLabel.hidden = YES;
+        self.btn.hidden = YES;
+        self.tLabel.hidden = YES;
+        self.jImageView.hidden = YES;
+    }
 }
 - (void)resetMessage:(NSString *)string
 {
@@ -58,7 +65,7 @@
     
 
     
-        if ([_paymentPasswordStatus isEqualToString:@"1"] | YES) {
+        if ([_paymentPasswordStatus isEqualToString:@"1"]) {
 //
             self.dustView.alpha = 0.4;
             self.tipView.alpha = 1;

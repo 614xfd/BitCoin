@@ -16055,7 +16055,12 @@
                         <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="bgLabel" destination="4w3-BG-nRs" id="UuB-Wb-0jj"/>
+                        <outlet property="btn" destination="I1E-fc-166" id="FA9-N3-s7f"/>
                         <outlet property="dustView" destination="fQc-KX-OTB" id="miO-Xh-Sd3"/>
+                        <outlet property="jImageView" destination="wKZ-ME-YZs" id="MPL-Rv-BuV"/>
+                        <outlet property="lineLabel" destination="8qi-5Z-DRd" id="BJM-Jp-07l"/>
+                        <outlet property="tLabel" destination="NRn-qr-Wfn" id="kkn-2f-s6R"/>
                         <outlet property="tipView" destination="Ph7-bR-55f" id="3Py-io-zZh"/>
                     </connections>
                 </viewController>
@@ -16180,7 +16185,7 @@
         <!--Wallet Detail View Controller-->
         <scene sceneID="U10-Sy-FSd">
             <objects>
-                <viewController id="3It-e1-Lmy" customClass="WalletDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletDetailVC" id="3It-e1-Lmy" customClass="WalletDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8jf-Hg-1GF"/>
                         <viewControllerLayoutGuide type="bottom" id="gIB-au-CdC"/>
@@ -17523,7 +17528,7 @@
                                         <color key="textColor" red="0.019607843140000001" green="0.82745098039999998" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="总矿池极差奖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tg4-Rc-wqA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="总矿池级差奖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tg4-Rc-wqA">
                                         <rect key="frame" x="16" y="85" width="293" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -17592,7 +17597,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="每日极差奖励" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHz-f0-OMP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="每日级差奖励" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHz-f0-OMP">
                                 <rect key="frame" x="28" y="544" width="86" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
