@@ -18,5 +18,12 @@
 
 @property (weak, nonatomic) IBOutlet UIView *dustView;
 @property (weak, nonatomic) IBOutlet UIView *tipView;
+@property (nonatomic, assign) BOOL isWallet;
+
+@property (weak, nonatomic) IBOutlet UILabel *bgLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lineLabel;
+@property (weak, nonatomic) IBOutlet UIButton *btn;
+@property (weak, nonatomic) IBOutlet UILabel *tLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *jImageView;
 
 @end

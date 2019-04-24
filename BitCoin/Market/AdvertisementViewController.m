@@ -30,7 +30,7 @@
     // Do any additional setup after loading the view.
     [self prefersStatusBarHidden];
 
-    [self requestImage];
+//    [self requestImage];
     [self.bgLabel.layer setMasksToBounds:YES];
     self.bgLabel.layer.cornerRadius = 6;
     [self.skipBtn.layer setMasksToBounds:YES];

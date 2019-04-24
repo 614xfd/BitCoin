@@ -7,6 +7,7 @@
 //
 
 #import "PayViewController.h"
+#import "MacAddressListViewController.h"
 
 static AFHTTPSessionManager *manager;
 
@@ -85,7 +86,8 @@ static AFHTTPSessionManager *manager;
         NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
         if ([code isEqualToString:@"1"]) {
             [self showToastWithMessage:@"完成支付"];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+//            [self.navigationController popToRootViewControllerAnimated:YES];
+            [weakSelf performSelectorOnMainThread:@selector(intoMacVC) withObject:nil waitUntilDone:YES];
         } else {
             [self showToastWithMessage:JSON[@"msg"]];
         }
@@ -93,6 +95,22 @@ static AFHTTPSessionManager *manager;
         //        [weakSelf requestError];
     }];
 }
+
+- (void) intoMacVC
+{
+    ToastView *messageView = [[ToastView alloc]initWithFrame:self.view.bounds WithMessage:@"支付成功"];
+    [self.view addSubview:messageView];
+    
+    double delayInSeconds = 1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_global_queue(0,0), ^(void){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            MacAddressListViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MacAddressListVC"];
+            [self.navigationController pushViewController:vc animated:YES];
+        });
+    });
+}
+
 - (void) payPassWord : (NSNotification *)obj
 {
     UITextField *tf = obj.object;

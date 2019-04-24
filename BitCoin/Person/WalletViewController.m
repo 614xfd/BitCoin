@@ -12,6 +12,7 @@
 #import "WalletDetailViewController.h"
 #import "CoinINViewController.h"
 #import "CoinOUTViewController.h"
+#import "SafeViewController.h"
 
 @interface WalletViewController ()
 
@@ -143,6 +144,9 @@
 
 }
 - (IBAction)pwdBtnClick:(id)sender {
+    SafeViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SafeVC"];
+    vc.isWallet = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

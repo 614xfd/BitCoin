@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
+#import "YWUnlockView.h"
 
 @interface BaseViewController ()
 
@@ -120,6 +121,8 @@
     [defaults removeObjectForKey:@"authenticationStatus"];
     [defaults removeObjectForKey:@"paymentPasswordStatus"];
     [defaults removeObjectForKey:@"token"];
+    [YWUnlockView deleteGesturesPassword];
+
     [defaults synchronize];
     [self showToastWithMessage:@"登录身份过期"];
     NSArray <UIViewController *> *childViewControllers = self.navigationController.childViewControllers;

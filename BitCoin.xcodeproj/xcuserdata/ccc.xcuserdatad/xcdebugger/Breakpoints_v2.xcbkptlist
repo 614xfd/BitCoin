@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/News/NewNewsViewController.m"
-            timestampString = "577769768.075182"
+            timestampString = "577780391.645202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -52,7 +52,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Person/WalletDetailViewController.m"
-            timestampString = "577769768.075314"
+            timestampString = "577780391.645348"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -68,7 +68,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Person/WalletDetailViewController.m"
-            timestampString = "577769768.075393"
+            timestampString = "577780391.645883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -84,7 +84,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/view/payPasswordView.m"
-            timestampString = "577769768.0754499"
+            timestampString = "577780391.646202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -100,12 +100,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Market/MarketViewController.m"
-            timestampString = "577769768.075537"
+            timestampString = "577780391.646286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
             endingLineNumber = "124"
             landmarkName = "-returnPayPassword:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BitCoin/Person/SafeViewController.m"
+            timestampString = "577780391.646354"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-payBtnClick:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

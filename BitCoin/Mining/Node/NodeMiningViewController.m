@@ -24,10 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabData = @[@{@"title":@"昨日团队业绩",@"img":@"cjjd.png",@"unit":@"GTSE"},
-                    @{@"title":@"昨日收益",@"img":@"cjjd.png",@"unit":@"GTSE"},
-                     @{@"title":@"总收益",@"img":@"cjjd.png",@"unit":@"GTSE"},
-                     @{@"title":@"加入天数",@"img":@"cjjd.png",@"unit":@""}];
+    self.tabData = @[@{@"title":@"昨日团队业绩",@"img":@"city_icon1.png",@"unit":@"GTSE"},
+                    @{@"title":@"昨日收益",@"img":@"city_icon3.png",@"unit":@"GTSE"},
+                     @{@"title":@"总收益",@"img":@"city_icon2.png",@"unit":@"GTSE"},
+                     @{@"title":@"加入天数",@"img":@"city_icon4.png",@"unit":@""}];
     
     [self requestGet];
     
@@ -249,7 +249,7 @@
     self.bgBtn.hidden = NO;
     self.tipLab1.text = self.isSuperNode?@"购买超级节点":@"购买城市节点";
     self.tipLab2.text = [NSString stringWithFormat:@"充值%@GTSE即可成为%@",self.numPrice,self.isSuperNode?@"超级节点":@"城市节点"];
-    self.tipLab3.text = [NSString stringWithFormat:@"%@享受25%%团队购买服务器销售提成",self.isSuperNode?@"超级节点":@"城市节点"];
+    self.tipLab3.text = [NSString stringWithFormat:@"%@享受%d%%团队购买服务器销售提成" ,self.isSuperNode?@"超级节点":@"城市节点", self.isSuperNode?30:25];
 }
 - (IBAction)tipCancleBtnClick:(id)sender {
     self.dustView.alpha = 0;

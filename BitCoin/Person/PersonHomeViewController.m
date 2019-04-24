@@ -170,7 +170,7 @@
         [defaults removeObjectForKey:@"paymentPasswordStatus"];
         [defaults removeObjectForKey:@"token"];
         [defaults synchronize];
-        //        [YWUnlockView deleteGesturesPassword];
+//                [YWUnlockView deleteGesturesPassword];
         
         [self logout];
     }
