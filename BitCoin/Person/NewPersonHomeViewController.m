@@ -17,6 +17,7 @@
 #import "AboutMeViewController.h"
 #import "SafeViewController.h"
 #import "WalletDetailViewController.h"
+#import "YWUnlockView.h"
 
 @interface NewPersonHomeViewController () {
     NSArray *_nameArray;
@@ -199,6 +200,8 @@
     [defaults removeObjectForKey:@"paymentPasswordStatus"];
     [defaults removeObjectForKey:@"token"];
     [defaults removeObjectForKey:@"inviteCode"];
+    [YWUnlockView deleteGesturesPassword];
+
     [defaults synchronize];
 }
 

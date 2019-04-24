@@ -10,6 +10,7 @@
 #import "ReSetLoginPWViewController.h"
 #import "SetPayPassWordViewController.h"
 #import "ReSetPayPasswordViewController.h"
+#import "YWUnlockView.h"
 
 @interface SafeViewController () {
     NSString *_status;
@@ -69,9 +70,22 @@
 //    }
 }
 - (IBAction)resetLoginBtnClick:(id)sender {
-    ReSetLoginPWViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ReSetLPWVC"];
-    vc.isReSet = NO;
-    [self.navigationController pushViewController:vc animated:YES];
+//    ReSetLoginPWViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ReSetLPWVC"];
+//    vc.isReSet = NO;
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    if ([YWUnlockView haveGesturePassword]) {
+        [YWUnlockView showUnlockViewWithType:YWUnlockViewUnlock  andReset:@"验证手势密码" andIsVerify:YES callBack:^(BOOL result) {
+            NSLog(@"-->%@",@(result));
+        }];
+    } else {
+        [YWUnlockView showUnlockViewWithType:YWUnlockViewCreate andReset:@"设置手势密码" andIsVerify:NO callBack:^(BOOL result) {
+            NSLog(@"-->%@",@(result));
+            if (result) {
+            }
+        }];
+    }
+
 }
 
 - (IBAction)goBack:(id)sender {

@@ -31,8 +31,14 @@ static AFHTTPSessionManager *manager;
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)payBtnClick:(id)sender {
-    self.dustView.alpha = 0.4;
-    self.tipView.alpha = 1;
+//    self.dustView.alpha = 0.4;
+//    self.tipView.alpha = 1;
+    [self inputPayPasswordWithPayTip:@"支付" andPrice:[NSString stringWithFormat:@"%@ GTSE", self.money]];
+}
+
+- (void) returnPayPassword:(NSString *)string
+{
+    [self requestPay:string];
 }
 
 - (void) creatBalance
@@ -104,7 +110,7 @@ static AFHTTPSessionManager *manager;
             if (x == 6) {
                 NSLog(@"%@", array);
                 // 验证支付密码
-                [self requestPay:[array componentsJoinedByString:@""]];
+//                [self requestPay:[array componentsJoinedByString:@""]];
             }
             continue;
         } else {
