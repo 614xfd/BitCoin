@@ -99,8 +99,6 @@
         //微信
         [platformsRegister setupWeChatWithAppId:@"wx92bccc880150b9ad" appSecret:@"75bfc149a4a46908091d47e0e340133c"];
         
-        //新浪
-        
     }];
     
     if(self.isEable) {
