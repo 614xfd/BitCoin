@@ -16,6 +16,7 @@
 #import "NewShareViewController.h"
 #import "AboutMeViewController.h"
 #import "SafeViewController.h"
+#import "WalletDetailViewController.h"
 
 @interface NewPersonHomeViewController () {
     NSArray *_nameArray;
@@ -121,12 +122,20 @@
                 break;
             }
                 
-            case 3:
-//                vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MyOrderVC"];
-
-            case 4: {
-                HoldMoneyViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HoldMoneyVC"];
+            case 3: {
+                WalletDetailViewController *vc = [[WalletDetailViewController alloc]init];
+                vc.isNewPH = YES;
                 [self.navigationController pushViewController:vc animated:YES];
+                break;
+            }
+            case 4: {
+                NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+                if ([[defaults objectForKey:@"isOpen"] isEqualToString:@"1"]) {
+                    HoldMoneyViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HoldMoneyVC"];
+                    [self.navigationController pushViewController:vc animated:YES];
+                } else {
+                    [self showToastWithMessage:@"暂未开放"];
+                }
                 break;
             }
 
@@ -182,6 +191,15 @@
     _isLogin = NO;
     self.phoneLabel.text = @"创建账户/登录";
     self.footView.hidden = YES;
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"isLogin"];
+    [defaults removeObjectForKey:@"phoneNum"];
+    [defaults removeObjectForKey:@"uid"];
+    [defaults removeObjectForKey:@"authenticationStatus"];
+    [defaults removeObjectForKey:@"paymentPasswordStatus"];
+    [defaults removeObjectForKey:@"token"];
+    [defaults removeObjectForKey:@"inviteCode"];
+    [defaults synchronize];
 }
 
 - (IBAction)loginBtnClick:(id)sender {
@@ -189,6 +207,12 @@
         LoginViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
         [self.navigationController pushViewController:vc animated:YES];
     }
+}
+- (IBAction)logoutBtnClick:(id)sender {
+    [self logout];
+}
+- (IBAction)service:(id)sender {
+    [self showService];
 }
 
 /*

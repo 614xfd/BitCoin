@@ -28,5 +28,6 @@
 
 @property (nonatomic, strong)NSString *idString;
 @property (nonatomic, strong)NSString *money;
+@property (weak, nonatomic) IBOutlet UILabel *canUse;
 
 @end

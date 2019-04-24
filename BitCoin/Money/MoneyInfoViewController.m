@@ -78,8 +78,8 @@
     
     [self.buyInfoView.layer setMasksToBounds:YES];
     self.buyInfoView.layer.cornerRadius = 4;
-    [self.payView.layer setMasksToBounds:YES];
-    self.payView.layer.cornerRadius = 4;
+//    [self.payView.layer setMasksToBounds:YES];
+//    self.payView.layer.cornerRadius = 4;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:self.bbcTF];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:self.usdtTF];
@@ -256,7 +256,7 @@
     }
     self.bgButton.hidden = YES;
     self.buyInfoView.hidden = YES;
-    self.payView.hidden = YES;
+//    self.payView.hidden = YES;
     [self.bbcTF resignFirstResponder];
     [self.usdtTF resignFirstResponder];
     [self.allBBCTF resignFirstResponder];
@@ -278,7 +278,7 @@
     //    NSLog(@"解密后:%@", [RSAEncryptor decryptString:@"E7Uh9LVxdjSur7J7ibViYuGWjPfXYTxiRdnsHulOB8qM80Ilj/xfOT+TT2hsePSI6n6ofciqOtdUCVXqbBP3tvg6vIIPOm8BPh4EfnZvrT5vo4or+ykezhw00G7+h/b2s2LhNbH7DsEoK4yLPUJo8fy/eTPgRit73L6uwI4ZE9JPupZwvPYypbjpqPLL5vstjZE6PmrmmNZLoyPqFe8UVCQw1KNA+WUCXuA1TLdLcq72T9Vn2X775ZVFyV1AbN9DYWC2CcGnOq2GXM2/+xNHgt71obu4//b9KMso4xmsWjqVktxEdVIihPEuDvoBpwXIpj3xOWCbe5NWyA8ANKoJRqhWqjSrMxpsAeaB0dxe1b+sMYg2sRDgzZvQ1CrO9qJsw99vJnFi+jJn7eeTJD/um+FMbZQGKnmaarWcavJ01A6Srxp3FTd1VD4ukNX429YuRlW39AkyKoeSRULwFRDWqUCEcylMCpbUSTvEBdj2Xam4j7tAR133SGH1/RIMyPcx" privateKeyWithContentsOfFile:private_key_path password:@""]);
     _orderData = [RSAEncryptor decryptString:string privateKeyWithContentsOfFile:private_key_path password:@""];
     self.buyInfoView.hidden = YES;
-    self.payView.hidden = NO;
+//    self.payView.hidden = NO;
     self.bgButton.hidden = NO;
 }
 
@@ -338,9 +338,16 @@
     [self.allBBCTF resignFirstResponder];
     
     //    [self order];
-    self.payView.hidden = NO;
+//    self.payView.hidden = NO;
+    [self inputPayPasswordWithPayTip:@"支付" andPrice:[NSString stringWithFormat:@"%@ GTSE", self.usdtTF.text]];
     self.bgButton.hidden = NO;
     self.payMoneyLabel.text = [NSString stringWithFormat:@"%@ GTSE", self.usdtTF.text];
+}
+
+- (void) returnPayPassword:(NSString *)string
+{
+    _payString = string;
+    [self order];
 }
 
 - (void) resetMessage:(NSString *)string
@@ -386,7 +393,7 @@
     }
     self.bgButton.hidden = YES;
     self.buyInfoView.hidden = YES;
-    self.payView.hidden = YES;
+//    self.payView.hidden = YES;
     [self.bbcTF resignFirstResponder];
     [self.usdtTF resignFirstResponder];
     [self.allBBCTF resignFirstResponder];

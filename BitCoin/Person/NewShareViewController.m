@@ -23,12 +23,17 @@
     self.codeLab.text = [ud objectForKey:@"inviteCode"];
 }
 - (IBAction)copyBtnClick:(id)sender {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = @"你好";
+    pasteboard.string = [ud objectForKey:@"inviteCode"];
     [self showToastWithMessage:@"小蚂蚁:已复制到粘贴板"];
 }
 - (IBAction)goBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)share:(id)sender {
+    [self shareImageViewWithView:self.view];
 }
 
 

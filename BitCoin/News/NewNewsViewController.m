@@ -8,6 +8,7 @@
 
 #import "NewNewsViewController.h"
 #import "UIView+AZGradient.h"
+#import "newsShareView.h"
 
 @interface NewNewsViewController () {
     NSArray *_dataArray;
@@ -86,7 +87,8 @@
     }
     UIButton *btn2 = (UIButton *)[view.subviews objectAtIndex:6];
     btn2.tag = indexPath.row+20000;
-    
+    [btn2 addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
+
     return cell;
 }
 
@@ -101,6 +103,10 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[[_dataArray objectAtIndex:x] objectForKey:@"link"]] options:@{} completionHandler:nil];
 }
 
+- (void) share:(UIButton *)btn
+{
+//    newsShareView *view = 
+}
 
 
 /*

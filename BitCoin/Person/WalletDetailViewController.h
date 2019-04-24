@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WalletDetailViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tabView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (nonatomic, assign) BOOL isNewPH;
+
 @end
 
 NS_ASSUME_NONNULL_END

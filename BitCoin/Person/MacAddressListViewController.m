@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableView.tableFooterView = [[UIView alloc] init];
     [self request];
 }
 
@@ -55,9 +56,9 @@
     UILabel *use = (UILabel *)[cell.contentView viewWithTag:2];
     use.text = @"未使用";
     use.textColor = [UIColor colorWithRed:5/255.0 green:211/255.0 blue:184/255.0 alpha:1];
-    if ([[NSString stringWithFormat:@"%@", [[_dataArray objectAtIndex:indexPath.row] objectForKey:@"mac"]] isEqualToString:@"1"]) {
+    if ([[NSString stringWithFormat:@"%@", [[_dataArray objectAtIndex:indexPath.row] objectForKey:@"status"]] isEqualToString:@"1"]) {
         use.text = @"已使用";
-        use.textColor = [UIColor groupTableViewBackgroundColor];
+        use.textColor = [UIColor grayColor];
     }
     
     UIButton *btn = (UIButton *) [cell.contentView.subviews objectAtIndex:2];
@@ -75,7 +76,9 @@
 
 - (void) copyClick:(UIButton *)btn
 {
-    
+    UIPasteboard * pastboard = [UIPasteboard generalPasteboard];
+    pastboard.string = [[_dataArray objectAtIndex:btn.tag-10000] objectForKey:@"mac"];
+    [self showToastWithMessage:@"复制成功"];
 }
 
 

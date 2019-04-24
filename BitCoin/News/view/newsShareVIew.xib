@@ -1,21 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="newsShareView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cylc_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pXp-FS-cwE">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="pXp-FS-cwE" secondAttribute="height" multiplier="75:56" id="4By-W6-IDq"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新资讯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPG-pK-djh">
+                    <rect key="frame" x="123" y="121" width="129.5" height="38.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okF-An-sC3">
+                    <rect key="frame" x="15" y="295" width="35.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJJ-Ly-cVe">
+                    <rect key="frame" x="15" y="342" width="345" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5P-bc-EuE">
+                    <rect key="frame" x="15" y="383" width="345" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SfF-X0-kNL">
+                    <rect key="frame" x="0.0" y="429" width="375" height="120"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="UVe-C1-HU3"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="34" y="54"/>
+            <constraints>
+                <constraint firstItem="pXp-FS-cwE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1Rw-fY-Vy7"/>
+                <constraint firstAttribute="bottom" secondItem="SfF-X0-kNL" secondAttribute="bottom" id="1kq-WD-f2F"/>
+                <constraint firstItem="qJJ-Ly-cVe" firstAttribute="top" secondItem="okF-An-sC3" secondAttribute="bottom" constant="30" id="9KU-J6-cTe"/>
+                <constraint firstAttribute="trailing" secondItem="SfF-X0-kNL" secondAttribute="trailing" id="AJl-3R-FzH"/>
+                <constraint firstItem="SfF-X0-kNL" firstAttribute="top" secondItem="f5P-bc-EuE" secondAttribute="bottom" constant="30" id="CYu-HO-3Sw"/>
+                <constraint firstAttribute="trailing" secondItem="qJJ-Ly-cVe" secondAttribute="trailing" constant="15" id="KZu-H1-GPD"/>
+                <constraint firstItem="UPG-pK-djh" firstAttribute="centerY" secondItem="pXp-FS-cwE" secondAttribute="centerY" id="Rbl-9r-5Ga"/>
+                <constraint firstItem="UPG-pK-djh" firstAttribute="centerX" secondItem="pXp-FS-cwE" secondAttribute="centerX" id="Tv4-py-hvI"/>
+                <constraint firstItem="SfF-X0-kNL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UVe-ah-e9y"/>
+                <constraint firstItem="f5P-bc-EuE" firstAttribute="top" secondItem="qJJ-Ly-cVe" secondAttribute="bottom" constant="20" id="ZWs-KT-ULC"/>
+                <constraint firstAttribute="trailing" secondItem="pXp-FS-cwE" secondAttribute="trailing" id="ZmV-HG-Hcp"/>
+                <constraint firstItem="pXp-FS-cwE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bhV-kc-da2"/>
+                <constraint firstAttribute="trailing" secondItem="f5P-bc-EuE" secondAttribute="trailing" constant="15" id="el3-4z-wLd"/>
+                <constraint firstItem="okF-An-sC3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="nO6-U0-PeF"/>
+                <constraint firstItem="qJJ-Ly-cVe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="ngW-PK-v6B"/>
+                <constraint firstItem="okF-An-sC3" firstAttribute="top" secondItem="pXp-FS-cwE" secondAttribute="bottom" constant="15" id="vNQ-dl-DAb"/>
+                <constraint firstItem="f5P-bc-EuE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="zwq-t0-num"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="content" destination="f5P-bc-EuE" id="Oe7-sB-iP6"/>
+                <outlet property="date" destination="okF-An-sC3" id="4p4-6e-vc0"/>
+                <outlet property="newsTitle" destination="qJJ-Ly-cVe" id="oPG-gf-Nbf"/>
+            </connections>
+            <point key="canvasLocation" x="21.600000000000001" y="-53.523238380809602"/>
         </view>
     </objects>
+    <resources>
+        <image name="cylc_bg.jpg" width="750" height="560"/>
+    </resources>
 </document>

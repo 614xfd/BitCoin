@@ -9,13 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "UIImageView+WebCache.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "payPasswordView.h"
 
 #define kScaleH                   (kScreenHeight/667.0)
 #define kScaleW                  (kScreenWidth/375.0)
 
-@interface BaseViewController : UIViewController
+@interface BaseViewController : UIViewController <payPasswordViewDelegate>
 
 //@property (nonatomic, assign)  CGFloat scale;
+@property (nonatomic, strong) NSString *payPasswordString;
 
 - (void) setBarBlackColor : (BOOL) isBlack;
 
@@ -35,6 +37,8 @@
 
 - (void) showService;
 
-- (void) shareImageView;
+- (void) shareImageViewWithView:(UIView *)view;
+
+- (void) inputPayPasswordWithPayTip:(NSString *)tip andPrice:(NSString *)price;
 
 @end

@@ -116,6 +116,12 @@
     [self.tableView.mj_header beginRefreshing];
     [self requestISOpen];
 
+//    [self inputPayPasswordWithPayTip:@"" andPrice:@""];
+}
+
+- (void) returnPayPassword:(NSString *)string
+{
+    NSLog(@"%@" ,string);
 }
 
 - (void) requestISOpen
@@ -124,10 +130,13 @@
     [[NetworkTool sharedTool] requestWithURLString:@"v1/node/get" parameters:nil method:@"POST" completed:^(id JSON, NSString *stringData) {
         NSLog(@"%@      ------------- %@", stringData, JSON );
         NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
+        NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
         if ([code isEqualToString:@"1"]) {
             _isOpen = YES;
+            [defaults setObject:@"1" forKey:@"isOpen"];
         } else {
             _isOpen = NO;
+            [defaults setObject:@"0" forKey:@"isOpen"];
         }
     } failed:^(NSError *error) {
         //        [weakSelf requestError];

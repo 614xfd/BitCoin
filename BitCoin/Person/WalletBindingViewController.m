@@ -57,7 +57,10 @@
         self.textField.text = string;
     }
 }
-    
+- (IBAction)goBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 /*
 #pragma mark - Navigation
 

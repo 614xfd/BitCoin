@@ -123,9 +123,14 @@
     }
 }
 - (IBAction)tbBtnClick:(id)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"token"];
     if (token.length) {
+        NSString *authenticationStatus = [defaults objectForKey:@"authenticationStatus"];
+        if (![authenticationStatus isEqualToString:@"2"]) {
+            [self showToastWithMessage:@"请先完成实名认证"];
+            return;
+        }
         CoinOUTViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CoinOUTVC"];
         [self.navigationController pushViewController:vc animated:YES];
     }

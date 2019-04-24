@@ -7,9 +7,8 @@
 //
 
 #import "BaseViewController.h"
-//#import "QRCodeViewController.h"
 
-@interface NodeMiningViewController : BaseViewController <UITextFieldDelegate>//<QRCodeViewControllerDelegate>
+@interface NodeMiningViewController : BaseViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 
 //@property (weak, nonatomic) IBOutlet UIScrollView *scroll;
@@ -37,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *payLab;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *bgBtn;
 
 
 @property (nonatomic, assign) BOOL isSuperNode;                 //超级d节点

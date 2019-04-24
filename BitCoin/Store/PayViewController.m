@@ -14,6 +14,7 @@ static AFHTTPSessionManager *manager;
 //    NSString *_numberString;
 //    UIImage *_image;
 //    NSData *_immageData;
+    NSString *_bbcBalance;
 }
 
 @end
@@ -24,6 +25,7 @@ static AFHTTPSessionManager *manager;
     self.orderIdLab.text = self.idString;
     self.moneyLab.text = self.money;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payPassWord:) name:UITextFieldTextDidChangeNotification object:nil];
+    [self requestBalance];
 }
 - (IBAction)goBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -32,6 +34,35 @@ static AFHTTPSessionManager *manager;
     self.dustView.alpha = 0.4;
     self.tipView.alpha = 1;
 }
+
+- (void) creatBalance
+{
+    self.canUse.text = [NSString stringWithFormat:@"余额：%@（GTSE）", _bbcBalance];
+}
+
+- (void) requestBalance
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token = [defaults objectForKey:@"token"];
+    if (token.length) {
+        __weak __typeof(self) weakSelf = self;
+        NSDictionary *d = @{@"token":token};
+        [[NetworkTool sharedTool] requestWithURLString:@"v1/user/account/info" parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
+            NSLog(@"%@      ------------- %@", stringData, JSON );
+            NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
+            if ([code isEqualToString:@"1"]) {
+                _bbcBalance = [NSString stringWithFormat:@"%.2lf", [[[JSON objectForKey:@"data"] objectForKey:@"normal"] doubleValue]];
+                [weakSelf performSelectorOnMainThread:@selector(creatBalance) withObject:nil waitUntilDone:YES];
+            } else {
+                
+            }
+        } failed:^(NSError *error) {
+            //        [weakSelf requestError];
+        }];
+    }
+}
+
+
 - (void) requestPay:(NSString *)pwd{
     __weak __typeof(self) weakSelf = self;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

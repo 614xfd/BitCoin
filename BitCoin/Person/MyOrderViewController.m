@@ -190,19 +190,19 @@
     UILabel *productNumber = (UILabel *) [cell viewWithTag:7];
     productNumber.text = [NSString stringWithFormat:@"x%@", [dic objectForKey:@"count"]];
     
-    UILabel *freight = (UILabel *) [cell viewWithTag:8];
+//    UILabel *freight = (UILabel *) [cell viewWithTag:8];
     UILabel *productTotal = (UILabel *) [cell viewWithTag:9];
     UILabel *all = (UILabel *) [cell viewWithTag:10];
     productTotal.text = [NSString stringWithFormat:@"%@ USDT", [dic objectForKey:@"totalMoney"]];
     all.text = [NSString stringWithFormat:@"共%@件商品  合计:", [dic objectForKey:@"count"]];
     
-    CGSize nameSize = [freight.text boundingRectWithSize:CGSizeMake(freight.frame.size.width, freight.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:freight.font} context:nil].size;
+//    CGSize nameSize = [freight.text boundingRectWithSize:CGSizeMake(freight.frame.size.width, freight.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:freight.font} context:nil].size;
 
-    freight.frame = CGRectMake(self.view.frame.size.width-nameSize.width-16, freight.frame.origin.y, nameSize.width, freight.frame.size.height);
-    nameSize = [productTotal.text boundingRectWithSize:CGSizeMake(productTotal.frame.size.width, productTotal.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:productTotal.font} context:nil].size;
-    productTotal.frame = CGRectMake(freight.frame.origin.x-nameSize.width-3, productTotal.frame.origin.y, nameSize.width, productTotal.frame.size.height);
-    nameSize = [all.text boundingRectWithSize:CGSizeMake(all.frame.size.width, all.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:all.font} context:nil].size;
-    all.frame = CGRectMake(productTotal.frame.origin.x-nameSize.width-5, all.frame.origin.y, nameSize.width, all.frame.size.height);
+//    freight.frame = CGRectMake(self.view.frame.size.width-nameSize.width-16, freight.frame.origin.y, nameSize.width, freight.frame.size.height);
+//    nameSize = [productTotal.text boundingRectWithSize:CGSizeMake(productTotal.frame.size.width, productTotal.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:productTotal.font} context:nil].size;
+//    productTotal.frame = CGRectMake(freight.frame.origin.x-nameSize.width-3, productTotal.frame.origin.y, nameSize.width, productTotal.frame.size.height);
+//    nameSize = [all.text boundingRectWithSize:CGSizeMake(all.frame.size.width, all.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:all.font} context:nil].size;
+//    all.frame = CGRectMake(productTotal.frame.origin.x-nameSize.width-5, all.frame.origin.y, nameSize.width, all.frame.size.height);
 
     
     
@@ -226,10 +226,10 @@
 //    return 4;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 250;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return 250*kScaleH;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -368,7 +368,7 @@
             }else if (index == 2) {
                 
             }else if (index == 3) {//申请售后
-                
+                [self showService];
             }
             
             return;
@@ -407,7 +407,7 @@
         [[NetworkTool sharedTool] requestWithURLString:@"/v1/mall/product/order/cancel" parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
             NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
             if ([code isEqualToString:@"1"]) {
-                [self showToastWithMessage:@"小蚂蚁：确认收货成功"];
+                [self showToastWithMessage:@"已取消"];
                 [self requestQuery:self.status];
                 self.dataList = [@[@[],@[],@[],@[]] mutableCopy];
             } else {

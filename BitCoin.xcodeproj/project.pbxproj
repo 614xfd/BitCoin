@@ -678,6 +678,8 @@
 		4A9D98F1226F4D0900D343C9 /* MacAddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D98F0226F4D0900D343C9 /* MacAddressListViewController.m */; };
 		4A9D98F3226F577300D343C9 /* 分享 (3).png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D98F2226F577000D343C9 /* 分享 (3).png */; };
 		4A9D98F5226F5F3100D343C9 /* mac_new.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D98F4226F5F2E00D343C9 /* mac_new.jpg */; };
+		4ACF454D226F970800D804DD /* payPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF454C226F970800D804DD /* payPasswordView.m */; };
+		4ACF454F226F972700D804DD /* payPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACF454E226F972700D804DD /* payPasswordView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1593,6 +1595,9 @@
 		4A9D98F0226F4D0900D343C9 /* MacAddressListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacAddressListViewController.m; sourceTree = "<group>"; };
 		4A9D98F2226F577000D343C9 /* 分享 (3).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享 (3).png"; sourceTree = "<group>"; };
 		4A9D98F4226F5F2E00D343C9 /* mac_new.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mac_new.jpg; sourceTree = "<group>"; };
+		4ACF454B226F970800D804DD /* payPasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = payPasswordView.h; sourceTree = "<group>"; };
+		4ACF454C226F970800D804DD /* payPasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = payPasswordView.m; sourceTree = "<group>"; };
+		4ACF454E226F972700D804DD /* payPasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = payPasswordView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1783,6 +1788,9 @@
 				37E4E8211F7E6A4900DA60BD /* CustomAlertView.m */,
 				37AA6936211E93C4005B0488 /* bluetooth.h */,
 				37AA6937211E93C4005B0488 /* bluetooth.m */,
+				4ACF454B226F970800D804DD /* payPasswordView.h */,
+				4ACF454C226F970800D804DD /* payPasswordView.m */,
+				4ACF454E226F972700D804DD /* payPasswordView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -3651,6 +3659,7 @@
 				3715DB7520B1F798000FF744 /* gesture_headIcon@2x.png in Resources */,
 				37112E261F7CE1A4001E94E7 /* BTC.png in Resources */,
 				377C2825201EAD6100F4B5EF /* 矿池信息_06.png in Resources */,
+				4ACF454F226F972700D804DD /* payPasswordView.xib in Resources */,
 				370FC52C2267B48F00CC0E6C /* back_blue.png in Resources */,
 				374168D6212A6DDD00BD2A63 /* 节点挖矿-加入_03.png in Resources */,
 				37C896CD1FA8891300C71D30 /* 查看物流_03.png in Resources */,
@@ -4062,6 +4071,7 @@
 				37B4AA2F1F763418002D224B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3715DB7B20B1F798000FF744 /* YWGesturesUnlockView.m in Sources */,
 				370983D41F764EC200FF111D /* LoginViewController.m in Sources */,
+				4ACF454D226F970800D804DD /* payPasswordView.m in Sources */,
 				37E68D58201B467800A027EE /* MASLayoutConstraint.m in Sources */,
 				3715DB8120B328DE000FF744 /* RechargeViewController.m in Sources */,
 				3715DB8420B329C9000FF744 /* BalanceViewController.m in Sources */,

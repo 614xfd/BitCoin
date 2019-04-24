@@ -35,7 +35,8 @@
     self.earningLab.text = @"+00.00";
     self.earningRatioLab.text = @"30%";
     self.buyBScrollView.alpha = 1;
-    
+    self.resultTableView.tableFooterView = [[UIView alloc] init];
+
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payPassWord:) name:UITextFieldTextDidChangeNotification object:nil];
     
@@ -112,7 +113,6 @@
     self.resultTableView.dataSource = self;
     self.resultTableView.bounces = NO;
     self.resultTableView.separatorStyle = UITableViewCellEditingStyleNone;     //让tableview不显示分割线
-
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -246,18 +246,26 @@
 - (IBAction)buyButtonClick:(id)sender {
     self.dustView.alpha = 0.4;
     self.buyTipView.alpha = 1;
+    self.bgBtn.hidden = NO;
     self.tipLab1.text = self.isSuperNode?@"购买超级节点":@"购买城市节点";
     self.tipLab2.text = [NSString stringWithFormat:@"充值%@GTSE即可成为%@",self.numPrice,self.isSuperNode?@"超级节点":@"城市节点"];
-    self.tipLab3.text = [NSString stringWithFormat:@"%@享受25%团队购买服务器销售提成",self.isSuperNode?@"超级节点":@"城市节点"];
+    self.tipLab3.text = [NSString stringWithFormat:@"%@享受25%%团队购买服务器销售提成",self.isSuperNode?@"超级节点":@"城市节点"];
 }
 - (IBAction)tipCancleBtnClick:(id)sender {
     self.dustView.alpha = 0;
     self.buyTipView.alpha = 0;
+    self.bgBtn.hidden = YES;
 }
 - (IBAction)tipBuyBtnClick:(id)sender {
-    self.buyTipView.alpha = 0;
-    self.payView.alpha = 1;
-    self.payLab.text = [NSString stringWithFormat:@"%@GTSE",self.numPrice];
+//    self.buyTipView.alpha = 0;
+//    self.payView.alpha = 1;
+//    self.payLab.text = [NSString stringWithFormat:@"%@GTSE",self.numPrice];
+    [self inputPayPasswordWithPayTip:@"支付" andPrice:[NSString stringWithFormat:@"%@ GTSE",self.numPrice]];
+}
+
+- (void) returnPayPassword:(NSString *)string
+{
+    [self requestAdd:string];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -271,6 +279,10 @@
         [tv becomeFirstResponder];
     }
     return YES;
+}
+- (IBAction)hiddenBuyView:(id)sender {
+    self.buyTipView.alpha = 0;
+    self.bgBtn.hidden = YES;
 }
 
 /*

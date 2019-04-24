@@ -228,6 +228,15 @@
     return image;
 }
 
+- (void)inputPayPasswordWithPayTip:(NSString *)tip andPrice:(NSString *)price
+{
+    payPasswordView *view = [[payPasswordView alloc] initWithFrame:self.view.bounds];
+    view.delegate =self;
+    [self.view addSubview:view];
+    view.payNameLabel.text = tip;
+    view.payNumLabel.text = [NSString stringWithFormat:@"%@ GTSE", price];
+}
+
 /*
  #pragma mark - Navigation
  

@@ -21,6 +21,9 @@
     [self requestQuery];
     self.tabView.delegate = self;
     self.tabView.dataSource = self;
+    if (self.isNewPH) {
+        self.nameLabel.text = @"账单";
+    }
 }
 
 
@@ -65,13 +68,13 @@
     
     UILabel *suffixLab = [cell.contentView viewWithTag:102];
     CGFloat amount = [item[@"amount"] floatValue];
-    if (item[@"isIncome"]) {
-        suffixLab.text = [NSString stringWithFormat:@"+%.2lfGTSE",amount];
-        suffixLab.textColor = [UIColor colorWithRed:250/255.0 green:100/255.0 blue:121/255.0 alpha:1];
+    if ([item[@"isIncome"] integerValue]) {
+        suffixLab.text = [NSString stringWithFormat:@"+%.2lf GTSE",amount];
+        suffixLab.textColor = [UIColor colorWithRed:5/255.0 green:211/255.0 blue:184/255.0 alpha:1];
     }else{
-        suffixLab.text = [NSString stringWithFormat:@"-%.2lfGTSE",amount];
-//        suffixLab.textColor = [UIColor colorWithRed:250/255.0 green:100/255.0 blue:121/255.0 alpha:1];
-        suffixLab.textColor = [UIColor greenColor];
+        suffixLab.text = [NSString stringWithFormat:@"-%.2lf GTSE",amount];
+        suffixLab.textColor = [UIColor colorWithRed:250/255.0 green:100/255.0 blue:121/255.0 alpha:1];
+//        suffixLab.textColor = [UIColor greenColor];
     }
     
     
