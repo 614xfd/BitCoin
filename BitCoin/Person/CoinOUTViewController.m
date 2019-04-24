@@ -85,7 +85,7 @@
 
 - (IBAction)upData:(id)sender {
     if (self.addressTF.text.length>0&&[self.numTF.text doubleValue]>0) {
-        
+        [self requestOUT];
     }
 }
 - (IBAction)goBack:(id)sender {
