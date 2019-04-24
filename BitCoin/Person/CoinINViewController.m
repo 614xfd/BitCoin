@@ -88,7 +88,7 @@
 
 - (IBAction)upData:(id)sender {
     if (self.addressTF.text.length>0&&[self.numTF.text doubleValue]>0) {
-        
+        [self requestIN];
     } else {
         [self showToastWithMessage:@"请输入地址和数量。"];
     }
