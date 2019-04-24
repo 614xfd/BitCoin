@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface payPasswordView : UIView <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *payNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *payNumLabel;
+@property (weak, nonatomic) IBOutlet UITextView *firstTV;
 
 @property (nonatomic, weak) id<payPasswordViewDelegate> delegate;
 

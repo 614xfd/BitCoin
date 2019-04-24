@@ -186,9 +186,23 @@
 }
 
 - (IBAction)registerBtnClick:(id)sender {
-    if (self.phoneNumberTF.text.length>0) {
-        [self request];
+    if (self.passwordTF.text.length<6) {
+        [self showToastWithMessage:@"请输入6-18位密码"];
+        return;
     }
+    if (self.inviteTf.text.length < 1) {
+        [self showToastWithMessage:@"请输入邀请码"];
+        return;
+    }
+    if (self.phoneNumberTF.text.length<1) {
+        [self showToastWithMessage:@"请完善信息"];
+        return;
+    }
+    if (self.inviteTf.text.length<6&&self.inviteTf.text.length>0) {
+        [self showToastWithMessage:@"请完善信息"];
+        return;
+    }
+    [self request];
 }
 
 - (void) verifyPass
