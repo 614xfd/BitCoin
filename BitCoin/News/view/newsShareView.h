@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface newsShareView : UIView
-@property (weak, nonatomic) IBOutlet UILabel *date;
-@property (weak, nonatomic) IBOutlet UILabel *newsTitle;
-@property (weak, nonatomic) IBOutlet UILabel *content;
 
 - (void) setInfo:(NSDictionary *) dic;
 

@@ -94,10 +94,10 @@
     
     [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
         //QQ
-        [platformsRegister setupQQWithAppId:@"100371282" appkey:@"aed9b0303e3ed1e27bae87c33761161d"];
+        [platformsRegister setupQQWithAppId:@"1108732881" appkey:@"PKWYylTngQqAaNiW"];
         
         //微信
-        [platformsRegister setupWeChatWithAppId:@"wx617c77c82218ea2c" appSecret:@"c7253e5289986cf4c4c74d1ccc185fb1"];
+        [platformsRegister setupWeChatWithAppId:@"wx92bccc880150b9ad" appSecret:@"75bfc149a4a46908091d47e0e340133c"];
         
         //新浪
         

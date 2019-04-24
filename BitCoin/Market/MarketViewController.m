@@ -84,7 +84,7 @@
 //    NSDictionary *dic = @{NSFontAttributeName:self.titleLabel.font, NSParagraphStyleAttributeName:paraStyle, NSKernAttributeName:@1.5f};
 //    NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:@"小蚂蚁" attributes:dic];
 //    self.titleLabel.attributedText = attributeStr;
-    
+//    
 //    CGFloat f = [self getSpaceLabelHeight:str withFont:content.font withWidth:content.frame.size.width];
 //    content.frame = CGRectMake(content.frame.origin.x, content.frame.origin.y, content.frame.size.width, f);
     
