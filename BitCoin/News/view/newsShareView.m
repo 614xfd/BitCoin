@@ -43,14 +43,15 @@
     tiem.font = [UIFont systemFontOfSize:14 weight:UIFontWeightRegular];
     [self addSubview:tiem];
 
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(15, 300, 375-30, 20)];
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(15, 316+20, 375-30, 45)];
     title.textColor = [UIColor blackColor];
     title.text = [dic objectForKey:@"title"];
     title.textAlignment = NSTextAlignmentCenter;
+    title.numberOfLines = 2;
     title.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
     [self addSubview:title];
     
-    UILabel *content = [[UILabel alloc] initWithFrame:CGRectMake(15, 300, 375-30, 20)];
+    UILabel *content = [[UILabel alloc] initWithFrame:CGRectMake(15, 316+20+15+45, 375-30, 20)];
     content.textColor = [UIColor blackColor];
     content.text = [dic objectForKey:@"content"];
     content.numberOfLines = 0;
