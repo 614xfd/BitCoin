@@ -84,7 +84,7 @@
     logo.image = [UIImage imageNamed:@"logo.png"];
     [view addSubview:logo];
     
-    UIImageView *code = [[UIImageView alloc] initWithFrame:CGRectMake(375-50-15, 15, 90, 90)];
+    UIImageView *code = [[UIImageView alloc] initWithFrame:CGRectMake(375-90-15, 15, 90, 90)];
     code.image = [UIImage imageNamed:@"WechatIMG2210.png"];
     [view addSubview:code];
     
