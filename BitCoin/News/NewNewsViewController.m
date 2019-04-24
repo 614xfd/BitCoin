@@ -105,7 +105,9 @@
 
 - (void) share:(UIButton *)btn
 {
-//    newsShareView *view = 
+    
+    newsShareView *view = [[newsShareView alloc] init];
+//    view setInfo:<#(NSDictionary *)#>
 }
 
 

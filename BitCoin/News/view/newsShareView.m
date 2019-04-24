@@ -10,7 +10,7 @@
 
 @implementation newsShareView
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)init{
     
     self = [super initWithFrame:frame];
     self = [[[NSBundle mainBundle] loadNibNamed:@"newsShareView" owner:self options:nil] lastObject];
