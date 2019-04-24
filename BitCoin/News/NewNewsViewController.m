@@ -105,9 +105,10 @@
 
 - (void) share:(UIButton *)btn
 {
-    
+    NSInteger x = btn.tag-20000;
     newsShareView *view = [[newsShareView alloc] init];
-//    view setInfo:<#(NSDictionary *)#>
+    [view setInfo:@{@"time":[[_dataArray objectAtIndex:x] objectForKey:@"time"],@"title":[[_dataArray objectAtIndex:x] objectForKey:@"title"],@"content":[[_dataArray objectAtIndex:x] objectForKey:@"content"]}];
+    [self.view addSubview:view];
 }
 
 

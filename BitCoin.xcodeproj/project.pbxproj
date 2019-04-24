@@ -396,7 +396,6 @@
 		37A5204E2154BB3A00B45632 /* ClounMiningInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A5204D2154BB3A00B45632 /* ClounMiningInfoViewController.m */; };
 		37A520502154C11300B45632 /* 运动挖矿分享图.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A5204F2154C11100B45632 /* 运动挖矿分享图.png */; };
 		37A520542154F7B000B45632 /* newsShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A520532154F7B000B45632 /* newsShareView.m */; };
-		37A520562154F7CD00B45632 /* newsShareVIew.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A520552154F7CD00B45632 /* newsShareVIew.xib */; };
 		37A52065215B623800B45632 /* jpush-extension-ios-1.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A52060215B623700B45632 /* jpush-extension-ios-1.1.1.a */; };
 		37A52066215B623800B45632 /* jcore-ios-1.2.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A52062215B623700B45632 /* jcore-ios-1.2.2.a */; };
 		37A52067215B623800B45632 /* jpush-ios-3.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A52063215B623800B45632 /* jpush-ios-3.1.0.a */; };
@@ -1183,7 +1182,6 @@
 		37A5204F2154C11100B45632 /* 运动挖矿分享图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "运动挖矿分享图.png"; sourceTree = "<group>"; };
 		37A520522154F7B000B45632 /* newsShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newsShareView.h; sourceTree = "<group>"; };
 		37A520532154F7B000B45632 /* newsShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newsShareView.m; sourceTree = "<group>"; };
-		37A520552154F7CD00B45632 /* newsShareVIew.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = newsShareVIew.xib; sourceTree = "<group>"; };
 		37A52060215B623700B45632 /* jpush-extension-ios-1.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-extension-ios-1.1.1.a"; sourceTree = "<group>"; };
 		37A52061215B623700B45632 /* JPushNotificationExtensionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPushNotificationExtensionService.h; sourceTree = "<group>"; };
 		37A52062215B623700B45632 /* jcore-ios-1.2.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-1.2.2.a"; sourceTree = "<group>"; };
@@ -2503,7 +2501,6 @@
 			children = (
 				37A520522154F7B000B45632 /* newsShareView.h */,
 				37A520532154F7B000B45632 /* newsShareView.m */,
-				37A520552154F7CD00B45632 /* newsShareVIew.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -3763,7 +3760,6 @@
 				3707B2C2214A75C6000D6D47 /* 首页_05.png in Resources */,
 				370FC4FF2267B48F00CC0E6C /* test_qrcode.png in Resources */,
 				3715DB9320B36F16000FF744 /* 邀请享佣金-2_07.png in Resources */,
-				37A520562154F7CD00B45632 /* newsShareVIew.xib in Resources */,
 				3707B28821421B65000D6D47 /* 运动挖矿分享图_03.png in Resources */,
 				37E68D47201B467800A027EE /* MA-EMA-MACD介绍.md in Resources */,
 				37E68BF7201B452C00A027EE /* 商城详情1_11.png in Resources */,

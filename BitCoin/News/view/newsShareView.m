@@ -12,11 +12,16 @@
 
 - (instancetype)init{
     
-    self = [super initWithFrame:frame];
-    self = [[[NSBundle mainBundle] loadNibNamed:@"newsShareView" owner:self options:nil] lastObject];
+    self = [super init];
     return self;
 }
 
+- (void) setInfo:(NSDictionary *)dic
+{
+    self.date.text = [dic objectForKey:@"time"];
+    self.newsTitle.text = [dic objectForKey:@"title"];
+    self.content.text = [dic objectForKey:@"content"];
+}
 
 
 /*
