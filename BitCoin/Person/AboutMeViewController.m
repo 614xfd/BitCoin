@@ -29,19 +29,23 @@
 //    self.scroll.contentSize = CGSizeMake(self.view.frame.size.width, 800*kScaleH);
     
     
-//    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
-//    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
-//    paraStyle.alignment = NSTextAlignmentLeft;
-//    paraStyle.lineSpacing = UILABEL_LINE_SPACE; //设置行间距
-//    paraStyle.hyphenationFactor = 1.0;
-//    paraStyle.firstLineHeadIndent = 0.0;
-//    paraStyle.paragraphSpacingBefore = 0.0;
-//    paraStyle.headIndent = 0;
-//    paraStyle.tailIndent = 0;
-//    //设置字间距 NSKernAttributeName:@1.5f
-//    NSDictionary *dic = @{NSFontAttributeName:self.textLabel.font, NSParagraphStyleAttributeName:paraStyle, NSKernAttributeName:@1.f};
-//    NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:self.textLabel.text attributes:dic];
-//    self.textLabel.attributedText = attributeStr;
+    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
+    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    paraStyle.alignment = NSTextAlignmentLeft;
+    paraStyle.lineSpacing = UILABEL_LINE_SPACE; //设置行间距
+    paraStyle.hyphenationFactor = 1.0;
+    paraStyle.firstLineHeadIndent = 0.0;
+    paraStyle.paragraphSpacingBefore = 0.0;
+    paraStyle.headIndent = 0;
+    paraStyle.tailIndent = 0;
+    //设置字间距 NSKernAttributeName:@1.5f
+    NSDictionary *dic = @{NSFontAttributeName:self.textLabel.font, NSParagraphStyleAttributeName:paraStyle, NSKernAttributeName:@1.f};
+    NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:self.textLabel.text attributes:dic];
+    self.textLabel.attributedText = attributeStr;
+    
+//    CGSize size = [self.textLabel.text boundingRectWithSize:CGSizeMake(self.textLabel.frame.size.width, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
+    
+
 }
 - (IBAction)goBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

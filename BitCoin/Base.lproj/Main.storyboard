@@ -14031,6 +14031,9 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="textLabel" destination="0gk-gx-BAd" id="I0d-n0-hUn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CW3-oa-VHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
