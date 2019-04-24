@@ -84,11 +84,11 @@
     [view addSubview:logo];
     
     UIImageView *code = [[UIImageView alloc] initWithFrame:CGRectMake(375-50-15, 15, 90, 90)];
-    code.image = [UIImage imageNamed:@""];
+    code.image = [UIImage imageNamed:@"WechatIMG2210.png"];
     [view addSubview:code];
     
     UIImageView *share = [[UIImageView alloc] initWithFrame:CGRectMake(15, 90+15+15, 20, 20)];
-    share.image = [UIImage imageNamed:@""];
+    share.image = [UIImage imageNamed:@"分享 (3).png"];
     [view addSubview:share];
     
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(4, 90+15+15, 200, 20)];
