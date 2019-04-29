@@ -143,8 +143,8 @@
         uuid = @"4E9FA0B1-EC0B-4CBD-83EF-AB54E2813FA8";
     }
     //    NSDictionary *dic = @{@"phone":self.phoneNum.text, @"pwd":string, @"mac":uuid};
-//    NSDictionary *dic = @{@"phone":self.phoneNum.text, @"loginPwd":string, @"smsCode":self.codeTF.text};
-    NSDictionary *dic = @{@"phone":self.phoneNum.text, @"loginPwd":string};
+    NSDictionary *dic = @{@"phone":self.phoneNum.text, @"loginPwd":string, @"smsCode":self.codeTF.text};
+//    NSDictionary *dic = @{@"phone":self.phoneNum.text, @"loginPwd":string};
     [[NetworkTool sharedTool] requestWithURLString:@"login" parameters:dic method:@"POST" completed:^(id JSON, NSString *stringData) {
         NSLog(@"%@      ------------- %@", stringData, JSON );
         //        NSString *isError = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
@@ -249,11 +249,11 @@
 - (IBAction)loginBtnClick:(id)sender {
     if (self.phoneNum.text.length>0&&self.passwordNum.text.length>0) {
         //  请求
-//        if (self.codeTF.text.length>0) {
+        if (self.codeTF.text.length>0) {
             [self request];
-//        } else{
-//            [self showToastWithMessage:@"请输入验证码"];
-//        }
+        } else{
+            [self showToastWithMessage:@"请输入验证码"];
+        }
         //        [self.navigationController popViewControllerAnimated:YES];
     }
 }
