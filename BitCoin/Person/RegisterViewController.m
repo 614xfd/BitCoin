@@ -15,6 +15,7 @@
     int _secondsCountDown; //倒计时总时长
     NSTimer *_countDownTimer;
     NSString *_codeMSG;
+    BOOL _isCheckSuccess;
 }
 
 @end
@@ -163,6 +164,7 @@
         if ([code isEqualToString:@"1"]) {
             [weakSelf Countdown];
         } else {
+            [weakSelf initSendBtn];
             [weakSelf performSelectorOnMainThread:@selector(showToastWithMessage:) withObject:[JSON objectForKey:@"msg"] waitUntilDone:YES];
         }
     } failed:^(NSError *error) {
@@ -180,6 +182,7 @@
         NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
         if ([code isEqualToString:@"1"]) {
             _codeMSG = @"";
+            _isCheckSuccess = YES;
             //            [weakSelf verifyPass];
             //            [weakSelf performSelectorOnMainThread:@selector(verify:) withObject:@"1" waitUntilDone:YES];
         } else {
@@ -209,10 +212,11 @@
         return;
     }
     
-    if (![_codeMSG isEqualToString:@"验证码x错误，请重新输入。"]) {
+    if (_isCheckSuccess) {
         [self request];
+    }else{
+        [self showToastWithMessage:@"请输入正确的验证码"];
     }
-    
 }
 
 - (void) verifyPass
@@ -232,6 +236,7 @@
         if (self.isFindID){
             
             [self sendCode];
+            [self Countdown];
         }else{
             [self requestCheckPhoneIsRegister];
         }
@@ -244,6 +249,7 @@
 
 - (void) Countdown
 {
+    [self.sendBtn setEnabled:NO];
     _secondsCountDown = 120;
     _countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeFireMethod) userInfo:nil repeats:YES]; //启动倒计时后会每秒钟调用一次方法 timeFireMethod
     [self.sendBtn setTitle:@"120秒重新发送" forState:UIControlStateNormal];
@@ -252,12 +258,18 @@
 -(void)timeFireMethod{
     _secondsCountDown--;
     if(_secondsCountDown==0){
-        [_countDownTimer invalidate];
-        _countDownTimer = nil;
-        [self.sendBtn setTitle:[NSString stringWithFormat:@"发送验证码"] forState:UIControlStateNormal];
+        
+//        [self.sendBtn setTitle:[NSString stringWithFormat:@"发送验证码"] forState:UIControlStateNormal];
+        [self initSendBtn];
         return;
     }
     [self changeTipLabel];
+}
+- (void)initSendBtn{
+    [_countDownTimer invalidate];
+    _countDownTimer = nil;
+    [self.sendBtn setEnabled:YES];
+    [self.sendBtn setTitle:[NSString stringWithFormat:@"发送验证码"] forState:UIControlStateNormal];
 }
 
 - (void) changeTipLabel
