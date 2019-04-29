@@ -340,7 +340,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Store/AddAddressViewController.m"
-                  timestampString = "577807974.808172"
+                  timestampString = "578236568.715224"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -355,7 +355,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Store/AddAddressViewController.m"
-                  timestampString = "577807974.810612"
+                  timestampString = "578236568.7185659"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -370,7 +370,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Store/AddAddressViewController.m"
-                  timestampString = "577807974.813202"
+                  timestampString = "578236568.7216181"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -712,8 +712,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
             endingLineNumber = "136"
-            landmarkName = "MarketViewController"
-            landmarkType = "3">
+            landmarkName = "-requestISOpen"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1203,7 +1203,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Mining/MacListViewController.m"
-                  timestampString = "577807974.881618"
+                  timestampString = "578236568.8329329"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
@@ -1218,7 +1218,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Mining/MacListViewController.m"
-                  timestampString = "577807974.883589"
+                  timestampString = "578236568.836141"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -1233,7 +1233,7 @@
                   moduleName = "BitCoin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lbh/Desktop/abc/BitCoin/BitCoin/Mining/MacListViewController.m"
-                  timestampString = "577807974.885489"
+                  timestampString = "578236568.840099"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
@@ -1719,7 +1719,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
             endingLineNumber = "124"
-            landmarkName = "-requestISOpen"
+            landmarkName = "-returnPayPassword:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
