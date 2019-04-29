@@ -102,7 +102,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row != 7&&!_isLogin) {
+    if (indexPath.row != 8&&!_isLogin) {
         [self loginBtnClick:nil];
     } else {
         switch (indexPath.row) {
