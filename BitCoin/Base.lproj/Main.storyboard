@@ -1476,16 +1476,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买城市节点" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZr-ah-yzP">
-                                        <rect key="frame" x="20" y="115" width="104" height="28"/>
+                                        <rect key="frame" x="20" y="106" width="285" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="h5S-dC-czM"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0V-mD-MdP">
-                                        <rect key="frame" x="0.0" y="155" width="162.5" height="45"/>
+                                        <rect key="frame" x="0.0" y="146" width="162.5" height="54"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="取消">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1495,16 +1495,16 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买城市节点" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eE-cz-aG6">
-                                        <rect key="frame" x="20" y="70" width="104" height="28"/>
+                                        <rect key="frame" x="20" y="63" width="92" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="Yim-hF-cWF"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yej-M2-Hcc">
-                                        <rect key="frame" x="162.5" y="155" width="162.5" height="45"/>
+                                        <rect key="frame" x="162.5" y="146" width="162.5" height="54"/>
                                         <color key="backgroundColor" red="0.18974468110000001" green="0.33610558509999999" blue="0.81128692629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="充值">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1520,15 +1520,16 @@
                                     <constraint firstItem="Z0V-mD-MdP" firstAttribute="top" secondItem="PZr-ah-yzP" secondAttribute="bottom" constant="12" id="9I1-ZJ-zTT"/>
                                     <constraint firstItem="VUB-GU-fsa" firstAttribute="leading" secondItem="fHh-9a-r3w" secondAttribute="leading" constant="20" id="E5B-My-XZB"/>
                                     <constraint firstAttribute="bottom" secondItem="Z0V-mD-MdP" secondAttribute="bottom" id="G7Q-Vd-knZ"/>
-                                    <constraint firstItem="PZr-ah-yzP" firstAttribute="top" secondItem="5eE-cz-aG6" secondAttribute="bottom" constant="17" id="GwR-eu-HWV"/>
+                                    <constraint firstItem="PZr-ah-yzP" firstAttribute="top" secondItem="5eE-cz-aG6" secondAttribute="bottom" constant="15" id="GwR-eu-HWV"/>
                                     <constraint firstItem="PZr-ah-yzP" firstAttribute="leading" secondItem="fHh-9a-r3w" secondAttribute="leading" constant="20" id="TPO-cv-ruh"/>
                                     <constraint firstAttribute="bottom" secondItem="yej-M2-Hcc" secondAttribute="bottom" id="U2n-PS-IpT"/>
-                                    <constraint firstItem="5eE-cz-aG6" firstAttribute="top" secondItem="VUB-GU-fsa" secondAttribute="bottom" constant="22" id="VGG-TJ-gvO"/>
+                                    <constraint firstItem="5eE-cz-aG6" firstAttribute="top" secondItem="VUB-GU-fsa" secondAttribute="bottom" constant="15" id="VGG-TJ-gvO"/>
                                     <constraint firstItem="VUB-GU-fsa" firstAttribute="top" secondItem="fHh-9a-r3w" secondAttribute="top" constant="20" id="aZ2-Dq-xyq"/>
                                     <constraint firstItem="yej-M2-Hcc" firstAttribute="top" secondItem="PZr-ah-yzP" secondAttribute="bottom" constant="12" id="ar8-D2-rBT"/>
                                     <constraint firstItem="yej-M2-Hcc" firstAttribute="leading" secondItem="Z0V-mD-MdP" secondAttribute="trailing" id="dPU-gD-j9c"/>
                                     <constraint firstItem="yej-M2-Hcc" firstAttribute="width" secondItem="Z0V-mD-MdP" secondAttribute="width" id="egk-ss-8V9"/>
                                     <constraint firstItem="5eE-cz-aG6" firstAttribute="leading" secondItem="fHh-9a-r3w" secondAttribute="leading" constant="20" id="jXv-KH-HRh"/>
+                                    <constraint firstAttribute="trailing" secondItem="PZr-ah-yzP" secondAttribute="trailing" constant="20" id="mUv-Ff-sRe"/>
                                     <constraint firstAttribute="height" constant="200" id="uVq-tX-7aa"/>
                                     <constraint firstItem="Z0V-mD-MdP" firstAttribute="leading" secondItem="fHh-9a-r3w" secondAttribute="leading" id="ych-pw-bb2"/>
                                 </constraints>
