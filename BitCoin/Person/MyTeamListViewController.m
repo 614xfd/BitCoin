@@ -14,7 +14,7 @@
     NSMutableArray *_firstArray;
     NSMutableDictionary *_secDic;
     NSMutableArray *_isOpenArr;
-    NSDictionary *_dicc;
+//    NSDictionary *_dicc;
 }
 
 @end
@@ -28,7 +28,7 @@
     _firstArray = [NSMutableArray array];
     _secDic = [NSMutableDictionary dictionary];
     _isOpenArr = [NSMutableArray array];
-    _dicc = @{@"79r9yg3":@[@"123123"], @"9jmhdgv":@[@"32451235",@"asdghf",@"3456",@"34",@"123412351",@"6573",@"3151235",@"1345143"], @"9jnchpp":@[@"970987089",@"90867686",@"bjaofhoa",@"i786998",@"0986776",@"asdfgasg"]};
+//    _dicc = @{@"79r9yg3":@[@"123123"], @"9jmhdgv":@[@"32451235",@"asdghf",@"3456",@"34",@"123412351",@"6573",@"3151235",@"1345143"], @"9jnchpp":@[@"970987089",@"90867686",@"bjaofhoa",@"i786998",@"0986776",@"asdfgasg"]};
     [self request];
 }
 
@@ -57,9 +57,9 @@
                             NSMutableArray *a = [NSMutableArray arrayWithArray:arr];
                             [a addObject:[array objectAtIndex:i]];
                             arr = [NSArray arrayWithArray:a];
-                            [_secDic setObject:[[array objectAtIndex:i] objectForKey:@"inviteYards"] forKey:arr];
+                            [_secDic setObject:arr forKey:[[array objectAtIndex:i] objectForKey:@"inviteYards"]];
                         } else {
-                            [_secDic setObject:[[array objectAtIndex:i] objectForKey:@"inviteYards"] forKey:[array objectAtIndex:i]];
+                            [_secDic setObject:@[[array objectAtIndex:i]] forKey:[[array objectAtIndex:i] objectForKey:@"inviteYards"]];
                         }
                     }
                 }
@@ -75,10 +75,9 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myteamlist" forIndexPath:indexPath];
-    
+    NSArray *array = [_secDic objectForKey:[[_firstArray objectAtIndex:indexPath.section] objectForKey:@"inviteCode"]];
     UILabel *label = (UILabel *) [cell viewWithTag:1];
-    label.text = [[_dicc objectForKey:[[_firstArray objectAtIndex:indexPath.section] objectForKey:@"inviteCode"]] objectAtIndex:indexPath.row];
-    
+    label.text = [[array objectAtIndex:indexPath.row] objectForKey:@"phone"];
     return cell;
 }
 
@@ -87,7 +86,7 @@
     if ([[_isOpenArr objectAtIndex:section]isEqualToString:@"0"]) {
         return 0;
     }
-    return [[_dicc objectForKey:[[_firstArray objectAtIndex:section] objectForKey:@"inviteCode"]] count];
+    return [[_secDic objectForKey:[[_firstArray objectAtIndex:section] objectForKey:@"inviteCode"]] count];
 }
 
 
