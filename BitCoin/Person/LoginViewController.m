@@ -166,6 +166,25 @@
         //        [weakSelf requestError];
     }];
 }
+
+- (void) sendCode
+{
+    __weak __typeof(self) weakSelf = self;
+    NSDictionary *dic = @{@"phone": self.phoneNum.text, @"timestamp":[NSString stringWithFormat:@"%ld",(long)([[NSDate date] timeIntervalSince1970])], @"auth":@"minant", @"q":@"q"};
+    [[NetworkTool sharedTool] requestWithURLString:@"sms/sendSmsCode" parameters:dic method:@"POST" completed:^(id JSON, NSString *stringData) {
+        NSLog(@"%@      ------------- %@",stringData, JSON );
+        //        NSString *isError = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
+        NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
+        if ([code isEqualToString:@"1"]) {
+            
+        } else {
+            [weakSelf performSelectorOnMainThread:@selector(showToastWithMessage:) withObject:[JSON objectForKey:@"msg"] waitUntilDone:YES];
+        }
+    } failed:^(NSError *error) {
+        [weakSelf requestError];
+    }];
+}
+
 - (void) showAlert
 {
     [self.phoneNum resignFirstResponder];
@@ -241,6 +260,14 @@
 - (IBAction)registerBtnClick:(id)sender {
     RegisterViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RegisterVC"];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)sendCodeBtnClick:(id)sender {
+    if (self.phoneNum.text.length>0) {
+
+        [self sendCode];
+    } else
+        [self showToastWithMessage:@"请输入手机号"];
 }
 
 - (IBAction)goBack:(id)sender {
