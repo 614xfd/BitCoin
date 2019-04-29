@@ -123,17 +123,22 @@
 
 - (IBAction)sendBtnClick:(id)sender {
     
-    
-    
+    [self inputPayPasswordWithPayTip:@"支付" andPrice:[NSString stringWithFormat:@"%@ GTSE", self.numberTF.text]];
     self.payNumLabel.text = [NSString stringWithFormat:@"%@", self.numberTF.text];
     
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.4];
-    self.bgBtn.alpha = 0.25;
-    self.payView.alpha = 1;
-    [UIView commitAnimations];
-    UITextField *tv = (UITextField *)[self.view viewWithTag:20];
-    [tv becomeFirstResponder];
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:0.4];
+//    self.bgBtn.alpha = 0.25;
+//    self.payView.alpha = 1;
+//    [UIView commitAnimations];
+//    UITextField *tv = (UITextField *)[self.view viewWithTag:20];
+//    [tv becomeFirstResponder];
+}
+
+- (void) returnPayPassword:(NSString *)string
+{
+//    _payString = string;
+    [self requestWithPW:string];
 }
 
 - (IBAction)bgBtnClick:(id)sender {

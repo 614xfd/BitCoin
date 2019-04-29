@@ -31,7 +31,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 375, 40)];
     label.center = imageView.center;
     label.textColor = [UIColor whiteColor];
-    label.text = @"最新资讯";
+    label.text = @"智谷资讯";
     label.textAlignment = NSTextAlignmentCenter;
     label.font = [UIFont systemFontOfSize:32 weight:UIFontWeightBold];
     [self addSubview:label];
@@ -39,11 +39,11 @@
     UILabel *tiem = [[UILabel alloc] initWithFrame:CGRectMake(15, 300, 375-30, 16)];
     tiem.textColor = [UIColor grayColor];
     tiem.text = [dic objectForKey:@"time"];
-    tiem.textAlignment = NSTextAlignmentCenter;
+//    tiem.textAlignment = NSTextAlignmentCenter;
     tiem.font = [UIFont systemFontOfSize:14 weight:UIFontWeightRegular];
     [self addSubview:tiem];
 
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(15, 316+20, 375-30, 45)];
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(15, 316+20, 375-30, 50)];
     title.textColor = [UIColor blackColor];
     title.text = [dic objectForKey:@"title"];
     title.textAlignment = NSTextAlignmentCenter;
@@ -51,7 +51,7 @@
     title.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
     [self addSubview:title];
     
-    UILabel *content = [[UILabel alloc] initWithFrame:CGRectMake(15, 316+20+15+45, 375-30, 20)];
+    UILabel *content = [[UILabel alloc] initWithFrame:CGRectMake(15, 316+20+15+50, 375-30, 20)];
     content.textColor = [UIColor blackColor];
     content.text = [dic objectForKey:@"content"];
     content.numberOfLines = 0;

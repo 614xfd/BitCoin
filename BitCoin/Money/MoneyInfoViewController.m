@@ -182,7 +182,7 @@
 {
     __weak __typeof(self) weakSelf = self;
     
-    NSString *s = @"0";
+//    NSString *s = @"0";
     //    if (self.allBBCTF.text.length > 0) {
     //        s = self.allBBCTF.text;
     //    }
