@@ -18188,22 +18188,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IgA-WH-bpc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IgA-WH-bpc">
                                 <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="nSc-JB-DSc">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nSc-JB-DSc" id="ni5-b0-qyh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nSc-JB-DSc" id="ni5-b0-qyh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZq-BJ-GV3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHU-uQ-9TJ">
-                                                            <rect key="frame" x="100" y="0.0" width="255" height="44.5"/>
+                                                            <rect key="frame" x="100" y="0.0" width="255" height="44"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIo-D4-Fqc">
+                                                            <rect key="frame" x="0.0" y="43" width="375" height="1"/>
+                                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" id="rc2-tm-LBb"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -18211,11 +18221,14 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="JIo-D4-Fqc" secondAttribute="trailing" id="4MZ-Sy-xRT"/>
+                                                        <constraint firstItem="JIo-D4-Fqc" firstAttribute="leading" secondItem="RZq-BJ-GV3" secondAttribute="leading" id="6xm-wW-TIC"/>
                                                         <constraint firstAttribute="trailing" secondItem="OHU-uQ-9TJ" secondAttribute="trailing" constant="20" id="7QU-Dj-DIo"/>
                                                         <constraint firstItem="OHU-uQ-9TJ" firstAttribute="leading" secondItem="RZq-BJ-GV3" secondAttribute="leading" constant="100" id="BCH-yQ-9n8"/>
                                                         <constraint firstAttribute="height" constant="44" id="Tr3-4d-vgT"/>
                                                         <constraint firstItem="OHU-uQ-9TJ" firstAttribute="top" secondItem="RZq-BJ-GV3" secondAttribute="top" id="ghd-GM-Zge"/>
                                                         <constraint firstAttribute="bottom" secondItem="OHU-uQ-9TJ" secondAttribute="bottom" id="tKj-Lx-Tkf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="JIo-D4-Fqc" secondAttribute="bottom" id="xee-JI-yeu"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

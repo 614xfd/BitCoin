@@ -57,7 +57,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _nameArray = @[@"钱包",@"订单",@"MAC地址",@"账单",@"生息记录",@"我的团队",@"实名认证",@"推荐有奖",@"关于我们",@"设置"];
-    _iconArray = @[@"wallet.png",@"order.png",@"mac_new.jpg",@"account.png",@"sxjl.png",@"smrz.png",@"share.png",@"aboutus.png",@"setting.png"];
+    _iconArray = @[@"wallet.png",@"order.png",@"mac_new.jpg",@"account.png",@"sxjl.png", @"jdwk.png",@"smrz.png",@"share.png",@"aboutus.png",@"setting.png"];
 }
 
 - (void) requestUserInfo
@@ -140,28 +140,34 @@
                 }
                 break;
             }
-
             case 5: {
+                MyTeamListViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MyTeamListVC"];
+                [self.navigationController pushViewController:vc animated:YES];
+                
+                break;
+            }
+                
+            case 6: {
                 NewRealNameViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NewRealNameVC"];
                 vc.infoDic = _infoData;
                 [self.navigationController pushViewController:vc animated:YES];
                 break;
             }
 
-            case 6:{
+            case 7:{
                 NewShareViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NewShareVC"];
                 vc.codeStr = [_infoData objectForKey:@"inviteCode"];
                 [self.navigationController pushViewController:vc animated:YES];
                 break;
             }
 
-            case 7: {
+            case 8: {
                 AboutMeViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AboutMeVC"];
                 [self.navigationController pushViewController:vc animated:YES];
                 break;
             }
 
-            case 8: {
+            case 9: {
                 SafeViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SafeVC"];
                 [self.navigationController pushViewController:vc animated:YES];
                 break;
