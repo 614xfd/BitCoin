@@ -138,6 +138,12 @@
         if ([code isEqualToString:@"1"]) {
             //            [weakSelf performSelectorOnMainThread:@selector(verifyPass) withObject:nil waitUntilDone:YES];
             //            [self.navigationController popToRootViewControllerAnimated:YES];
+            if(weakSelf.isFindID){
+                [self showToastWithMessage:@"修改密码成功！"];
+            }else{
+                [self showToastWithMessage:@"创建账号成功！"];
+            }
+            
             [self.navigationController popViewControllerAnimated:YES];
         } else {
             //            [weakSelf performSelectorOnMainThread:@selector(showToastWithMessage:) withObject:[JSON objectForKey:@"msg"] waitUntilDone:YES];

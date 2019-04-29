@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
+#import <ShareSDKUI/SSUIShareSheetConfiguration.h>
 #import "YWUnlockView.h"
 
 @interface BaseViewController ()
@@ -195,7 +196,18 @@
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params SSDKSetupShareParamsByText:nil images:@[[self makeImageWithView:view withSize:view.frame.size]] url:nil title:nil type:SSDKContentTypeImage];
-    [ShareSDK share:SSDKPlatformTypeWechat parameters:params onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+    
+    NSArray *items = nil;
+        items = @[
+                  @(SSDKPlatformTypeQQ),
+                  @(SSDKPlatformTypeWechat),
+                  @(SSDKPlatformSubTypeWechatTimeline),
+                  @(SSDKPlatformSubTypeWechatSession),
+                  @(SSDKPlatformSubTypeQQFriend),
+                  @(SSDKPlatformSubTypeQZone)
+                  ];
+    SSUIShareSheetConfiguration *config = [[SSUIShareSheetConfiguration alloc] init];
+    [ShareSDK showShareActionSheet:nil customItems:items shareParams:params sheetConfiguration:config onStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
         switch (state) {
             case SSDKResponseStateUpload:
                 // 分享视频的时候上传回调，进度信息在 userData
@@ -203,6 +215,7 @@
             case SSDKResponseStateSuccess:
                 //成功
                 [self showToastWithMessage:@"分享成功！"];
+                break;
             case SSDKResponseStateFail:
             {
                 NSLog(@"--%@",error.description);
@@ -218,6 +231,32 @@
                 break;
         }
     }];
+    /*
+    [ShareSDK share:SSDKPlatformTypeQQ parameters:params onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+        switch (state) {
+            case SSDKResponseStateUpload:
+                // 分享视频的时候上传回调，进度信息在 userData
+                break;
+            case SSDKResponseStateSuccess:
+                //成功
+                [self showToastWithMessage:@"分享成功！"];
+                break;
+            case SSDKResponseStateFail:
+            {
+                NSLog(@"--%@",error.description);
+                //失败
+                [self showToastWithMessage:@"分享失败！"];
+                break;
+            }
+            case SSDKResponseStateCancel:
+                //取消
+                [self showToastWithMessage:@"已取消分享！"];
+                break;
+            default:
+                break;
+        }
+    }];
+     */
 }
 
 

@@ -29,6 +29,15 @@
 //    self.scroll.contentSize = CGSizeMake(self.view.frame.size.width, 800*kScaleH);
     
     
+    
+    
+//    CGSize size = [self.textLabel.text boundingRectWithSize:CGSizeMake(self.textLabel.frame.size.width, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
+    
+//    AboutMeViewController
+    [self setTextLabelText:self.textLabel.text];
+    [self requestInfo];
+}
+- (void)setTextLabelText:(NSString *)text{
     NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
     paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
     paraStyle.alignment = NSTextAlignmentLeft;
@@ -40,13 +49,24 @@
     paraStyle.tailIndent = 0;
     //设置字间距 NSKernAttributeName:@1.5f
     NSDictionary *dic = @{NSFontAttributeName:self.textLabel.font, NSParagraphStyleAttributeName:paraStyle, NSKernAttributeName:@1.f};
-    NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:self.textLabel.text attributes:dic];
+    NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:text attributes:dic];
     self.textLabel.attributedText = attributeStr;
-    
-//    CGSize size = [self.textLabel.text boundingRectWithSize:CGSizeMake(self.textLabel.frame.size.width, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
-    
-
 }
+
+- (void)requestInfo{
+    __weak __typeof(self) weakSelf = self;
+    [[NetworkTool sharedTool] requestWithURLString:@"/about/us/info" parameters:nil method:@"POST" completed:^(id JSON, NSString *stringData) {
+        NSLog(@"%@      ------------- %@", stringData, JSON );
+        NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
+        if ([code isEqualToString:@"1"]) {
+            [weakSelf setTextLabelText:[JSON objectForKey:@"data"]];
+        } else {
+        }
+    } failed:^(NSError *error) {
+        //        [weakSelf requestError];
+    }];
+}
+
 - (IBAction)goBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
