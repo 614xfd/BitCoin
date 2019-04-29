@@ -205,13 +205,13 @@
         if ([code isEqualToString:@"1"]) {
 
             NSDictionary *data = JSON[@"data"];
-            if ([data[@"userLevel"] isEqualToString: @"2"] && self.isSuperNode) {
+//            if ([data[@"userLevel"] isEqualToString: @"2"] && self.isSuperNode) {
+//                [self requestDetail];
+//            }else if ([data[@"userLevel"] isEqualToString: @"2"] && !self.isSuperNode) {
                 [self requestDetail];
-            }else if ([data[@"userLevel"] isEqualToString: @"2"] && !self.isSuperNode) {
-                [self requestDetail];
-            }else{
-                self.buyBScrollView.alpha = 1;
-            }
+//            }else{
+//                self.buyBScrollView.alpha = 1;
+//            }
         } else {
             [self showToastWithMessage:JSON[@"msg"]];
         }
