@@ -10244,6 +10244,11 @@
                                         <state key="normal" title="发送验证码">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="sendCodeBtnClick:" destination="T39-go-tcu" eventType="touchUpInside" id="iFY-Yg-p5K"/>
                                         </connections>
@@ -10327,9 +10332,11 @@
                         <outlet property="alertView" destination="2bq-M3-3V5" id="T36-7c-Aro"/>
                         <outlet property="bgLabel" destination="fga-7h-RuP" id="ptc-Uh-1Ys"/>
                         <outlet property="bgView" destination="5IO-bD-Dn9" id="jrZ-n7-aLx"/>
+                        <outlet property="codeTF" destination="erI-7x-0UU" id="4b3-5F-ori"/>
                         <outlet property="loginBtn" destination="UtJ-62-Qv2" id="XEC-QU-MIM"/>
                         <outlet property="passwordNum" destination="ern-u1-kbM" id="EbL-cC-Nah"/>
                         <outlet property="phoneNum" destination="WiX-zK-tvf" id="mXK-Fc-Aev"/>
+                        <outlet property="sendBtn" destination="97e-Eg-emi" id="CdC-Aa-jSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKF-Ck-W4W" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -18,6 +18,8 @@
     NSString *_uid;
     NSString *_authenticationStatus;
     NSString *_PaymentPasswordStatus;
+    int _secondsCountDown; //倒计时总时长
+    NSTimer *_countDownTimer;
 }
 
 @end
@@ -141,7 +143,7 @@
         uuid = @"4E9FA0B1-EC0B-4CBD-83EF-AB54E2813FA8";
     }
     //    NSDictionary *dic = @{@"phone":self.phoneNum.text, @"pwd":string, @"mac":uuid};
-    NSDictionary *dic = @{@"phone":self.phoneNum.text, @"loginPwd":string};
+    NSDictionary *dic = @{@"phone":self.phoneNum.text, @"loginPwd":string, @"smsCode":self.codeTF.text};
     [[NetworkTool sharedTool] requestWithURLString:@"login" parameters:dic method:@"POST" completed:^(id JSON, NSString *stringData) {
         NSLog(@"%@      ------------- %@", stringData, JSON );
         //        NSString *isError = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
@@ -246,7 +248,11 @@
 - (IBAction)loginBtnClick:(id)sender {
     if (self.phoneNum.text.length>0&&self.passwordNum.text.length>0) {
         //  请求
-        [self request];
+        if (self.codeTF.text.length>0) {
+            [self request];
+        } else{
+            [self showToastWithMessage:@"请输入验证码"];
+        }
         //        [self.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -264,10 +270,33 @@
 
 - (IBAction)sendCodeBtnClick:(id)sender {
     if (self.phoneNum.text.length>0) {
-
+        [self Countdown];
         [self sendCode];
     } else
         [self showToastWithMessage:@"请输入手机号"];
+}
+
+- (void) Countdown
+{
+    _secondsCountDown = 120;
+    _countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeFireMethod) userInfo:nil repeats:YES]; //启动倒计时后会每秒钟调用一次方法 timeFireMethod
+    [self.sendBtn setTitle:@"120秒重新发送" forState:UIControlStateNormal];
+}
+
+-(void)timeFireMethod{
+    _secondsCountDown--;
+    if(_secondsCountDown==0){
+        [_countDownTimer invalidate];
+        _countDownTimer = nil;
+        [self.sendBtn setTitle:[NSString stringWithFormat:@"发送验证码"] forState:UIControlStateNormal];
+        return;
+    }
+    [self changeTipLabel];
+}
+
+- (void) changeTipLabel
+{
+    [self.sendBtn setTitle:[NSString stringWithFormat:@"%d秒重新发送", _secondsCountDown] forState:UIControlStateNormal];
 }
 
 - (IBAction)goBack:(id)sender {
