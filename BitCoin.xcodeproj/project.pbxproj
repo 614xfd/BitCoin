@@ -268,6 +268,7 @@
 		3715DB9920B40D9C000FF744 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3715DB9820B40D9C000FF744 /* CalculatorViewController.m */; };
 		371882D5226E12530015C8FF /* CoinINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371882D4226E12530015C8FF /* CoinINViewController.m */; };
 		371882D8226E97080015C8FF /* CoinOUTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371882D7226E97080015C8FF /* CoinOUTViewController.m */; };
+		371882DB227723BB0015C8FF /* MyTeamListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 371882DA227723BB0015C8FF /* MyTeamListViewController.m */; };
 		372353A42106D5B400B72344 /* 钱包.png in Resources */ = {isa = PBXBuildFile; fileRef = 372353A32106D5B300B72344 /* 钱包.png */; };
 		372353A62106FA9400B72344 /* 订单.png in Resources */ = {isa = PBXBuildFile; fileRef = 372353A52106FA9300B72344 /* 订单.png */; };
 		372353A9210718C100B72344 /* 运动挖矿首页_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 372353A7210718C000B72344 /* 运动挖矿首页_06.png */; };
@@ -1026,6 +1027,8 @@
 		371882D4226E12530015C8FF /* CoinINViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinINViewController.m; sourceTree = "<group>"; };
 		371882D6226E97080015C8FF /* CoinOUTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinOUTViewController.h; sourceTree = "<group>"; };
 		371882D7226E97080015C8FF /* CoinOUTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinOUTViewController.m; sourceTree = "<group>"; };
+		371882D9227723BB0015C8FF /* MyTeamListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTeamListViewController.h; sourceTree = "<group>"; };
+		371882DA227723BB0015C8FF /* MyTeamListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTeamListViewController.m; sourceTree = "<group>"; };
 		372353A32106D5B300B72344 /* 钱包.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "钱包.png"; sourceTree = "<group>"; };
 		372353A52106FA9300B72344 /* 订单.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "订单.png"; sourceTree = "<group>"; };
 		372353A7210718C000B72344 /* 运动挖矿首页_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "运动挖矿首页_06.png"; sourceTree = "<group>"; };
@@ -2287,6 +2290,8 @@
 				4A55A396226F471600108CF9 /* NewPersonHomeViewController.m */,
 				4A9D98EF226F4D0900D343C9 /* MacAddressListViewController.h */,
 				4A9D98F0226F4D0900D343C9 /* MacAddressListViewController.m */,
+				371882D9227723BB0015C8FF /* MyTeamListViewController.h */,
+				371882DA227723BB0015C8FF /* MyTeamListViewController.m */,
 			);
 			path = Person;
 			sourceTree = "<group>";
@@ -3991,6 +3996,7 @@
 				37E68D6A201B467800A027EE /* MJRefreshFooter.m in Sources */,
 				3706E1DB1F8B537800C79EDA /* QRCodeViewController.m in Sources */,
 				37E68D6B201B467800A027EE /* MJRefreshHeader.m in Sources */,
+				371882DB227723BB0015C8FF /* MyTeamListViewController.m in Sources */,
 				37E68D45201B467800A027EE /* Y_KLineMainView.m in Sources */,
 				372353DF21182F5B00B72344 /* ServiceExplainViewController.m in Sources */,
 				37112E771F7CF1FF001E94E7 /* UIImageView+WebCache.m in Sources */,

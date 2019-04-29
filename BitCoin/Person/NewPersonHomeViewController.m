@@ -18,6 +18,7 @@
 #import "SafeViewController.h"
 #import "WalletDetailViewController.h"
 #import "YWUnlockView.h"
+#import "MyTeamListViewController.h"
 
 @interface NewPersonHomeViewController () {
     NSArray *_nameArray;
@@ -55,7 +56,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _nameArray = @[@"钱包",@"订单",@"MAC地址",@"账单",@"生息记录",@"实名认证",@"推荐有奖",@"关于我们",@"设置"];
+    _nameArray = @[@"钱包",@"订单",@"MAC地址",@"账单",@"生息记录",@"我的团队",@"实名认证",@"推荐有奖",@"关于我们",@"设置"];
     _iconArray = @[@"wallet.png",@"order.png",@"mac_new.jpg",@"account.png",@"sxjl.png",@"smrz.png",@"share.png",@"aboutus.png",@"setting.png"];
 }
 
