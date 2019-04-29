@@ -194,7 +194,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"token"];
     NSString *phoneNum = [defaults objectForKey:@"phoneNum"];
-    NSString *payPass = [self md5:[NSString stringWithFormat:@"%@",payPwd]];
+    NSString *payPass = payPwd;
     NSDictionary *d = @{@"token":token,@"payPass":payPass,@"sumMoney":self.numPrice};
     
     [[NetworkTool sharedTool] requestWithURLString:@"/v1/node/add" parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
@@ -232,11 +232,12 @@
         NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
         if ([code isEqualToString:@"1"]) {
             self.detailDict = JSON[@"data"];
-            [self.resultTableView reloadData];
+            
             self.earningLab.text = [NSString stringWithFormat:@"+%@",self.detailDict[@"money"]];
         } else {
             
         }
+        [self.resultTableView reloadData];
     } failed:^(NSError *error) {
     }];
 }

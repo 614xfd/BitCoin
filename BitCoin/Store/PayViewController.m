@@ -75,7 +75,7 @@ static AFHTTPSessionManager *manager;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"token"];
     NSString *phone = [defaults objectForKey:@"phoneNum"];
-    pwd = [self md5:[NSString stringWithFormat:@"%@",pwd]];
+    pwd = pwd;
     //    NSDictionary *dic = @{@"phone":self.phoneNum.text, @"pwd":string, @"mac":uuid};
     NSDictionary *dic = @{@"token":token, @"productOrderId":self.idString,@"payPwd":pwd};
     [[NetworkTool sharedTool] requestWithURLString:@"/v1/mall/product/order/pay" parameters:dic method:@"POST" completed:^(id JSON, NSString *stringData) {
