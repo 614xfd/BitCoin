@@ -91,13 +91,13 @@
     }
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"token"];
-    NSString *phoneNum = [defaults objectForKey:@"phoneNum"];
+//    NSString *phoneNum = [defaults objectForKey:@"phoneNum"];
     
     //    [self md5:[NSString stringWithFormat:@"%@%@",[self.numArray componentsJoinedByString:@""],phoneNum]]
     if (token.length) {
         __weak __typeof(self) weakSelf = self;
-        NSString *password = [self md5:[NSString stringWithFormat:@"%@%@",string,phoneNum]];
-        NSDictionary *dic = @{@"token": token, @"money":self.numberTF.text, @"payPass":password, @"toPhone":self.phoneString};
+//        NSString *password = [self md5:[NSString stringWithFormat:@"%@%@",string,phoneNum]];
+        NSDictionary *dic = @{@"token": token, @"money":self.numberTF.text, @"payPass":string, @"toPhone":self.phoneString};
         [[NetworkTool sharedTool] requestWithURLString:@"/v1/account/transfer" parameters:dic method:@"POST" completed:^(id JSON, NSString *stringData) {
             NSLog(@"%@      ------------- %@", stringData, JSON );
             //        NSString *isError = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];

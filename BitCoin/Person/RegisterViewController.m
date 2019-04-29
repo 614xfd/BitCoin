@@ -155,7 +155,7 @@
 - (void) sendCode
 {
     __weak __typeof(self) weakSelf = self;
-    NSDictionary *dic = @{@"phone": self.phoneNumberTF.text, @"timestamp":@"1555616204", @"auth":@"minant", @"q":@"q"};
+    NSDictionary *dic = @{@"phone": self.phoneNumberTF.text, @"timestamp":[NSString stringWithFormat:@"%ld",(long)([[NSDate date] timeIntervalSince1970])], @"auth":@"minant", @"q":@"q"};
     [[NetworkTool sharedTool] requestWithURLString:@"sms/sendSmsCode" parameters:dic method:@"POST" completed:^(id JSON, NSString *stringData) {
         NSLog(@"%@      ------------- %@",stringData, JSON );
         //        NSString *isError = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
