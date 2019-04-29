@@ -29,7 +29,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self createUI];
     [self requestSMS:NO];
-    [self Countdown];
+    
     [self.timeBtn setEnabled:NO];
     self.tf.delegate = self;
 }
@@ -72,6 +72,8 @@
         if ([code isEqualToString:@"1"]) {
             if (weakIsValid) {
                 [weakSelf performSelectorOnMainThread:@selector(pushVC) withObject:nil waitUntilDone:YES];
+            }else{
+                [self Countdown];
             }
             
         } else {

@@ -119,7 +119,7 @@
             [self showToastWithMessage:@"两次输入的密码不一致"];
             return;
         }
-        dic = @{@"phone": self.phoneNumberTF.text,@"loginPassword":[self md5:[NSString stringWithFormat:@"%@",self.passwordTF.text]]};
+        dic = @{@"phone": self.phoneNumberTF.text,@"loginPassword":[self md5:[NSString stringWithFormat:@"%@%@",self.passwordTF.text,self.phoneNumberTF.text]]};
         url = @"/forgetLoginPwd";
     }else{
         dic = @{@"phone": self.phoneNumberTF.text,@"loginPassword":[self md5:[NSString stringWithFormat:@"%@%@",self.passwordTF.text,self.phoneNumberTF.text]],@"comeFrom":@"app",@"inviteYards":self.inviteTf.text};//,@"smsCode":self.codeTF.text
@@ -161,7 +161,7 @@
         //        NSString *isError = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
         NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
         if ([code isEqualToString:@"1"]) {
-            
+            [weakSelf Countdown];
         } else {
             [weakSelf performSelectorOnMainThread:@selector(showToastWithMessage:) withObject:[JSON objectForKey:@"msg"] waitUntilDone:YES];
         }
@@ -208,7 +208,11 @@
         [self showToastWithMessage:@"请完善信息"];
         return;
     }
-    [self request];
+    
+    if (![_codeMSG isEqualToString:@"验证码x错误，请重新输入。"]) {
+        [self request];
+    }
+    
 }
 
 - (void) verifyPass
@@ -226,7 +230,7 @@
 - (IBAction)reSendBtnClick:(id)sender {
     if (self.phoneNumberTF.text.length>0) {
         if (self.isFindID){
-            [self Countdown];
+            
             [self sendCode];
         }else{
             [self requestCheckPhoneIsRegister];
