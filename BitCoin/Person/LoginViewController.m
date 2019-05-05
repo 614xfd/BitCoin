@@ -317,6 +317,7 @@
 {
     [self.phoneNum resignFirstResponder];
     [self.passwordNum resignFirstResponder];
+    [self.codeTF resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
