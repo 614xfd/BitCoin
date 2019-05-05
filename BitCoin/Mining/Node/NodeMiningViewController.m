@@ -33,7 +33,7 @@
     
     
     self.earningLab.text = @"+00.00";
-    self.earningRatioLab.text = @"30%";
+    self.earningRatioLab.text = @"0.00%";
     self.buyBScrollView.alpha = 1;
     self.resultTableView.tableFooterView = [[UIView alloc] init];
 
@@ -47,6 +47,8 @@
     
 //    [self requestGetNote];
 }
+
+
 - (void) payPassWord : (NSNotification *)obj
 {
     UITextField *tf = obj.object;
@@ -163,11 +165,13 @@
         if ([code isEqualToString:@"1"]) {
             NSDictionary *data = JSON[@"data"];
             NSArray *nodeTypes = data[@"nodeTypes"];
+            
+            float rate = 0;
             for (NSDictionary *dict in nodeTypes) {
                 if ([dict[@"nameType"] isEqualToString:@"2"] && weakSelf.isSuperNode){
                     NSLog(@"%@",dict[@"rate"]);
                     
-                    float rate = [dict[@"rate"] floatValue]*100.0;
+                    rate = [dict[@"rate"] floatValue]*100.0;
                     [weakSelf setNodeEarnings:[NSString stringWithFormat:@"%.0lf",rate]];
                     
                     weakSelf.numPrice = dict[@"money"] ;
@@ -175,7 +179,7 @@
 //                    NSLog(@"%.0f%@",rate,@"%");
                 }else if ([dict[@"nameType"] isEqualToString:@"3"] && !weakSelf.isSuperNode){
                     NSLog(@"%@",dict[@"rate"]);
-                    float rate = [dict[@"rate"] floatValue]*100.0;
+                    rate = [dict[@"rate"] floatValue]*100.0;
 //                    NSLog(@"%.0f%@",rate,@"%");
                     [weakSelf setNodeEarnings:[NSString stringWithFormat:@"%.0lf",rate]];
                     
@@ -189,12 +193,15 @@
                     [self createTabView];
                     [self requestDetail];
                     self.buyBScrollView.alpha = 0;
+                    
+                    self.earningRatioLab.text = [NSString stringWithFormat:@"%.0f%@",rate,@"%"];
                 }
             }else{
                 if ([data[@"userLevel"] isEqualToString: @"3"]){
                     [self createTabView];
                     [self requestDetail];
                     self.buyBScrollView.alpha = 0;
+                    self.earningRatioLab.text = [NSString stringWithFormat:@"%.0f%@",rate,@"%"];
                 }
             }
             
@@ -225,7 +232,10 @@
 //            if ([data[@"userLevel"] isEqualToString: @"2"] && self.isSuperNode) {
 //                [self requestDetail];
 //            }else if ([data[@"userLevel"] isEqualToString: @"2"] && !self.isSuperNode) {
-                [self requestDetail];
+            
+                [weakSelf requestGet];
+                [weakSelf requestDetail];
+                [weakSelf hideTipView];
 //            }else{
 //                self.buyBScrollView.alpha = 1;
 //            }
@@ -251,6 +261,7 @@
             self.detailDict = JSON[@"data"];
             
             self.earningLab.text = [NSString stringWithFormat:@"+%@",self.detailDict[@"money"]];
+            
         } else {
             
         }
@@ -259,7 +270,6 @@
     }];
 }
 - (void)setNodeEarnings:(NSString *)earnings{
-    
     
     self.tipLab3.text = [NSString stringWithFormat:@"%@享受%@%%团队购买服务器销售提成" ,self.isSuperNode?@"超级节点":@"城市节点", earnings];
 }
@@ -276,6 +286,9 @@
 
 
 - (IBAction)tipCancleBtnClick:(id)sender {
+    [self hideTipView];
+}
+- (void)hideTipView{
     self.dustView.alpha = 0;
     self.buyTipView.alpha = 0;
     self.bgBtn.hidden = YES;
