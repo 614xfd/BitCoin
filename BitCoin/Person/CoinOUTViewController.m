@@ -46,11 +46,15 @@
 
 - (void) requestOUT
 {
+    if (self.contentTF.text.length<1) {
+        [self showToastWithMessage:@"请填写备注"];
+        return;
+    }
     __weak __typeof(self) weakSelf = self;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"token"];
     if (token.length) {
-        NSDictionary *d = @{@"token":token, @"toAddress":self.addressTF, @"count":self.numTF.text};
+        NSDictionary *d = @{@"token":token, @"toAddress":self.addressTF, @"count":self.numTF.text, @"mark":self.contentTF.text};
         [[NetworkTool sharedTool] requestWithURLString:@"v1/user/withdraw/add" parameters:d method:@"POST" completed:^(id JSON, NSString *stringData) {
             NSLog(@"%@      ------------- %@", stringData, JSON );
             NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];

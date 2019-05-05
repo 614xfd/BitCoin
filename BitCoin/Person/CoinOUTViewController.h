@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *addressTF;
 @property (weak, nonatomic) IBOutlet UITextField *numTF;
 @property (weak, nonatomic) IBOutlet UILabel *coinNumLabel;
+@property (weak, nonatomic) IBOutlet UITextField *contentTF;
 
 @end
 

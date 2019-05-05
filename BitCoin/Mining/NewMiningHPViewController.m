@@ -110,7 +110,7 @@
     UILabel *nameLabel = (UILabel *)[cell.contentView viewWithTag:1];
     nameLabel.text = [NSString stringWithFormat:@"%@", [dic objectForKey:@"name"]];
     UILabel *dayReleaseLabel = (UILabel *)[cell.contentView viewWithTag:2];
-    dayReleaseLabel.text = [NSString stringWithFormat:@"%@", [dic objectForKey:@"dayRelease"]];
+    dayReleaseLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [[dic objectForKey:@"dayRelease"] doubleValue]];
     UILabel *statusLabel = (UILabel *)[cell.contentView viewWithTag:3];
     NSString *stri = [NSString stringWithFormat:@"%@", [dic objectForKey:@"status"]];
     if ([stri isEqualToString:@"1"]) {
