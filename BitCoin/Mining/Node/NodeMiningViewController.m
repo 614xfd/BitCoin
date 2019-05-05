@@ -44,6 +44,8 @@
     if (!self.isSuperNode) {
         self.titleLab.text = @"城市节点";
     }
+    
+//    [self requestGetNote];
 }
 - (void) payPassWord : (NSNotification *)obj
 {
@@ -160,24 +162,39 @@
         NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
         if ([code isEqualToString:@"1"]) {
             NSDictionary *data = JSON[@"data"];
+            NSArray *nodeTypes = data[@"nodeTypes"];
+            for (NSDictionary *dict in nodeTypes) {
+                if ([dict[@"nameType"] isEqualToString:@"2"] && weakSelf.isSuperNode){
+                    NSLog(@"%@",dict[@"rate"]);
+                    
+                    float rate = [dict[@"rate"] floatValue]*100.0;
+                    [weakSelf setNodeEarnings:[NSString stringWithFormat:@"%.0lf",rate]];
+                    
+                    weakSelf.numPrice = dict[@"money"] ;
+                    weakSelf.buyBScrollView.alpha = 1;
+//                    NSLog(@"%.0f%@",rate,@"%");
+                }else if ([dict[@"nameType"] isEqualToString:@"3"] && !weakSelf.isSuperNode){
+                    NSLog(@"%@",dict[@"rate"]);
+                    float rate = [dict[@"rate"] floatValue]*100.0;
+//                    NSLog(@"%.0f%@",rate,@"%");
+                    [weakSelf setNodeEarnings:[NSString stringWithFormat:@"%.0lf",rate]];
+                    
+                    weakSelf.numPrice = dict[@"money"] ;
+                    weakSelf.buyBScrollView.alpha = 1;
+                }
+            }
+            
             if (self.isSuperNode) {
                 if ([data[@"userLevel"] isEqualToString: @"2"]){
                     [self createTabView];
                     [self requestDetail];
                     self.buyBScrollView.alpha = 0;
-                }else{
-                    
-                    self.numPrice = data[@"2"] ;
-                    self.buyBScrollView.alpha = 1;
                 }
             }else{
                 if ([data[@"userLevel"] isEqualToString: @"3"]){
                     [self createTabView];
                     [self requestDetail];
                     self.buyBScrollView.alpha = 0;
-                }else{
-                    self.numPrice = data[@"3"];
-                    self.buyBScrollView.alpha = 1;
                 }
             }
             
@@ -241,6 +258,11 @@
     } failed:^(NSError *error) {
     }];
 }
+- (void)setNodeEarnings:(NSString *)earnings{
+    
+    
+    self.tipLab3.text = [NSString stringWithFormat:@"%@享受%@%%团队购买服务器销售提成" ,self.isSuperNode?@"超级节点":@"城市节点", earnings];
+}
 - (IBAction)goBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -250,8 +272,9 @@
     self.bgBtn.hidden = NO;
     self.tipLab1.text = self.isSuperNode?@"购买超级节点":@"购买城市节点";
     self.tipLab2.text = [NSString stringWithFormat:@"充值%@GTSE即可成为%@",self.numPrice,self.isSuperNode?@"超级节点":@"城市节点"];
-    self.tipLab3.text = [NSString stringWithFormat:@"%@享受%d%%团队购买服务器销售提成" ,self.isSuperNode?@"超级节点":@"城市节点", self.isSuperNode?30:25];
 }
+
+
 - (IBAction)tipCancleBtnClick:(id)sender {
     self.dustView.alpha = 0;
     self.buyTipView.alpha = 0;

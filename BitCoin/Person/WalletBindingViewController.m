@@ -60,6 +60,9 @@
 - (IBAction)goBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.textField resignFirstResponder];
+}
 
 /*
 #pragma mark - Navigation

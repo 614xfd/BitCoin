@@ -152,6 +152,7 @@
         LoginViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
         [self.navigationController pushViewController:vc animated:YES];
     }
+    [self.macTF resignFirstResponder];
 }
 - (IBAction)hiddenAddView:(id)sender {
     self.bgBtn.hidden = YES;
@@ -165,6 +166,11 @@
 - (IBAction)teamBtnClick:(id)sender {
     TeamViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"teamVC"];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.macTF resignFirstResponder];
 }
 
 

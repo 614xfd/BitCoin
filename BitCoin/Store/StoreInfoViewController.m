@@ -207,6 +207,7 @@
     _adsScrollView = [[ImagesScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width/800*626) withImagesArray:_adsArray isRound:NO withImageWidth:self.view.frame.size.width/800*626 withImageHeight:self.view.frame.size.width isSmall : NO time:5.0 tag:100];
     _adsScrollView.tag = 100;
     _adsScrollView.delegate = self;
+
     [self.scroll addSubview:_adsScrollView];
     
     _sIconImageString = [NSString stringWithFormat:@"%@%@", IMAGE_URL, [_adsArray objectAtIndex:0]];
@@ -309,6 +310,8 @@
     }
 }
 
+
+
 //键盘消失事件
 - (void) keyboardWillHide:(NSNotification *)notify {
     _isKeyBoardShow = NO;
@@ -336,6 +339,8 @@
         self.numTF.text  = @"1";
     }
 }
+
+
 
 #pragma mark  循环scroll广告点击事件跳转
 - (void) index:(unsigned long)index tag:(unsigned long)tag

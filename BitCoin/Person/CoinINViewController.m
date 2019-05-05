@@ -101,7 +101,10 @@
     pastboard.string = _address;
     [self showToastWithMessage:@"复制成功"];
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.numTF resignFirstResponder];
+    [self.addressTF resignFirstResponder];
+}
 /*
 #pragma mark - Navigation
 
