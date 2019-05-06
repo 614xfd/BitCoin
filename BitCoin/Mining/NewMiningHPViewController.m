@@ -48,7 +48,7 @@
 
 - (void) setAllLabelText:(NSString *)string
 {
-    self.AllLabel.text = [NSString stringWithFormat:@"%.2lf", [string doubleValue]];
+    self.AllLabel.text = [NSString stringWithFormat:@"%.3lf", [string doubleValue]];
 }
 
 - (void) reques
@@ -110,7 +110,7 @@
     UILabel *nameLabel = (UILabel *)[cell.contentView viewWithTag:1];
     nameLabel.text = [NSString stringWithFormat:@"%@", [dic objectForKey:@"name"]];
     UILabel *dayReleaseLabel = (UILabel *)[cell.contentView viewWithTag:2];
-    dayReleaseLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [[dic objectForKey:@"dayRelease"] doubleValue]];
+    dayReleaseLabel.text = [NSString stringWithFormat:@"%.3lf GTSE", [[dic objectForKey:@"dayRelease"] doubleValue]];
     UILabel *statusLabel = (UILabel *)[cell.contentView viewWithTag:3];
     NSString *stri = [NSString stringWithFormat:@"%@", [dic objectForKey:@"status"]];
     if ([stri isEqualToString:@"1"]) {
@@ -119,7 +119,7 @@
         statusLabel.text = @"异常";
     }
     UILabel *singleTotalLabel = (UILabel *)[cell.contentView viewWithTag:4];
-    singleTotalLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [[dic objectForKey:@"singleTotal"] doubleValue]];
+    singleTotalLabel.text = [NSString stringWithFormat:@"%.3lf GTSE", [[dic objectForKey:@"singleTotal"] doubleValue]];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     

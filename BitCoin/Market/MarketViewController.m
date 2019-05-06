@@ -62,6 +62,7 @@
     } else {
         _isLogin = NO;
     }
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewDidLoad {
@@ -180,20 +181,24 @@
     [[NetworkTool sharedTool] requestWithURLString:@"market/gtse" parameters:nil method:@"GET" completed:^(id JSON, NSString *stringData) {
         NSLog(@"%@      ------------- %@", stringData, JSON );
         [weakSelf performSelectorOnMainThread:@selector(requestMarker) withObject:nil waitUntilDone:YES];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"code"]];
         if ([code isEqualToString:@"1"]) {
             NSDictionary *dic = [[JSON objectForKey:@"data"] objectForKey:@"gtse_usdt"];
             _defaultDic = @{@"amount" : dic[@"volume"], @"coinName" : @"gtse", @"icon" : @"", @"percent" : dic[@"change"], @"price" : dic[@"last"]};
             [_coinArray addObject:_defaultDic];
+            [defaults setObject:dic[@"last"] forKey:@"GTSE_Price"];
+            
             _defaultNum = 6.8;
             if ([[[JSON objectForKey:@"data"] objectForKey:@"usdt_hbcny"] isKindOfClass:[NSDictionary class]]) {
                 dic = [[JSON objectForKey:@"data"] objectForKey:@"usdt_hbcny"];
                 _defaultNum = [dic[@"last"] floatValue];
             }
-            [weakSelf.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
         } else {
             [_coinArray addObject:_defaultDic];
+            [defaults setObject:@"4.0" forKey:@"GTSE_Price"];
         }
+        [weakSelf.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
 
     } failed:^(NSError *error) {
         //        [weakSelf requestError];

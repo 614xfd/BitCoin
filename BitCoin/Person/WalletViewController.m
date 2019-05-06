@@ -39,6 +39,20 @@
     self.moneyLabel.text = [NSString stringWithFormat:@"%.2lf", [string doubleValue]];
 }
 
+- (void) setMoneyWithDic : (NSDictionary *)dic
+{
+    self.normalLab.text = [NSString stringWithFormat:@"%.4lf", [dic[@"normal"] doubleValue]];
+    self.freezeLab.text = [NSString stringWithFormat:@"%.4lf", [dic[@"freeze"] doubleValue]];
+    
+    
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    //            [defaults setObject:dic[@"last"] forKey:@"GTSE_Price"];
+    CGFloat normal = [dic[@"normal"] floatValue];
+    CGFloat freeze = [dic[@"freeze"] floatValue];
+    CGFloat  maney = (normal + freeze) * [[ud objectForKey:@"GTSE_Price"] floatValue];
+    self.moneyLabel.text = [NSString stringWithFormat:@"%.2lf",maney];
+}
+
 - (void) request
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -51,16 +65,7 @@
         if ([code isEqualToString:@"1"]) {
             
             NSDictionary *data = JSON[@"data"];
-            self.normalLab.text = data[@"normal"];
-            self.freezeLab.text = data[@"freeze"];
-            
-            
-            NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-//            [defaults setObject:dic[@"last"] forKey:@"GTSE_Price"];
-            CGFloat normal = [data[@"normal"] floatValue];
-            CGFloat freeze = [data[@"freeze"] floatValue];
-            CGFloat  maney = (normal + freeze) * [[ud objectForKey:@"GTSE_Price"] floatValue];
-            self.moneyLabel.text = [NSString stringWithFormat:@"%.2lf",maney];
+            [weakSelf performSelectorOnMainThread:@selector(setMoneyWithDic:) withObject:data waitUntilDone:YES];
 
         } else {
 
