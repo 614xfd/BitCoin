@@ -123,7 +123,7 @@
 
 - (IBAction)sendBtnClick:(id)sender {
     
-    [self inputPayPasswordWithPayTip:@"支付" andPrice:[NSString stringWithFormat:@"%@ GTSE", self.numberTF.text]];
+    [self inputPayPasswordWithPayTip:@"支付" andPrice:[NSString stringWithFormat:@"%.2lf GTSE", [self.numberTF.text doubleValue]]];
     self.payNumLabel.text = [NSString stringWithFormat:@"%@", self.numberTF.text];
     
 //    [UIView beginAnimations:nil context:nil];

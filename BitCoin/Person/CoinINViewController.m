@@ -108,6 +108,7 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.numTF resignFirstResponder];
     [self.addressTF resignFirstResponder];
+    [self.contentTF resignFirstResponder];
 }
 /*
 #pragma mark - Navigation

@@ -119,7 +119,7 @@
         statusLabel.text = @"异常";
     }
     UILabel *singleTotalLabel = (UILabel *)[cell.contentView viewWithTag:4];
-    singleTotalLabel.text = [NSString stringWithFormat:@"%@", [dic objectForKey:@"singleTotal"]];
+    singleTotalLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [[dic objectForKey:@"singleTotal"] doubleValue]];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     

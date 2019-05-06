@@ -38,7 +38,7 @@
     
     self.nameLabel.text = [self.dic objectForKey:@"name"];
     self.titleLabel.text = [self.dic objectForKey:@"title"];
-    self.priceLabel.text = [NSString stringWithFormat:@"%@ GTSE", [self.dic objectForKey:@"price"]];
+    self.priceLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [[self.dic objectForKey:@"price"] doubleValue]];
     self.numberLabel.text = [NSString stringWithFormat:@"x%@", self.storeNum];
 //    self.maintainLabel.text = [self.dic objectForKey:@"productWarranty"];
     [self.storeImageView sd_setImageWithURL:[NSURL URLWithString:str]];

@@ -44,7 +44,7 @@ static AFHTTPSessionManager *manager;
 
 - (void) creatBalance
 {
-    self.canUse.text = [NSString stringWithFormat:@"余额：%@（GTSE）", _bbcBalance];
+    self.canUse.text = [NSString stringWithFormat:@"余额：%.2lf（GTSE）", [_bbcBalance doubleValue]];
 }
 
 - (void) requestBalance

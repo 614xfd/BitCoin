@@ -284,7 +284,7 @@
     view.delegate =self;
     [self.view addSubview:view];
     view.payNameLabel.text = tip;
-    view.payNumLabel.text = [NSString stringWithFormat:@"%@ GTSE", price];
+    view.payNumLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [price doubleValue]];
     [view.firstTV becomeFirstResponder];
 }
 

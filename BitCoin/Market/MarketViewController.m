@@ -23,6 +23,7 @@
 #import "CoinSendInfoViewController.h"
 #import "HoldListViewController.h"
 #import "NewShareViewController.h"
+#import "LoginViewController.h"
 
 #define SCREEN_HEIGHT                      [UIScreen mainScreen].bounds.size.height
 #define SCREEN_WIDTH                       [UIScreen mainScreen].bounds.size.width
@@ -42,6 +43,7 @@
     NSDictionary *_defaultDic;
     float _defaultNum;
     BOOL _isOpen;
+    BOOL _isLogin;
 
 }
 
@@ -53,6 +55,13 @@
 {
     [super viewWillAppear:animated];
     [self setBarBlackColor:YES];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *value = [defaults objectForKey:@"isLogin"];
+    if ([value isEqualToString:@"YES"]) {
+        _isLogin = YES;
+    } else {
+        _isLogin = NO;
+    }
 }
 
 - (void)viewDidLoad {
@@ -397,33 +406,59 @@
         [self showToastWithMessage:@"暂未开放"];
         return;
     }
+    if (!_isLogin) {
+        [self login];
+        return;
+    }
     HoldListViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HoldListVC"];
     vc.dataArray = _rateArray;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void) intoNode {
-    
+    if (!_isLogin) {
+        [self login];
+        return;
+    }
     NodeMiningViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NodeMiningVC"];
     vc.isSuperNode = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void) intoCloud {
+    if (!_isLogin) {
+        [self login];
+        return;
+    }
     NodeMiningViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NodeMiningVC"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void) more {
-    
+    [self showToastWithMessage:@"暂未开放"];
 }
+
+- (void)login{
+    LoginViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (IBAction)QRCodeBtnClick:(id)sender {
     [self intoQRCode];
 }
 - (IBAction)inComeBtnClick:(id)sender {
+    if (!_isLogin) {
+        [self login];
+        return;
+    }
     [self intoCoinInCome];
 }
 - (IBAction)sendBtnClick:(id)sender {
+    if (!_isLogin) {
+        [self login];
+        return;
+    }
+
     [self intoCoinSend];
 }
 - (IBAction)announcementBtnClick:(id)sender {
@@ -439,6 +474,10 @@
 
 - (void) intoVC:(NSInteger)index
 {
+    if (!_isLogin) {
+        [self login];
+        return;
+    }
     if (index == 0) {
         NodeMiningViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NodeMiningVC"];
         [self.navigationController pushViewController:vc animated:YES];

@@ -84,7 +84,7 @@
 
 - (void) creatBalance
 {
-    self.coinNumLabel.text = [NSString stringWithFormat:@"%@ GTSE", _bbcBalance];
+    self.coinNumLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [_bbcBalance doubleValue]];
 }
 
 - (IBAction)upData:(id)sender {
@@ -94,6 +94,13 @@
 }
 - (IBAction)goBack:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.numTF resignFirstResponder];
+    [self.addressTF resignFirstResponder];
+    [self.contentTF resignFirstResponder];
 }
 
 /*

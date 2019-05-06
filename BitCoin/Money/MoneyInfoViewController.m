@@ -98,7 +98,7 @@
     //    double d = [[_data objectForKey:@"userETHBalance"] doubleValue];
     
     //    self.bbcTF.placeholder = [NSString stringWithFormat:@"最大可买%.2lfBBC", d*_parities];
-    self.limitLabel.text = [NSString stringWithFormat:@"最低买入%@GTSE", [_data objectForKey:@"limit"]];
+    self.limitLabel.text = [NSString stringWithFormat:@"最低买入%.2lfGTSE", [[_data objectForKey:@"limit"] doubleValue]];
     
     //    if ([[_data objectForKey:@"type"] isEqualToString:@"1"]) {
     //        self.allBBCTF.placeholder = [NSString stringWithFormat:@"转入%@%%分享所得BBC", [_data objectForKey:@"typeValue"]];
@@ -341,7 +341,7 @@
 //    self.payView.hidden = NO;
     [self inputPayPasswordWithPayTip:@"支付" andPrice:[NSString stringWithFormat:@"%@ GTSE", self.usdtTF.text]];
     self.bgButton.hidden = NO;
-    self.payMoneyLabel.text = [NSString stringWithFormat:@"%@ GTSE", self.usdtTF.text];
+    self.payMoneyLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [self.usdtTF.text doubleValue]];
 }
 
 - (void) returnPayPassword:(NSString *)string

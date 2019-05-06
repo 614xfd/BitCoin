@@ -36,7 +36,7 @@
 
 - (void) setcoin :(NSString *) stirng
 {
-    self.coin.text = [NSString stringWithFormat:@"%@ GTSE", stirng];
+    self.coin.text = [NSString stringWithFormat:@"%.2lf GTSE", [stirng doubleValue]];
 }
 
 - (void) requestPeople
