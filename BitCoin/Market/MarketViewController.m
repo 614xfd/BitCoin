@@ -387,11 +387,19 @@
 }
 
 - (void) intoCoinInCome {
+    if (!_isLogin) {
+        [self login];
+        return;
+    }
     CoinInComeViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CoinInComeVC"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void) intoCoinSend {
+    if (!_isLogin) {
+        [self login];
+        return;
+    }
     CoinSendViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CoinSendVC"];
     [self.navigationController pushViewController:vc animated:YES];
 }
