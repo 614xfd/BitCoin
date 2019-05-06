@@ -48,7 +48,7 @@
 
 - (void) setAllLabelText:(NSString *)string
 {
-    self.AllLabel.text = string;
+    self.AllLabel.text = [NSString stringWithFormat:@"%.2lf", [string doubleValue]];
 }
 
 - (void) reques
