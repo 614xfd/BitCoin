@@ -141,11 +141,19 @@
     
     
     NSArray *keys = @[@"teamMoney",@"money",@"totalMoeny",@"days"];
+    
+    float f = 0.00;
     if (self.detailDict) {
-        rightLab.text = [NSString stringWithFormat:@"%@%@",self.detailDict[keys[indexPath.row]],dict[@"unit"]];
-    }else{
-        rightLab.text = [NSString stringWithFormat:@"0%@",dict[@"unit"]];
+        f = [self.detailDict[keys[indexPath.row]] floatValue];
     }
+    NSString *unit = dict[@"unit"];
+    if (unit.length > 1) {
+        rightLab.text = [NSString stringWithFormat:@"%.2f%@",f,dict[@"unit"]];
+    }else{
+        rightLab.text = [NSString stringWithFormat:@"%.0f%@",f,dict[@"unit"]];
+    }
+    
+    
     
     return cell;
 }

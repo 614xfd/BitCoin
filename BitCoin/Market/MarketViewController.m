@@ -403,6 +403,7 @@
 }
 
 - (void) intoNode {
+    
     NodeMiningViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NodeMiningVC"];
     vc.isSuperNode = YES;
     [self.navigationController pushViewController:vc animated:YES];
