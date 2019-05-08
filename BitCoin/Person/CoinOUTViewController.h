@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CoinOUTViewController : BaseViewController
+@interface CoinOUTViewController : BaseViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *addressTF;
 @property (weak, nonatomic) IBOutlet UITextField *numTF;
 @property (weak, nonatomic) IBOutlet UILabel *coinNumLabel;

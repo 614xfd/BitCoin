@@ -34,6 +34,7 @@
 //@property (nonatomic, assign)  CGFloat scale;
 @property (weak, nonatomic) IBOutlet UIView *imagesView;
 @property (weak, nonatomic) IBOutlet UILabel *line;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
 
 - (void) requestImage;
 
