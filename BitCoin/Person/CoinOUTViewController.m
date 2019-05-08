@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldEditChanged:) name:UITextFieldTextDidChangeNotification object:self.numTF];
+
     [self requestBalance];
 }
 
@@ -91,6 +93,15 @@
     self.coinNumLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [_bbcBalance doubleValue]-5];
 }
 
+-(void)textFieldEditChanged:(NSNotification *)obj
+{
+    UITextField *tf = obj.object;
+    if (tf ==self.numTF) {
+        if ([tf.text doubleValue]<=[_bbcBalance doubleValue]-5) {
+            tf.text = @"0.00";
+        }
+    }
+}
 - (IBAction)upData:(id)sender {
     if (self.addressTF.text.length>0&&[self.numTF.text doubleValue]>0) {
         [self requestOUT];

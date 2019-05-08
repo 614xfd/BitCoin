@@ -163,6 +163,7 @@
 - (IBAction)payBtnClick:(id)sender {
     [self requestAdd];
     self.addView.hidden = YES;
+    self.bgBtn.hidden = YES;
 }
 - (IBAction)teamBtnClick:(id)sender {
     TeamViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"teamVC"];
