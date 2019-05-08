@@ -39,6 +39,7 @@
     [formatter setDateFormat:@"yyyy-MM-dd"];
     NSString *dateStr = [formatter stringFromDate:date];
     self.dateLabel.text = dateStr;
+    self.dateLabel1.text = dateStr;
     [self.bgLineLabel.layer setBorderWidth:1];
     [self.bgLineLabel.layer setBorderColor:[UIColor colorWithRed:241/255.0 green:241/255.0 blue:245/255.0 alpha:1].CGColor];
     [self.viewBGColorLabel az_setGradientBackgroundWithColors:@[[UIColor colorWithRed:44/255.0 green:12/255.0 blue:104/255.0 alpha:1],[UIColor colorWithRed:116/255.0 green:34/255.0 blue:168/255.0 alpha:1]] locations:nil startPoint:CGPointMake(0, 0) endPoint:CGPointMake(1, 0)];
@@ -48,7 +49,7 @@
 
 - (void) setAllLabelText:(NSString *)string
 {
-    self.AllLabel.text = [NSString stringWithFormat:@"%.3lf", [string doubleValue]];
+    self.AllLabel.text = [NSString stringWithFormat:@"%.2lf", [string doubleValue]];
 }
 
 - (void) reques
@@ -110,7 +111,7 @@
     UILabel *nameLabel = (UILabel *)[cell.contentView viewWithTag:1];
     nameLabel.text = [NSString stringWithFormat:@"%@", [dic objectForKey:@"name"]];
     UILabel *dayReleaseLabel = (UILabel *)[cell.contentView viewWithTag:2];
-    dayReleaseLabel.text = [NSString stringWithFormat:@"%.3lf GTSE", [[dic objectForKey:@"dayRelease"] doubleValue]];
+    dayReleaseLabel.text = [NSString stringWithFormat:@"%.5lf GTSE", [[dic objectForKey:@"dayRelease"] doubleValue]];
     UILabel *statusLabel = (UILabel *)[cell.contentView viewWithTag:3];
     NSString *stri = [NSString stringWithFormat:@"%@", [dic objectForKey:@"status"]];
     if ([stri isEqualToString:@"1"]) {
@@ -119,7 +120,7 @@
         statusLabel.text = @"异常";
     }
     UILabel *singleTotalLabel = (UILabel *)[cell.contentView viewWithTag:4];
-    singleTotalLabel.text = [NSString stringWithFormat:@"%.3lf GTSE", [[dic objectForKey:@"singleTotal"] doubleValue]];
+    singleTotalLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [[dic objectForKey:@"singleTotal"] doubleValue]];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     

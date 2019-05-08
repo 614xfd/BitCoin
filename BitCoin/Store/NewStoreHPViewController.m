@@ -127,7 +127,7 @@
     UILabel *subTitle_L = (UILabel *) [cell.contentView viewWithTag:13];
     subTitle_L.text = [NSString stringWithFormat:@"%@", [dic_L objectForKey:@"astract"]];
     UILabel *price_L = (UILabel *) [cell.contentView viewWithTag:14];
-    price_L.text = [NSString stringWithFormat:@"%.2lf gtse", [[dic_L objectForKey:@"price"] doubleValue]];
+    price_L.text = [NSString stringWithFormat:@"%.2lf GTSE", [[dic_L objectForKey:@"price"] doubleValue]];
     UIButton *btn_L = (UIButton *)[view_L.subviews objectAtIndex:4];
     btn_L.tag = 10000+indexPath.row*2;
     [btn_L addTarget:self action:@selector(selectBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -144,7 +144,7 @@
         UILabel *subTitle_R = (UILabel *) [cell.contentView viewWithTag:23];
         subTitle_R.text = [NSString stringWithFormat:@"%@", [dic_R objectForKey:@"astract"]];
         UILabel *price_R = (UILabel *) [cell.contentView viewWithTag:24];
-        price_R.text = [NSString stringWithFormat:@"%.2lf gtse", [[dic_R objectForKey:@"price"] doubleValue]];
+        price_R.text = [NSString stringWithFormat:@"%.2lf GTSE", [[dic_R objectForKey:@"price"] doubleValue]];
         UIButton *btn_R = (UIButton *)[view_R.subviews objectAtIndex:4];
         btn_R.tag = 10000+indexPath.row*2+1;
         [btn_R addTarget:self action:@selector(selectBtn:) forControlEvents:UIControlEventTouchUpInside];

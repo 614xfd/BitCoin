@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Mining/NewMiningHPViewController.m"
-            timestampString = "577684274.8338701"
+            timestampString = "579004961.916916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-addMiningBtnClick:"
             landmarkType = "7">
          </BreakpointContent>
@@ -100,12 +100,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitCoin/Market/MarketViewController.m"
-            timestampString = "577780391.646286"
+            timestampString = "578833172.1077271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-returnPayPassword:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,6 +122,22 @@
             startingLineNumber = "61"
             endingLineNumber = "61"
             landmarkName = "-payBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BitCoin/Market/view/marketHeadView.m"
+            timestampString = "578833172.1078171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-creatImageWith:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -46,6 +46,10 @@
 
 - (void) requestOUT
 {
+    if ([self.numTF.text doubleValue]<1) {
+        [self showToastWithMessage:@"请输入提币数量"];
+        return;
+    }
     if (self.contentTF.text.length<1) {
         [self showToastWithMessage:@"请填写备注"];
         return;
@@ -84,7 +88,7 @@
 
 - (void) creatBalance
 {
-    self.coinNumLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [_bbcBalance doubleValue]];
+    self.coinNumLabel.text = [NSString stringWithFormat:@"%.2lf GTSE", [_bbcBalance doubleValue]-5];
 }
 
 - (IBAction)upData:(id)sender {
