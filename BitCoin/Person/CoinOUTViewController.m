@@ -97,8 +97,8 @@
 {
     UITextField *tf = obj.object;
     if (tf ==self.numTF) {
-        if ([tf.text doubleValue]<=[_bbcBalance doubleValue]-5) {
-            tf.text = @"0.00";
+        if ([tf.text doubleValue]>[_bbcBalance doubleValue]-5) {
+            tf.text = [NSString stringWithFormat:@"%.2lf", [_bbcBalance doubleValue]-5];
         }
     }
 }
