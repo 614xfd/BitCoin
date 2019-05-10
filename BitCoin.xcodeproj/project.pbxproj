@@ -104,7 +104,6 @@
 		370983EA1F7B9D3800FF111D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370983E91F7B9D3800FF111D /* BaseViewController.m */; };
 		370983F81F7BAD4200FF111D /* 个人中心_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 370983ED1F7BAC8400FF111D /* 个人中心_03.png */; };
 		370FC4842267640B00CC0E6C /* NewMiningHPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370FC4832267640B00CC0E6C /* NewMiningHPViewController.m */; };
-		370FC4862267788E00CC0E6C /* mining_bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 370FC4852267788D00CC0E6C /* mining_bg1.png */; };
 		370FC4882267ABBC00CC0E6C /* register_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 370FC4872267ABBB00CC0E6C /* register_bg.jpg */; };
 		370FC4FA2267B48F00CC0E6C /* regist_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 370FC48A2267B48F00CC0E6C /* regist_check.png */; };
 		370FC4FB2267B48F00CC0E6C /* smrz2.png in Resources */ = {isa = PBXBuildFile; fileRef = 370FC48B2267B48F00CC0E6C /* smrz2.png */; };
@@ -824,7 +823,6 @@
 		370983ED1F7BAC8400FF111D /* 个人中心_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "个人中心_03.png"; sourceTree = "<group>"; };
 		370FC4822267640B00CC0E6C /* NewMiningHPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMiningHPViewController.h; sourceTree = "<group>"; };
 		370FC4832267640B00CC0E6C /* NewMiningHPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMiningHPViewController.m; sourceTree = "<group>"; };
-		370FC4852267788D00CC0E6C /* mining_bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mining_bg1.png; sourceTree = "<group>"; };
 		370FC4872267ABBB00CC0E6C /* register_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = register_bg.jpg; sourceTree = "<group>"; };
 		370FC48A2267B48F00CC0E6C /* regist_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = regist_check.png; sourceTree = "<group>"; };
 		370FC48B2267B48F00CC0E6C /* smrz2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smrz2.png; sourceTree = "<group>"; };
@@ -2491,7 +2489,6 @@
 			isa = PBXGroup;
 			children = (
 				4A9D98F2226F577000D343C9 /* 分享 (3).png */,
-				370FC4852267788D00CC0E6C /* mining_bg1.png */,
 				37D0C0AC202C27E80021E9AE /* 挖矿_03.png */,
 				37A69EE7202AEDCC0097CBD3 /* 白_返回.png */,
 				377C2821201EAD6000F4B5EF /* 矿池信息_03.png */,
@@ -3796,7 +3793,6 @@
 				3735A3481F763B3F0072C77F /* 删除.png in Resources */,
 				3707B28221421AF0000D6D47 /* runShareView.xib in Resources */,
 				3707B273214120F6000D6D47 /* 云矿机_07.png in Resources */,
-				370FC4862267788E00CC0E6C /* mining_bg1.png in Resources */,
 				370FC55D2267B49000CC0E6C /* city_icon2.png in Resources */,
 				37E68BF8201B452C00A027EE /* 实名认证-验证信息审核_03.png in Resources */,
 				3707B120212FC784000D6D47 /* 个人中心_18 (2).png in Resources */,
